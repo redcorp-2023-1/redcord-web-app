@@ -1,12 +1,5 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue';
-import index from './components/landingpagecomponents/index.vue';
-import SideBar from "./components/SideBar/SideBar.vue";
-</script>
+<script setup></script>
 
 <template>
-  <index></index>
-  <SideBar></SideBar>
+  <RouterView />
 </template>
-
-<style scoped></style>
