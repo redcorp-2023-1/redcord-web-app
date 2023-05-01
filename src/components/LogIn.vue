@@ -10,7 +10,7 @@
     <div class="right-section">
       <div class="header">
         <a href="#" class="link">¿No eres miembro?</a>
-        <a href="#" class="link">Registrate ahora</a>
+        <RouterLink to="/register" class="link">Registrate ahora</RouterLink>
       </div>
       <h2>Iniciar sesión Redcorp</h2>
       <form class="form">
@@ -22,7 +22,7 @@
           <label for="password">Contraseña:</label>
           <input type="password" id="password" required />
         </div>
-        <button class="btn-login">Iniciar sesión</button>
+        <button @click="$router.push('/home')" class="btn-login">Iniciar sesión</button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>

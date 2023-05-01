@@ -10,7 +10,7 @@
     <div class="right-section">
       <div class="header">
         <a href="#" class="link">Ya eres miembro</a>
-        <a href="#" class="link">Iniciar sesión</a>
+        <RouterLink to="/login" class="link">Iniciar sesión</RouterLink>
       </div>
       <h2>Registrate en RedCorp</h2>
       <form class="form">

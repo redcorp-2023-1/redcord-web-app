@@ -20,8 +20,8 @@
             <li><a>Conócenos</a></li>
             <li><a>Precios y planes</a></li>
             <li><a>Contacto</a></li>
-            <li><a>Iniciar sesión</a></li>
-            <li><a>Registrarse</a></li>
+            <li><RouterLink to="/login">Iniciar sesión</RouterLink></li>
+            <li><RouterLink to="/register">Registrarse</RouterLink></li>
           </ul>
         </nav>
       </div>
