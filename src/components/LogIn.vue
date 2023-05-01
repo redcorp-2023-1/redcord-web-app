@@ -40,7 +40,7 @@ export default {
 .container {
   display: flex;
   align-items: normal;
-  height: 90vh;
+  height: 100vh;
   background-color: #9F5454;
   margin: 0 auto;
 }
@@ -106,6 +106,8 @@ h2 {
   color: #000000;
   font-size: 2rem;
   margin-bottom: 20px;
+  text-align: center;
+
 }
 
 .form {

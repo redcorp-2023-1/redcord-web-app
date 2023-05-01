@@ -1,10 +1,11 @@
 <script setup>
 
 import HelloWorld from './components/HelloWorld.vue'
-import verification from "./components/verification.vue";
 import Verification from "./components/verification.vue";
+import LogIn from "./components/LogIn.vue";
+import Register from "./components/Register.vue";
 </script>
 
 <template>
-<verification/>
+  <verification/>
 </template>
