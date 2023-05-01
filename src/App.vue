@@ -1,12 +1,11 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
-import SeccionComponent from './components/Seccion/seccion.component.vue';
-import InicioComponent from './components/ Inicio/Inicio.component.vue';
-import LogIn from './components/LogIn.vue';
-import register from './components/Register.vue';
-import Register from './components/Register.vue';
+import index from './components/landingpagecomponents/index.vue';
+import servicios from './components/landingpagecomponents/servicios.vue';
 </script>
 
 <template>
-  <Register />
+  <index></index>
 </template>
+
+<style scoped></style>
