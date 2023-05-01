@@ -1,53 +1,59 @@
 <template>
-  <div class="SeccionesActuales">
-    <div class="title">Secciones Actuales</div>
+  <main>
+    <SideBar />
 
-    <div class="filter">
-      <span class="filter-text">Filtrar</span>
-      <select name="Input" id="input" class="Options-dropdown">
-        <option value="Option">Todas las secciones</option>
-      </select>
+    <div class="SeccionesActuales">
+      <div class="title">Secciones Actuales</div>
+
+      <div class="filter">
+        <span class="filter-text">Filtrar</span>
+        <select name="Input" id="input" class="Options-dropdown">
+          <option value="Option">Todas las secciones</option>
+        </select>
+      </div>
+
+      <div class="content">
+        <div class="card">
+          <SeccionCardComponent />
+          <div class="line"></div>
+        </div>
+
+        <div class="card">
+          <SeccionCardComponent />
+          <div class="line"></div>
+        </div>
+
+        <div class="card">
+          <SeccionCardComponent />
+          <div class="line"></div>
+        </div>
+
+        <div class="card">
+          <SeccionCardComponent />
+          <div class="line"></div>
+        </div>
+      </div>
     </div>
-
-    <div class="content">
-      <div class="card">
-        <SeccionCardComponent />
-        <div class="line"></div>
-      </div>
-
-      <div class="card">
-        <SeccionCardComponent />
-        <div class="line"></div>
-      </div>
-
-      <div class="card">
-        <SeccionCardComponent />
-        <div class="line"></div>
-      </div>
-
-      <div class="card">
-        <SeccionCardComponent />
-        <div class="line"></div>
-      </div>
-    </div>
-  </div>
+  </main>
 </template>
 
-<script>
+<script setup>
 import SeccionCardComponent from './seccion.card.component.vue';
-export default {
-  name: 'seccion.component',
-  components: { SeccionCardComponent },
-};
+import SideBar from '../SideBar/SideBar.vue';
 </script>
 
 <style scoped>
+main {
+  display: flex;
+}
+
 .SeccionesActuales {
   background-color: rgb(240, 240, 240);
   color: dimgrey;
   border-radius: 10px;
   min-height: 100vh;
   position: relative;
+  flex: 1 1 auto;
 }
 .title {
   border-bottom: 1px solid slategrey;
