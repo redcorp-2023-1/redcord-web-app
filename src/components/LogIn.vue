@@ -1,28 +1,28 @@
 <template>
   <div class="container">
     <div class="left-section">
-      <img src="../assets/logo.png" alt="logo" class="logo">
+      <img src="../assets/logo.png" alt="logo" class="logo" />
       <p class="description">
         Descubre el mundo de la productividad para mejorar tu rutina laboral.
       </p>
-      <img src="../assets/icono2.png" alt="icon" class="icon">
+      <img src="../assets/icono2.png" alt="icon" class="icon" />
     </div>
     <div class="right-section">
       <div class="header">
         <a href="#" class="link">¿No eres miembro?</a>
-        <a href="#" class="link">Registrate ahora</a>
+        <RouterLink to="/register" class="link">Registrate ahora</RouterLink>
       </div>
       <h2>Iniciar sesión Redcorp</h2>
       <form class="form">
         <div class="form-group">
           <label for="email">Dirección de correo electrónico:</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" required />
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" required>
+          <input type="password" id="password" required />
         </div>
-        <button class="btn-login">Iniciar sesión</button>
+        <button @click="$router.push('/home')" class="btn-login">Iniciar sesión</button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
@@ -32,7 +32,7 @@
 </template>
 <script>
 export default {
-  name: "LogIn",
+  name: 'LogIn',
 };
 </script>
 <style scoped>
@@ -41,7 +41,7 @@ export default {
   display: flex;
   align-items: normal;
   height: 100vh;
-  background-color: #9F5454;
+  background-color: #9f5454;
   margin: 0 auto;
 }
 
@@ -107,7 +107,6 @@ h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-
 }
 
 .form {
@@ -131,22 +130,20 @@ label {
   color: #000000;
   font-size: 1.1rem;
   margin-bottom: 10px;
-  text-align-all: left;
-
 }
 
-input[type="email"],
-input[type="password"] {
+input[type='email'],
+input[type='password'] {
   width: 50%;
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background-color: #EFEEF5;
+  background-color: #efeef5;
   margin-bottom: 10px;
 }
 
 button.btn-login {
-  background-color: #C9725B;
+  background-color: #c9725b;
   color: white;
   font-size: 1.2rem;
   padding: 10px 50px;
@@ -157,13 +154,13 @@ button.btn-login {
 }
 
 button.btn-login:hover {
-  background-color: #7D3B3B;
+  background-color: #7d3b3b;
 }
 input {
   color: #1a1a1a;
 }
 .contra {
-  color:#665075;
+  color: #665075;
   margin-top: 10px;
   text-decoration: none;
 }
@@ -171,4 +168,3 @@ input {
   margin-top: 15px;
 }
 </style>
-

@@ -1,11 +1,5 @@
-<script setup>
-
-import HelloWorld from './components/HelloWorld.vue'
-import Verification from "./components/verification.vue";
-import LogIn from "./components/LogIn.vue";
-import Register from "./components/Register.vue";
-</script>
+<script setup></script>
 
 <template>
-  <verification/>
+  <RouterView />
 </template>

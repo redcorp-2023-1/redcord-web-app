@@ -1,84 +1,90 @@
 <template>
+  <div class="SeccionesActuales">
+    <div class="title">Secciones Actuales</div>
 
-    <div class="SeccionesActuales">
-      <div class="title">
-        Secciones Actuales
-      </div>
-
-      <div class="filter">
-          <span class="filter-text">Filtrar</span>
-          <select name="Input" id="input" class="Options-dropdown">
-              <option value="Option">Todas las secciones</option>
-          </select>
-      </div>
-
-      <div class="content">
-          <div class="card">
-              <SeccionCardComponent />
-              <div class="line"></div>
-          </div>
-      </div>
+    <div class="filter">
+      <span class="filter-text">Filtrar</span>
+      <select name="Input" id="input" class="Options-dropdown">
+        <option value="Option">Todas las secciones</option>
+      </select>
     </div>
 
+    <div class="content">
+      <div class="card">
+        <SeccionCardComponent />
+        <div class="line"></div>
+      </div>
+
+      <div class="card">
+        <SeccionCardComponent />
+        <div class="line"></div>
+      </div>
+
+      <div class="card">
+        <SeccionCardComponent />
+        <div class="line"></div>
+      </div>
+
+      <div class="card">
+        <SeccionCardComponent />
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import SeccionCardComponent from "./seccion.card.component.vue";
+import SeccionCardComponent from './seccion.card.component.vue';
 export default {
-    name: "seccion.component",
-    components: {SeccionCardComponent}
-}
-
+  name: 'seccion.component',
+  components: { SeccionCardComponent },
+};
 </script>
 
 <style scoped>
-.SeccionesActuales{
-    width: 800px;
-    background-color: rgb(240,240,240);
-    color: dimgrey;
-    border-radius: 10px;
-    height: 500px;
-    position: relative;
+.SeccionesActuales {
+  background-color: rgb(240, 240, 240);
+  color: dimgrey;
+  border-radius: 10px;
+  min-height: 100vh;
+  position: relative;
 }
-.title{
-    border-bottom: 1px solid slategrey;
-    height: 40px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+.title {
+  border-bottom: 1px solid slategrey;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
-.filter{
-    border-bottom: 1px solid slategrey;
-    height: 40px;
-    line-height: 40px;
-    display: flex;
-    padding-left: 150px
+.filter {
+  border-bottom: 1px solid slategrey;
+  line-height: 40px;
+  display: flex;
+  padding: 5px 60px;
 }
-.filter-text{
-    font-size:20px;
+.filter-text {
+  font-size: 20px;
 }
-.Options-dropdown{
-    margin-left: 15px;
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    height: 30px;
-    width: 150px;
-    text-align : center;
-    margin-top: 5px;
+.Options-dropdown {
+  margin-left: 15px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  margin-top: 5px;
 }
-.content{
-    position: relative;
-    align-items: center;
-    justify-content: center;
+.content {
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
-.card{
-    padding-top: 12px;
-    padding-bottom: 5px;
+.card {
+  padding: 12px 30px 5px;
 }
-.line{
-    margin-top: 10px;
-    height: 0;
-    border: 1px solid darkgrey;
+.line {
+  margin-top: 10px;
+  height: 0;
+  border: 1px solid darkgrey;
 }
 </style>

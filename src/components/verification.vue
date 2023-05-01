@@ -1,27 +1,27 @@
 <template>
   <div class="container">
     <div class="left-section">
-      <img src="../assets/logo.png" alt="logo" class="logo">
+      <img src="../assets/logo.png" alt="logo" class="logo" />
       <p class="description">
         Descubre el mundo de la productividad para mejorar tu rutina laboral.
       </p>
-      <img src="../assets/icono7.png" alt="icon" class="icon">
+      <img src="../assets/icono7.png" alt="icon" class="icon" />
     </div>
     <div class="right-section">
       <div class="header">
         <a href="#" class="link">¿Ya eres miembro?</a>
-        <a href="#" class="link">Iniciar sesión</a>
+        <RouterLink to="/login" class="link">Iniciar sesión</RouterLink>
       </div>
       <h2>Registrate en Redcorp</h2>
       <form class="form">
         <div class="form-group">
           <label for="verification-code">Ingrese código de verificación:</label>
-          <input type="text" id="verification-code" required class="verification-input">
+          <input type="text" id="verification-code" required class="verification-input" />
         </div>
         <button class="btn-create-account">Crear una cuenta</button>
       </form>
       <div class="verification">
-        <img src="../assets/icono6.png" alt="icon" class="message-icon">
+        <img src="../assets/icono6.png" alt="icon" class="message-icon" />
         <p>Se enviará un código de verificación de acceso a su correo ingresado</p>
       </div>
     </div>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "Verification",
+  name: 'Verification',
 };
 </script>
 
@@ -93,18 +93,17 @@ export default {
   width: 100%;
   margin-bottom: 10px;
 }
-a{
-  color:#665075;
+a {
+  color: #665075;
 }
-input[type="text"]
- {
+input[type='text'] {
   width: 60%;
   padding: 5px;
   border: none;
   border-radius: 20px;
-  background-color: #F4F4F4;
-  margin-bottom:auto;
-  color:black;
+  background-color: #f4f4f4;
+  margin-bottom: auto;
+  color: black;
 }
 .verification {
   display: flex;
@@ -122,8 +121,8 @@ input[type="text"]
   font-size: 14px;
   margin: 0;
 }
-p{
-  color:black;
+p {
+  color: black;
 }
 .right-section {
   display: flex;
@@ -144,8 +143,8 @@ p{
   margin-bottom: 10px;
 }
 
-button.btn-create-account{
-  background-color: #C9725B;
+button.btn-create-account {
+  background-color: #c9725b;
   color: white;
   font-size: 1.2rem;
   padding: 10px 20px;
@@ -181,9 +180,8 @@ label {
   color: #000000;
   font-size: 1rem;
   margin-bottom: 10px;
-  text-align-all: left;
 }
-input.verification-code{
-  color:black;
+input.verification-code {
+  color: black;
 }
 </style>
