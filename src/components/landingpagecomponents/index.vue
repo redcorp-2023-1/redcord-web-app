@@ -1,314 +1,292 @@
-<script setup>
-
-    
-</script>
+<script setup></script>
 
 <template>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/jpg" href="./png/LogoRedcorp2.png" />
-        <title>Redcorp</title>
-        
-    
-    </head>
-    <body>
+  <header>
+    <div class="container__menu">
+      <div class="logo">
+        <a href="index.html"
+          ><img src="./png/LogoRedcorp.png" width="160" height="80" alt="Logo" />
+        </a>
+      </div>
+      <div class="menu">
+        <i class="fas fa-bars" id="btn_menu"></i>
+        <div id="back_menu"></div>
+        <nav id="nav">
+          <img src="./png/LogoRedcorp2.png" alt="" />
+          <ul>
+            <li><a>Inicio</a></li>
+            <li><a>¿Qué es Redcorp? y nuestros servicios</a></li>
+            <li><a>Blog</a></li>
+            <li><a>Conócenos</a></li>
+            <li><a>Precios y planes</a></li>
+            <li><a>Contacto</a></li>
+            <li><a>Iniciar sesión</a></li>
+            <li><a>Registrarse</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container__cover">
+      <div class="cover">
+        <div class="text">
+          <h1>Te ayudamos a gestionar las labores de tu empresa de forma productiva</h1>
 
-        <header>
-            <div class="container__menu">
-                <div class="logo">
-                    <a href="index.html"
-                        ><img src="./png/LogoRedcorp.png" width="160" height="80" alt="Logo" />
-                    </a>
-                </div>
-                <div class="menu">
-                    <i class="fas fa-bars" id="btn_menu"></i>
-                    <div id="back_menu"></div>
-                    <nav id="nav">
-                        <img src="./png/LogoRedcorp2.png" alt="" />
-                        <ul>
-                            <li><a>Inicio</a></li>
-                            <li><a>¿Qué es Redcorp? y nuestros servicios</a></li>
-                            <li><a>Blog</a></li>
-                            <li><a>Conócenos</a></li>
-                            <li><a>Precios y planes</a></li>
-                            <li><a>Contacto</a></li>
-                            <li><a>Iniciar sesión</a></li>
-                            <li><a>Registrarse</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <main>
+          <p>
+            Brindamos la planificación diaria con diversas herramientas de gestión de proyectos en
+            unos simples pasos para ayudar internamente a la compañía de nuestros usuarios.
+          </p>
+          <a href="planes.html">
+            <input type="button" value="Empieza ahora" />
+          </a>
 
-
-
-        <div class="container__cover">
-            <div class="cover">
-            <div class="text">
-                <h1>Te ayudamos a gestionar las labores de tu empresa de forma productiva</h1>
-
-                <p>
-                Brindamos la planificación diaria con diversas herramientas de gestión de proyectos en
-                unos simples pasos para ayudar internamente a la compañía de nuestros usuarios.
-                </p>
-                <a href="planes.html">
-                <input type="button" value="Empieza ahora" />
-                </a>
-
-                <div class="avatars">
-                <img src="./png/avatars.png" width="200" height="96" alt="avatars" />
-                </div>
-                <div class="textopequeño">Más de 1,5 mil personas se han unido</div>
-            </div>
-            <div class="svg">
-                <img src="./png/imagentask2.png" alt="" />
-            </div>
-            </div>
-            <div class="apps">
-            <img src="./png/apps.png" alt="avatars" />
-            </div>
+          <div class="avatars">
+            <img src="./png/avatars.png" width="200" height="96" alt="avatars" />
+          </div>
+          <div class="textopequeño">Más de 1,5 mil personas se han unido</div>
         </div>
-        </main>
-
-        <section>
-        <div class="container__banner">
-            <div class="banner">
-            <div class="text">
-                <h1>
-                ¡Podrás iniciar sesión o registrarte eligiendo su cargo de la empresa para disfrutar
-                de todas las funcionalidades que tenemos para tí y lograr facilitar las labores
-                sociales en unos simples clicks!
-                </h1>
-            </div>
-            </div>
-            <div class="task">
-            <img src="./jpg/image1.JPG" alt="" />
-            </div>
-
-            <div class="boton2">
-            <a href="planes.html">
-                <input type="button" value="Ver Planes" />
-            </a>
-            </div>
+        <div class="svg">
+          <img src="./png/imagentask2.png" alt="" />
         </div>
-        </section>
+      </div>
+      <div class="apps">
+        <img src="./png/apps.png" alt="avatars" />
+      </div>
+    </div>
+  </main>
 
-        <section>
-        <div class="container__banner2">
-            <div class="banner2">
-            <div class="text2">
-                <h1>¡Las funciones necesarias para facilitar las ocupaciones de trabajo en una app!</h1>
-            </div>
-            </div>
-            <div class="task2">
-            <img src="./jpg/image2.JPG" alt="" />
-            </div>
-
-            <div class="boton3">
-            <a href="servicios.html">
-                <input type="button" value="Nuestros servicios" />
-            </a>
-            </div>
+  <section>
+    <div class="container__banner">
+      <div class="banner">
+        <div class="text">
+          <h1>
+            ¡Podrás iniciar sesión o registrarte eligiendo su cargo de la empresa para disfrutar de
+            todas las funcionalidades que tenemos para tí y lograr facilitar las labores sociales en
+            unos simples clicks!
+          </h1>
         </div>
-        </section>
+      </div>
+      <div class="task">
+        <img src="./jpg/image1.JPG" alt="" />
+      </div>
 
-        <section>
-        <div class="container__banner3">
-            <div class="banner3">
-            <div class="text3">
-                <h1>
-                ¡Podrás realizar videollamadas estés donde estés con tus compañeros de trabajo,
-                recibir notificaciones, realizar la edición de tus perfil profesional, enviar
-                documentos importantes, entre otras más funciones en Redcorp!
-                </h1>
-            </div>
-            </div>
-            <div class="task3">
-            <img src="./jpg/image12.JPG" alt="" />
-            </div>
+      <div class="boton2">
+        <a href="planes.html">
+          <input type="button" value="Ver Planes" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container__banner2">
+      <div class="banner2">
+        <div class="text2">
+          <h1>¡Las funciones necesarias para facilitar las ocupaciones de trabajo en una app!</h1>
         </div>
-        </section>
+      </div>
+      <div class="task2">
+        <img src="./jpg/image2.JPG" alt="" />
+      </div>
 
-        <section>
-        <div class="container__banner4">
-            <div class="banner4">
-            <div class="text4">
-                <h1>
-                ¡No te olvides que también podrás disfrutar de todos nuestros servicios vía web!
-                </h1>
-            </div>
-            </div>
-            <div class="task4">
-            <img src="./jpg/pc2.JPG" alt="" />
-            </div>
+      <div class="boton3">
+        <a href="servicios.html">
+          <input type="button" value="Nuestros servicios" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container__banner3">
+      <div class="banner3">
+        <div class="text3">
+          <h1>
+            ¡Podrás realizar videollamadas estés donde estés con tus compañeros de trabajo, recibir
+            notificaciones, realizar la edición de tus perfil profesional, enviar documentos
+            importantes, entre otras más funciones en Redcorp!
+          </h1>
         </div>
-        </section>
+      </div>
+      <div class="task3">
+        <img src="./jpg/image12.JPG" alt="" />
+      </div>
+    </div>
+  </section>
 
-        <section class="testimonios">
-        <div class="testimonios__header">
-            <h2>Testimonios</h2>
+  <section>
+    <div class="container__banner4">
+      <div class="banner4">
+        <div class="text4">
+          <h1>¡No te olvides que también podrás disfrutar de todos nuestros servicios vía web!</h1>
         </div>
+      </div>
+      <div class="task4">
+        <img src="./jpg/pc2.JPG" alt="" />
+      </div>
+    </div>
+  </section>
 
-        <!--Testimonios-->
-        <div class="testimonios__contenedor">
-            <div class="testimonios__caja">
-            <div class="caja-top">
-                <div class="perfil">
-                <div class="perfil-img">
-                    <img src="./png/testimonio1.png" />
-                </div>
+  <section class="testimonios">
+    <div class="testimonios__header">
+      <h2>Testimonios</h2>
+    </div>
 
-                <div class="name-user">
-                    <strong>Leslie Alexander</strong>
-                    <span>Gerente Administrativa de Claro</span>
-                </div>
-                </div>
-            </div>
-
-            <div class="comentarios__clientes">
-                <p>
-                Realmense útil! He tenido resultados progresivos y eficientes en mi empresa con esta
-                plataforma web. La recomiendo!
-                </p>
-            </div>
+    <!--Testimonios-->
+    <div class="testimonios__contenedor">
+      <div class="testimonios__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/testimonio1.png" />
             </div>
 
-            <div class="testimonios__caja">
-            <div class="caja-top">
-                <div class="perfil">
-                <div class="perfil-img">
-                    <img src="./png/testimonio2.png" />
-                </div>
-
-                <div class="name-user">
-                    <strong>Robert Fox</strong>
-                    <span>Jefe de proyecto de Marketing</span>
-                </div>
-                </div>
-            </div>
-
-            <div class="comentarios__clientes">
-                <p>
-                No estaba convencido sobre las herramientas digitales para mi empresa. No obstante,
-                opté por contratar este servicio y me ha ido de maravilla!
-                </p>
-            </div>
-            </div>
-
-            <div class="testimonios__caja">
-            <div class="caja-top">
-                <div class="perfil">
-                <div class="perfil-img">
-                    <img src="./png/testimonio3.png" />
-                </div>
-
-                <div class="name-user">
-                    <strong>Cody Fisher</strong>
-                    <span>Gerente Administrativo de H&S</span>
-                </div>
-                </div>
-            </div>
-
-            <div class="comentarios__clientes">
-                <p>
-                Esta plataforma deben conocerla todos los empresarios! Agradezco que exista una
-                aplicación como la que es Redcorp.
-                </p>
-            </div>
-            </div>
-        </div>
-        </section>
-    <footer>
-      <div class="container-footer-all">
-        <div class="container-body">
-          <div class="colum1">
-            <h1>Mas informacion</h1>
-            <p>Síguenos en nuestras redes sociales</p>
-            <div class="row">
-              <a href="https://www.facebook.com/" target="_blank">
-                <img src="./png/iconFacebook.png" width="32" height="30" alt="facebook" />
-              </a>
-              <label>Facebook</label>
-            </div>
-            <div class="row">
-              <a href="https://www.instagram.com/" target="_blank">
-                <img src="./png/iconInstagram.png" width="43" height="60" alt="facebook" />
-              </a>
-              <label>Instagram</label>
+            <div class="name-user">
+              <strong>Leslie Alexander</strong>
+              <span>Gerente Administrativa de Claro</span>
             </div>
           </div>
+        </div>
 
-          <div class="colum2">
-            <h1>Navegación</h1>
-
-            <div class="row">
-              <li><a class="Inicio" href="index.html">Inicio</a></li>
-            </div>
-            <div class="row">
-              <li><a class="Blog" href="blog.html">Blog</a></li>
-            </div>
-            <div class="row">
-              <li><a class="Conócenos" href="conocenos.html">Conócenos</a></li>
-            </div>
-            <div class="row">
-              <li><a class="Servicios" href="servicios.html">Servicios</a></li>
-            </div>
-          </div>
-
-          <div class="colum3">
-            <h1>Contáctanos</h1>
-
-            <div class="row2">
-              <a href="https://goo.gl/maps/7U3YVLgyQSRCME5B6" target="_blank">
-                <img src="./png/iconMap.png" width="32" height="30" alt="map" />
-              </a>
-              <label>Lima, Perú</label>
-            </div>
-
-            <div class="row2">
-              <a href="https://outlook.live.com/" target="_blank">
-                <img src="./png/iconMail.png" width="33" height="30" alt="mail" />
-              </a>
-              <label>redcorp@corporation.com</label>
-            </div>
-
-            <div>
-              <form action="">
-                <input type="text" placeholder="Ingrese su correo" />
-                <button type="submit">Enviar</button>
-              </form>
-            </div>
-          </div>
+        <div class="comentarios__clientes">
+          <p>
+            Realmense útil! He tenido resultados progresivos y eficientes en mi empresa con esta
+            plataforma web. La recomiendo!
+          </p>
         </div>
       </div>
 
-      <div class="container-footer">
-        <div class="footer">
-          <div class="copyright">© 2022 Todos los Derechos Reservados | <a href="">Redcorp</a></div>
+      <div class="testimonios__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/testimonio2.png" />
+            </div>
 
-          <div class="information">
-            <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> |
-            <a href="">Terminos y Condiciones</a>
+            <div class="name-user">
+              <strong>Robert Fox</strong>
+              <span>Jefe de proyecto de Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comentarios__clientes">
+          <p>
+            No estaba convencido sobre las herramientas digitales para mi empresa. No obstante, opté
+            por contratar este servicio y me ha ido de maravilla!
+          </p>
+        </div>
+      </div>
+
+      <div class="testimonios__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/testimonio3.png" />
+            </div>
+
+            <div class="name-user">
+              <strong>Cody Fisher</strong>
+              <span>Gerente Administrativo de H&S</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comentarios__clientes">
+          <p>
+            Esta plataforma deben conocerla todos los empresarios! Agradezco que exista una
+            aplicación como la que es Redcorp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1>Mas informacion</h1>
+          <p>Síguenos en nuestras redes sociales</p>
+          <div class="row">
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src="./png/iconFacebook.png" width="32" height="30" alt="facebook" />
+            </a>
+            <label>Facebook</label>
+          </div>
+          <div class="row">
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="./png/iconInstagram.png" width="43" height="60" alt="facebook" />
+            </a>
+            <label>Instagram</label>
+          </div>
+        </div>
+
+        <div class="colum2">
+          <h1>Navegación</h1>
+
+          <div class="row">
+            <li><a class="Inicio" href="index.html">Inicio</a></li>
+          </div>
+          <div class="row">
+            <li><a class="Blog" href="blog.html">Blog</a></li>
+          </div>
+          <div class="row">
+            <li><a class="Conócenos" href="conocenos.html">Conócenos</a></li>
+          </div>
+          <div class="row">
+            <li><a class="Servicios" href="servicios.html">Servicios</a></li>
+          </div>
+        </div>
+
+        <div class="colum3">
+          <h1>Contáctanos</h1>
+
+          <div class="row2">
+            <a href="https://goo.gl/maps/7U3YVLgyQSRCME5B6" target="_blank">
+              <img src="./png/iconMap.png" width="32" height="30" alt="map" />
+            </a>
+            <label>Lima, Perú</label>
           </div>
 
-          <div class="col-md-3 mb-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <label>Idioma</label>
-              <select name="idioma" id="idioma">
-                <option value="Español">Español</option>
-                <option value="Inglés">Inglés</option>
-              </select>
-            </h6>
+          <div class="row2">
+            <a href="https://outlook.live.com/" target="_blank">
+              <img src="./png/iconMail.png" width="33" height="30" alt="mail" />
+            </a>
+            <label>redcorp@corporation.com</label>
+          </div>
+
+          <div>
+            <form action="">
+              <input type="text" placeholder="Ingrese su correo" />
+              <button type="submit">Enviar</button>
+            </form>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
-    </body>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">© 2022 Todos los Derechos Reservados | <a href="">Redcorp</a></div>
 
+        <div class="information">
+          <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> |
+          <a href="">Terminos y Condiciones</a>
+        </div>
+
+        <div class="col-md-3 mb-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <label>Idioma</label>
+            <select name="idioma" id="idioma">
+              <option value="Español">Español</option>
+              <option value="Inglés">Inglés</option>
+            </select>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
@@ -322,13 +300,12 @@
 }
 
 header {
-  width: 1216px;
+  width: 100%;
   height: 80px;
   margin-top: 40px;
   position: absolute;
   z-index: 1;
   padding: 40px;
-  
 }
 
 .container__menu {
@@ -348,7 +325,6 @@ header {
 .logo img {
   width: 160px;
   height: 75px;
-  margin-top: -15px;
 }
 
 .menu {
@@ -358,12 +334,12 @@ header {
 
 .menu ul {
   display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
 .menu ul li {
   list-style: none;
-  margin-left: 55px;
-  margin-top: 2px;
   text-align: center;
 }
 
@@ -373,7 +349,6 @@ header {
   color: #fff;
   font-family: 'Roboto Condensed', sans-serif;
 }
-
 
 nav ul li a:hover {
   position: static;
@@ -475,8 +450,6 @@ nav ul li a:hover {
 
 .avatars img {
   width: 210px;
-
-  
 }
 
 .textopequeño {
@@ -1110,10 +1083,9 @@ button:hover {
 }
 
 @media screen and (max-width: 1300px) {
-
-    header{
-        width: 1200px;
-    }
+  header {
+    width: 1200px;
+  }
 
   .menu nav {
     position: fixed;
@@ -1214,7 +1186,7 @@ button:hover {
     background-image: url(./jpg/fondo2.JPG);
   }
 
-  header{
+  header {
     width: 900px;
   }
 
@@ -1263,7 +1235,7 @@ button:hover {
     text-align: center;
     align-items: center;
   }
-  header{
+  header {
     width: 750px;
   }
 }
@@ -1308,7 +1280,7 @@ button:hover {
     width: 500px;
     height: 380px;
   }
-  header{
+  header {
     width: 650px;
   }
 }
@@ -1325,7 +1297,7 @@ button:hover {
     width: 550px;
     height: 250px;
   }
-  header{
+  header {
     width: 590px;
   }
 }
@@ -1338,7 +1310,7 @@ button:hover {
   .colum3 {
     margin-top: 30px;
   }
-  header{
+  header {
     width: 530px;
   }
 }
@@ -1532,5 +1504,4 @@ button:hover {
     height: 230px;
   }
 }
-
 </style>
