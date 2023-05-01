@@ -1,10 +1,5 @@
-<script setup>
-
-import HelloWorld from './components/HelloWorld.vue'
-import verification from "./components/verification.vue";
-import Verification from "./components/verification.vue";
-</script>
+<script setup></script>
 
 <template>
-<verification/>
+  <RouterView />
 </template>
