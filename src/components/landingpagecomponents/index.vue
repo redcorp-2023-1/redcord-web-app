@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="task">
-        <img src="./jpg/image1.JPG" alt="" />
+        <img src="./jpg/image1.jpg" alt="" />
       </div>
 
       <div class="boton2">
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="task2">
-        <img src="./jpg/image2.JPG" alt="" />
+        <img src="./jpg/image2.jpg" alt="" />
       </div>
 
       <div class="boton3">
@@ -110,7 +110,7 @@
         </div>
       </div>
       <div class="task3">
-        <img src="./jpg/image12.JPG" alt="" />
+        <img src="./jpg/image12.jpg" alt="" />
       </div>
     </div>
   </section>
@@ -123,7 +123,7 @@
         </div>
       </div>
       <div class="task4">
-        <img src="./jpg/pc2.JPG" alt="" />
+        <img src="./jpg/pc2.jpg" alt="" />
       </div>
     </div>
   </section>
@@ -466,7 +466,7 @@ nav ul li a:hover {
 .container__banner {
   width: 100%;
   height: 850px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -541,7 +541,7 @@ nav ul li a:hover {
 .container__banner2 {
   width: 100%;
   height: 850px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -616,7 +616,7 @@ nav ul li a:hover {
 .container__banner3 {
   width: 100%;
   height: 850px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -691,7 +691,7 @@ nav ul li a:hover {
 .container__banner4 {
   width: 100%;
   height: 1150px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1078,7 +1078,7 @@ button:hover {
 @media screen and (max-width: 1700px) {
   .container__cover {
     background-position: 50%;
-    background-image: url(./jpg/fondo2.JPG);
+    background-image: url(./jpg/fondo2.jpg);
   }
 }
 
@@ -1161,7 +1161,7 @@ button:hover {
 
 @media screen and (max-width: 1250px) {
   .container__cover {
-    background-image: url(./jpg/fondo2.JPG);
+    background-image: url(./jpg/fondo2.jpg);
   }
 
   header {
@@ -1183,7 +1183,7 @@ button:hover {
 
 @media screen and (max-width: 1200px) {
   .container__cover {
-    background-image: url(./jpg/fondo2.JPG);
+    background-image: url(./jpg/fondo2.jpg);
   }
 
   header {
