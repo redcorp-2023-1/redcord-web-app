@@ -106,6 +106,7 @@ h2 {
   color: #000000;
   font-size: 2rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .form {

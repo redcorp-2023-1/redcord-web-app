@@ -166,6 +166,8 @@ h2 {
   color: #000000;
   font-size: 1.2rem;
   margin-bottom: 15px;
+  text-align: center;
+
 }
 .form {
   display: flex;
