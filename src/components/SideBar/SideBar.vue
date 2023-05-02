@@ -13,26 +13,27 @@
     <seccton class="herramientas">
       <label>Herramientas</label>
       <ul>
-        <a>Visión General</a>
-        <a>Secciones</a>
-        <a>herramientas</a>
-        <a>Comunicados</a>
-        <a>Lista de trabajadores de areas</a>
-        <a>Progreso de Empleados</a>
+        <a> <img class="iconos" src="./images/v_g.png"> Visión General</a>
+        <a> <img class="iconos" src="./images/secc.png ">Secciones</a>
+        <a> <img class="iconos" src="./images/herr.png">herramientas</a>
+        <a> <img class="iconos" src="./images/comunicados.png">Comunicados</a>
+        <a> <img class="iconos" src="./images/list.png">Lista de trabajadores de areas</a>
+        <a> <img class="iconos" src="./images/prog.png">Progreso de Empleados</a>
       </ul>
     </seccton>
     <seccton class="interacciones">
       <div>
         <label>Interacciones</label>
         <ul>
-          <a>Chats</a>
-          <a>Notificaciones</a>
-          <a>Comentarios</a>
+          <a> <img class="iconos" src="./images/chats.png">Chats</a>
+          <a> <img class="iconos" src="./images/not.png">Notificaciones</a>
+          <a> <img class="iconos" src="./images/coments.png">Comentarios</a>
         </ul>
       </div>
     </seccton>
 
-    <button @click="$router.push('/')">Cerrar sesión</button>
+    <button @click="$router.push('/')"> <img class="iconos" src="./images/out.png">
+        Cerrar sesión</button>
   </div>
 </template>
 
@@ -42,11 +43,17 @@ export default {
 };
 </script>
 
+
 <style scoped>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.iconos{
+    max-width:30px;
+    max-height:30px;
 }
 
 .sidebar {
@@ -66,18 +73,19 @@ export default {
 }
 
 .perfil {
-  background: #303341;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 35px;
-  height: 80px;
-  min-width: min-content;
-  padding: 10px;
+    background: #303341;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-radius: 35px;
+    height: 80px;
+    width: auto;
 }
 .perfil div {
-  margin-left: 10px;
+  margin-left: 20px;
+    margin-right:30px;
 }
+
 .perfil img {
   width: 70px;
   height: 70px;
@@ -91,7 +99,7 @@ export default {
 }
 .herramientas label {
   color: #6a5dc4;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 .herramientas ul {
   color: #7da4ca;
@@ -105,6 +113,8 @@ export default {
   margin-top: 10px;
   padding: 5px;
   border-radius: 10px;
+    display:flex;
+    align-items: center;
 }
 
 .herramientas ul a:hover {
@@ -118,7 +128,7 @@ export default {
 }
 .interacciones label {
   color: #6a5dc4;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 .interacciones ul {
   color: #7da4ca;
@@ -132,6 +142,8 @@ export default {
   margin-top: 10px;
   padding: 5px;
   border-radius: 10px;
+    display:flex;
+    align-items: center;
 }
 .interacciones ul a:hover {
   background: #375176;
@@ -146,8 +158,11 @@ button {
   padding: 10px;
   border-radius: 10px;
   border: none;
+    display:flex;
+    align-items: center;
 }
 button:hover {
-  background: #375176;
+    background-color: rgba(55, 81, 118, 0.5);
 }
+
 </style>
