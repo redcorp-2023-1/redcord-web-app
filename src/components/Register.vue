@@ -44,7 +44,7 @@
           <label for="ruc">RUC:</label>
           <input type="text" id="ruc" required />
         </div>
-        <button class="btn-register">Continuar</button>
+        <button @click="$router.push('/verification')" class="btn-register">Continuar</button>
       </form>
       <div class="verification">
         <img src="../assets/icono4.png" alt="icon" class="message-icon" />
