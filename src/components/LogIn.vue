@@ -22,7 +22,7 @@
           <label for="password">Contraseña:</label>
           <input type="password" id="password" required />
         </div>
-        <button @click="$router.push('/home')" class="btn-login">Iniciar sesión</button>
+        <button @click="$router.push('/section')" class="btn-login">Iniciar sesión</button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
