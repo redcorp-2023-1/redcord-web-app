@@ -22,8 +22,13 @@ const routes = [
   },
   { path: '/verification', component: Verification },
   { path: '/section', component: Section },
-  {path:'/trabajadores',component: Trabajadores},
-  {path:'/Trabajador/:id/:nombre/:correo/:area/:foto/',component:trabajadoresCard,props:true,name: "Trabajador"}
+  { path: '/trabajadores', component: Trabajadores },
+  {
+    path: '/Trabajador/:id/:nombre/:correo/:area/:foto/',
+    component: trabajadoresCard,
+    props: true,
+    name: 'Trabajador',
+  },
 ];
 
 export const router = createRouter({
