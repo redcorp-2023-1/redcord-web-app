@@ -14,10 +14,10 @@
       <label>Herramientas</label>
       <ul>
         <a> <img class="iconos" src="./images/v_g.png"> Visión General</a>
-        <a> <img class="iconos" src="./images/secc.png ">Secciones</a>
+        <router-link  to="/section" class="link"><img class="iconos" src="./images/secc.png ">Secciones</router-link>
         <a> <img class="iconos" src="./images/herr.png">herramientas</a>
         <a> <img class="iconos" src="./images/comunicados.png">Comunicados</a>
-        <a> <img class="iconos" src="./images/list.png">Lista de trabajadores de areas</a>
+        <router-link to="/trabajadores" class="link"> <img class="iconos" src="./images/list.png">Lista de trabajadores de areas</router-link>
         <a> <img class="iconos" src="./images/prog.png">Progreso de Empleados</a>
       </ul>
     </seccton>
@@ -51,9 +51,14 @@ export default {
   padding: 0;
 }
 
+.link{
+  color:#7da4ca;
+} 
+
 .iconos{
     max-width:30px;
     max-height:30px;
+    color:#7da4ca;
 }
 
 .sidebar {
