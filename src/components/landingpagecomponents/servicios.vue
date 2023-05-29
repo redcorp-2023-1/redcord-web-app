@@ -134,10 +134,9 @@ import FooterComponent from './FooterComponent.vue';
 }
 
 .contenido-banner {
-  position: relative;
+ 
   color: #fff;
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -353,44 +352,15 @@ import FooterComponent from './FooterComponent.vue';
   }
 }
 
-@media screen and (max-width: 1700px) {
-  .container__cover {
-    background-position: 50%;
-    background-image: url(./jpg/fondo2.JPG);
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  
-}
-
-@media screen and (max-width: 1250px) {
-  .container__cover {
-    background-image: url(./jpg/fondo2.JPG);
-  }
 
 
-  .container__cover {
-    background-position: 0px;
-  }
 
-  .container__cover .svg img {
-    width: 500px;
-  }
-}
+
 
 @media screen and (max-width: 1200px) {
 
 
-  .container__cover .svg img {
-    display: none;
-  }
 
-  .container__cover .text {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
 
   .container__banner .text {
     max-width: 100%;
@@ -398,13 +368,7 @@ import FooterComponent from './FooterComponent.vue';
     align-items: center;
   }
 
-  .container__cover .text .avatars img {
-    display: none;
-  }
 
-  .container__cover .text .textopequeño {
-    display: none;
-  }
 
 
 
