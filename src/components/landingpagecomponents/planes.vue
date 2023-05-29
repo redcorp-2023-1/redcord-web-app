@@ -108,7 +108,7 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 .contenido-bannerplanes {
-    position: relative;
+    
     color: #fff;
     height: 100%;
     display: flex;
