@@ -12,7 +12,7 @@
         <a href="#" class="link">Ya eres miembro</a>
         <RouterLink to="/login" class="link">Iniciar sesión</RouterLink>
       </div>
-      <h2>Registrate en RedCorp</h2>
+      <h2>Regístrate en RedCorp</h2>
       <form class="form">
         <div class="form-group-inline">
           <div class="form-group">
@@ -53,6 +53,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'Register',
@@ -63,7 +64,8 @@ export default {
 /* estilos para el contenedor principal */
 .container {
   display: flex;
-  align-items: normal;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background-color: #7da4ca;
   margin: 0 auto;
@@ -73,10 +75,25 @@ export default {
 .left-section {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   width: 30%;
-  height: 100%;
   padding: 20px;
+  background-color: #7da4ca;
+  border-radius: 10px;
+  animation: fade-in 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .logo {
@@ -86,29 +103,41 @@ export default {
 }
 
 .description {
-  color: white;
+  color: #ffffff;
   text-align: center;
   font-size: 1.2rem;
   margin: 30px 0;
 }
 
 .icon {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
-  margin: 0 auto;
+  margin-top: 30px;
+  animation: pulse 2s infinite ;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* estilos para la sección derecha */
 .right-section {
   display: flex;
   flex-direction: column;
-  justify-content: right;
-  align-items: inherit;
+  justify-content: center;
+  align-items: center;
   width: 70%;
   height: 100%;
   padding: 20px;
   background-color: white;
+  border-radius: 10px;
 }
 
 .header {
@@ -159,8 +188,8 @@ label {
 input[type='email'],
 input[type='password'],
 input[type='text'] {
-  width: 60%;
-  padding: 5px;
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 20px;
   background-color: #f4f4f4;
@@ -183,7 +212,7 @@ button.btn-register {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
+  width: 100%;
   margin-bottom: 5px;
 }
 
@@ -205,7 +234,25 @@ button.btn-register {
   font-size: 14px;
   margin: 0;
 }
+
 p {
   color: black;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
 }
 </style>
