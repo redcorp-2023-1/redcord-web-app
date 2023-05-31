@@ -35,23 +35,28 @@ export default {
 </script>
 
 <style scoped>
-/* estilos para el contenedor principal */
+/* Estilos para el contenedor principal */
 .container {
   display: flex;
-  align-items: normal;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background-color: #665075;
   margin: 0 auto;
 }
 
-/* estilos para la sección izquierda */
+/* Estilos para la sección izquierda */
 .left-section {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  width: 30%;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
   padding: 20px;
+  background-color: #665075;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation: fadeInLeft 1s;
 }
 
 .logo {
@@ -61,78 +66,47 @@ export default {
 }
 
 .description {
-  color: white;
+  color: White;
   text-align: center;
   font-size: 1.2rem;
   margin: 30px 0;
 }
 
 .icon {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
-  margin: 0 auto;
+  margin-top: 30px;
+  animation: pulse 2s infinite ;
+
 }
 
-/* estilos para la sección derecha */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Estilos para la sección derecha */
 .right-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  height: 10%;
-  padding: 20px;
-  background-color: white;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 10px;
-}
-a {
-  color: #665075;
-}
-input[type='text'] {
-  width: 60%;
-  padding: 5px;
-  border: none;
-  border-radius: 20px;
-  background-color: #f4f4f4;
-  margin-bottom: auto;
-  color: black;
-}
-.verification {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-.message-icon {
-  margin-right: 10px;
-  width: 25px;
-  height: 25px;
-  object-fit: contain;
-}
-.verification p {
-  font-size: 14px;
-  margin: 0;
-}
-p {
-  color: black;
-}
-.right-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  align-items: inherit;
-  width: 70%;
+  width: 50%;
   height: 100%;
   padding: 20px;
   background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  animation: fadeInRight 1s;
 }
 
 .header {
@@ -141,6 +115,43 @@ p {
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.link {
+  color: #665075;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+h2 {
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+label {
+  color: #000000;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  margin-bottom: auto;
 }
 
 button.btn-create-account {
@@ -154,34 +165,48 @@ button.btn-create-account {
   transition: background-color 0.3s ease;
 }
 
-.form-group {
+.verification {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 80%;
-  margin-bottom: 5px;
+  justify-content: center;
+  margin-top: 20px;
 }
-h2 {
-  color: #000000;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  text-align: center;
 
+.message-icon {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+
+.verification p {
+  font-size: 14px;
+  margin: 0;
 }
-label {
-  color: #000000;
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-input.verification-code {
+
+p {
   color: black;
 }
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+/* Animaciones */
+
+
+
+
 </style>
