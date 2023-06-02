@@ -1,0 +1,54 @@
+{
+    "trabajadores":[
+        {
+            "id":1,
+            "foto":"./assets/images/dianne.png",
+            "name":"Dianne Russell",
+            "correo":"vuhaithuongnute@gmail.com",
+            "area":"Finanzas y Contabilidad"
+        },
+        {
+            "id":2,
+            "foto":"./assets/images/Antwan.png",
+            "name":"Antwan Denny",
+            "correo":"ckctm12@gmail.com",
+            "area":"Recursos Humanos"
+        },
+        {
+            "id":3,
+            "foto":"./assets/images/harrypetter.png",
+            "name":"Harry Peter",
+            "correo":"danghoang87hl@gmail.com",
+            "area":"Marketing y Ventas"
+        },
+        {
+            "id":4,
+            "foto":"./assets/images/kendall.png",
+            "name":"Kendall Mckernan",
+            "correo":"binhan628@gmail.com",
+            "area":"Recursos Humanos"
+        },
+        {
+            "id":5,
+            "foto":"./assets/images/nathan.png",
+            "name":"Nathan Cooper",
+            "correo":"nvt.isst.nute@gmail.com",
+            "area":"Producción"
+        },
+        {
+            "id":6,
+            "foto":"./assets/images/pat.png",
+            "name":"Pat Alexander",
+            "correo":"tienlapspktnd@gmail.com",
+            "area":"Producción"
+        },
+        {
+            "id":7,
+            "foto":"./assets/images/lawerence.png",
+            "name":"Lawerence Munford",
+            "correo":"binhan628@gmail.com",
+            "area":"Marketing y Ventas"
+        }
+
+    ]
+}

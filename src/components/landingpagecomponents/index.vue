@@ -1,32 +1,14 @@
-<script setup></script>
+<script setup>
+import FooterComponent from './FooterComponent.vue';
+import HeaderComponent from './HeaderComponent.vue';
+</script>
 
 <template>
+
   <header>
-    <div class="container__menu">
-      <div class="logo">
-        <a href="index.html"
-          ><img src="./png/LogoRedcorp.png" width="160" height="80" alt="Logo" />
-        </a>
-      </div>
-      <div class="menu">
-        <i class="fas fa-bars" id="btn_menu"></i>
-        <div id="back_menu"></div>
-        <nav id="nav">
-          <img src="./png/LogoRedcorp2.png" alt="" />
-          <ul>
-            <li><a>Inicio</a></li>
-            <li><a>¿Qué es Redcorp? y nuestros servicios</a></li>
-            <li><a>Blog</a></li>
-            <li><a>Conócenos</a></li>
-            <li><a>Precios y planes</a></li>
-            <li><a>Contacto</a></li>
-            <li><a>Iniciar sesión</a></li>
-            <li><a>Registrarse</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <HeaderComponent></HeaderComponent>
   </header>
+  
   <main>
     <div class="container__cover">
       <div class="cover">
@@ -68,7 +50,7 @@
         </div>
       </div>
       <div class="task">
-        <img src="./jpg/image1.JPG" alt="" />
+        <img src="./jpg/image1.jpg" alt="" />
       </div>
 
       <div class="boton2">
@@ -87,7 +69,7 @@
         </div>
       </div>
       <div class="task2">
-        <img src="./jpg/image2.JPG" alt="" />
+        <img src="./jpg/image2.jpg" alt="" />
       </div>
 
       <div class="boton3">
@@ -110,7 +92,7 @@
         </div>
       </div>
       <div class="task3">
-        <img src="./jpg/image12.JPG" alt="" />
+        <img src="./jpg/image12.jpg" alt="" />
       </div>
     </div>
   </section>
@@ -123,7 +105,7 @@
         </div>
       </div>
       <div class="task4">
-        <img src="./jpg/pc2.JPG" alt="" />
+        <img src="./jpg/pc2.jpg" alt="" />
       </div>
     </div>
   </section>
@@ -203,89 +185,7 @@
     </div>
   </section>
   <footer>
-    <div class="container-footer-all">
-      <div class="container-body">
-        <div class="colum1">
-          <h1>Mas informacion</h1>
-          <p>Síguenos en nuestras redes sociales</p>
-          <div class="row">
-            <a href="https://www.facebook.com/" target="_blank">
-              <img src="./png/iconFacebook.png" width="32" height="30" alt="facebook" />
-            </a>
-            <label>Facebook</label>
-          </div>
-          <div class="row">
-            <a href="https://www.instagram.com/" target="_blank">
-              <img src="./png/iconInstagram.png" width="43" height="60" alt="facebook" />
-            </a>
-            <label>Instagram</label>
-          </div>
-        </div>
-
-        <div class="colum2">
-          <h1>Navegación</h1>
-
-          <div class="row">
-            <li><a class="Inicio" href="index.html">Inicio</a></li>
-          </div>
-          <div class="row">
-            <li><a class="Blog" href="blog.html">Blog</a></li>
-          </div>
-          <div class="row">
-            <li><a class="Conócenos" href="conocenos.html">Conócenos</a></li>
-          </div>
-          <div class="row">
-            <li><a class="Servicios" href="servicios.html">Servicios</a></li>
-          </div>
-        </div>
-
-        <div class="colum3">
-          <h1>Contáctanos</h1>
-
-          <div class="row2">
-            <a href="https://goo.gl/maps/7U3YVLgyQSRCME5B6" target="_blank">
-              <img src="./png/iconMap.png" width="32" height="30" alt="map" />
-            </a>
-            <label>Lima, Perú</label>
-          </div>
-
-          <div class="row2">
-            <a href="https://outlook.live.com/" target="_blank">
-              <img src="./png/iconMail.png" width="33" height="30" alt="mail" />
-            </a>
-            <label>redcorp@corporation.com</label>
-          </div>
-
-          <div>
-            <form action="">
-              <input type="text" placeholder="Ingrese su correo" />
-              <button type="submit">Enviar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-footer">
-      <div class="footer">
-        <div class="copyright">© 2022 Todos los Derechos Reservados | <a href="">Redcorp</a></div>
-
-        <div class="information">
-          <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> |
-          <a href="">Terminos y Condiciones</a>
-        </div>
-
-        <div class="col-md-3 mb-2">
-          <h6 class="text-uppercase font-weight-bold">
-            <label>Idioma</label>
-            <select name="idioma" id="idioma">
-              <option value="Español">Español</option>
-              <option value="Inglés">Inglés</option>
-            </select>
-          </h6>
-        </div>
-      </div>
-    </div>
+    <FooterComponent></FooterComponent>
   </footer>
 </template>
 
@@ -293,78 +193,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-header {
-  width: 100%;
-  height: 80px;
-  margin-top: 40px;
-  position: absolute;
-  z-index: 1;
-  padding: 40px;
-}
-
-.container__menu {
-  max-width: 1200px;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.logo {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  width: 160px;
-  height: 75px;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-}
-
-.menu ul {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-
-.menu ul li {
-  list-style: none;
-  text-align: center;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  font-size: 16px;
-  color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
-nav ul li a:hover {
-  position: static;
-  border: 0px solid #6a5dc4;
-  color: white;
-  text-decoration: none;
-  background: #c9725b;
-}
-
-.menu nav img {
-  display: none;
-}
-
-.menu #btn_menu {
-  display: none;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 /*COVER*/
 
@@ -466,7 +299,7 @@ nav ul li a:hover {
 .container__banner {
   width: 100%;
   height: 850px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -541,7 +374,7 @@ nav ul li a:hover {
 .container__banner2 {
   width: 100%;
   height: 850px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -616,7 +449,7 @@ nav ul li a:hover {
 .container__banner3 {
   width: 100%;
   height: 850px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -691,7 +524,7 @@ nav ul li a:hover {
 .container__banner4 {
   width: 100%;
   height: 1150px;
-  background-image: url(./jpg/banner.JPG);
+  background-image: url(./jpg/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -720,7 +553,7 @@ nav ul li a:hover {
 }
 
 .container__banner4 .task4 img {
-  width: 750px;
+  width: 700px;
   align-content: center;
   justify-content: center;
   display: flex;
@@ -858,374 +691,14 @@ nav ul li a:hover {
 }
 
 footer {
-  width: 100%;
   background: #22242e;
   color: #22242e;
 }
 
-.container-footer-all {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 150px;
-  background-color: #22242e;
-}
-
-.container-body {
-  display: flex;
-  margin-top: 50px;
-  justify-content: space-between;
-  background-color: #22242e;
-}
-
-.colum1 {
-  max-width: 400px;
-  color: white;
-}
-
-.colum1 h1 {
-  font-family: 'Roboto Slab';
-  color: white;
-  font-size: 20px;
-}
-
-.colum1 p {
-  font-family: 'Roboto Condensed';
-  color: white;
-  font-size: 17px;
-  margin-top: 20px;
-}
-
-.colum2 {
-  max-width: 400px;
-}
-
-.colum2 h1 {
-  font-family: 'Roboto Slab';
-  color: white;
-  font-size: 20px;
-}
-
-.row {
-  margin-top: 20px;
-  display: flex;
-  font-family: 'Roboto Condensed';
-  color: white;
-  font-size: 17px;
-}
-
-.Inicio {
-  color: white;
-  text-decoration: none;
-}
-.Inicio:hover {
-  color: #c9725b;
-  text-decoration: none;
-}
-
-.Blog {
-  color: white;
-  text-decoration: none;
-}
-
-.Blog:hover {
-  color: #c9725b;
-  text-decoration: none;
-}
-.Conócenos {
-  color: white;
-  text-decoration: none;
-}
-
-.Conócenos:hover {
-  color: #c9725b;
-  text-decoration: none;
-}
-.Servicios {
-  color: white;
-  text-decoration: none;
-}
-.Servicios:hover {
-  color: #c9725b;
-  text-decoration: none;
-}
-
-.row img {
-  width: 36px;
-  height: 36px;
-}
-
-.row label {
-  margin-top: 10px;
-  margin-left: 15px;
-  color: white;
-}
-
-.colum3 {
-  max-width: 400px;
-}
-
-.colum3 h1 {
-  font-family: 'Roboto Slab';
-  color: white;
-  font-size: 20px;
-}
-
-.row2 {
-  text-decoration: none;
-  margin-top: 15px;
-  display: flex;
-  font-family: 'Roboto Condensed';
-  color: white;
-  font-size: 17px;
-}
-
-.row2 img {
-  width: 36px;
-  height: 36px;
-}
-
-.row2 label {
-  margin-top: 10px;
-  margin-left: 20px;
-  max-width: 140px;
-}
-
-form {
-  width: 230px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  margin-top: 15px;
-}
-
-input {
-  padding: 10px 10px;
-  width: 265px;
-}
-
-button {
-  position: absolute;
-  text-decoration: none;
-  color: white;
-  width: 200px;
-  font-family: 'Roboto Condensed';
-  font-size: 18px;
-  text-align: center;
-  background-color: #c9725b;
-  border-radius: 100px;
-  border: none;
-  padding: 15px 15px;
-  margin-top: 55px;
-  margin-left: 0px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #22242e;
-  color: white;
-  border: 2px solid #22242e;
-  cursor: pointer;
-  border: solid white;
-}
-
-.container-footer {
-  width: 100%;
-  background-color: #22242e;
-  font-family: 'Roboto Slab';
-  color: white;
-  font-size: 16px;
-}
-
-.footer {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  background-color: #22242e;
-}
-
-.copyright {
-  color: #c7c7c7;
-}
-
-.copyright a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-.information a {
-  text-decoration: none;
-  color: #c7c7c7;
-}
-
-@keyframes move-vector {
-  0% {
-    transform: translateY(15px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-
-@media screen and (max-width: 1700px) {
-  .container__cover {
-    background-position: 50%;
-    background-image: url(./jpg/fondo2.JPG);
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  header {
-    width: 1200px;
-  }
-
-  .menu nav {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    background: white;
-    width: 250px;
-    height: 100vh;
-    padding: 40px;
-    z-index: 1;
-    transition: all 300ms;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    margin-top: 40px;
-  }
-
-  .menu ul li {
-    margin-top: 30px;
-    margin-left: 0;
-  }
-
-  .menu ul li a {
-    color: #bebebe;
-  }
-
-  #selected {
-    background: none;
-    padding: 0px;
-    border-radius: none;
-    color: #f6615d;
-  }
-
-  .menu nav img {
-    display: block;
-    width: 60px;
-  }
-
-  #back_menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-  }
-
-  .menu #btn_menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    font-size: 24px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 300ms;
-  }
-
-  .menu #btn_menu:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  #testimonios .text {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 1250px) {
-  .container__cover {
-    background-image: url(./jpg/fondo2.JPG);
-  }
-
-  header {
-    width: 1100px;
-  }
-
-  .container__cover {
-    background-position: 0px;
-  }
-
-  .container__cover .svg img {
-    width: 500px;
-  }
-
-  .testimonios {
-    height: 1000px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .container__cover {
-    background-image: url(./jpg/fondo2.JPG);
-  }
-
-  header {
-    width: 900px;
-  }
-
-  .container__cover .svg img {
-    display: none;
-  }
-
-  .container__cover .text {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .container__banner .text {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .container__cover .text .avatars img {
-    display: none;
-  }
-
-  .container__cover .text .textopequeño {
-    display: none;
-  }
-
-  #testimonios .text {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .container-body {
-    flex-wrap: wrap;
-  }
-
-  .colum1 {
-    max-width: 100%;
+@media screen and (max-width: 1060px) {
+  .testimonios{
+    height: 1050px;
+    min-height: 950px;
   }
 }
 
@@ -1235,9 +708,7 @@ button:hover {
     text-align: center;
     align-items: center;
   }
-  header {
-    width: 750px;
-  }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -1246,10 +717,16 @@ button:hover {
     text-align: center;
     align-items: center;
   }
-
+  .container__banner3 .task3{
+    padding-top: 130px;
+  }
   .container__banner3 .task3 img {
+    
     width: 750px;
     height: 400px;
+  }
+  .svg{
+    display: none;
   }
 
   .container__banner4 .task4 img {
@@ -1280,9 +757,7 @@ button:hover {
     width: 500px;
     height: 380px;
   }
-  header {
-    width: 650px;
-  }
+
 }
 
 @media screen and (max-width: 693px) {
@@ -1297,23 +772,10 @@ button:hover {
     width: 550px;
     height: 250px;
   }
-  header {
-    width: 590px;
-  }
+
 }
 
-@media screen and (max-width: 670px) {
-  .colum2 {
-    margin-top: 30px;
-  }
 
-  .colum3 {
-    margin-top: 30px;
-  }
-  header {
-    width: 530px;
-  }
-}
 
 @media screen and (max-width: 656px) {
   .container__banner4 .task4 img {
@@ -1350,6 +812,9 @@ button:hover {
     width: 540px;
     height: 520px;
   }
+  .textopequeño{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1361,6 +826,9 @@ button:hover {
   .container__banner4 .task4 img {
     width: 520px;
     height: 500px;
+  }
+  .container__cover .apps{
+    display: none;
   }
 }
 
@@ -1430,6 +898,9 @@ button:hover {
     width: 400px;
     height: 300px;
   }
+  .container__cover .text input{
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 504px) {
@@ -1466,19 +937,24 @@ button:hover {
 
 @media screen and (max-width: 433px) {
   .container__banner .task img {
+    padding-top: 30px;
     width: 250px;
     height: 230px;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 428px) {
   .container__cover .apps img {
     margin-top: 30px;
     width: 300px;
   }
+  .container__cover .text h1
+  {
+    font-size: 30px;
+  }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 428px) {
   .container__banner2 .task2 img {
     width: 350px;
     height: 300px;
@@ -1493,15 +969,46 @@ button:hover {
     width: 340px;
     height: 350px;
   }
+  .testimonios{
+    height: 1150px;
+  }
 }
 
 @media screen and (max-width: 390px) {
   .container__banner .text h1 {
-    font-size: 35px;
+    font-size: 18px;
   }
   .container__banner .task img {
     width: 250px;
     height: 230px;
   }
+  .container__banner4 .task4 img{
+    width: 300px;
+    height: 300px;
+  }
+
 }
+
+@media screen and (max-width: 360px){
+ 
+  
+  .container__banner2 .banner2{
+    height: 800px;
+  }
+  .container__banner2 .task2 img{
+    width: 250px;
+    height: 200px;
+    margin-bottom: none;
+  }
+
+  .container__banner3 .task3 img{
+    width: 300px;
+    height: 200px;
+  }
+  .container__banner4 .task4 img{
+    width: 300px;
+    height: 300px;
+  }
+}
+
 </style>

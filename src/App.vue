@@ -9,4 +9,9 @@ import SelectCargo from "./components/selectCargo.vue";
 
 <template>
   <register/>
+
+<script setup></script>
+
+<template>
+  <RouterView />
 </template>
