@@ -73,16 +73,16 @@ export default{
 .nav-list
 {
 
-    display: flex;
-    list-style-type:none;
-    gap:1rem;
-    padding:0;
-    margin: 0px;
-    position: relative;
-   flex-direction: column;
-   align-items: end;
-    justify-content: center;
-    gap: normal !important;
+  display: flex;
+  list-style-type:none;
+  gap:1rem;
+  padding:0;
+  margin: 0px;
+  position: relative;
+  flex-direction: row;
+  align-items: end;
+  justify-content: center;
+  gap: normal !important;
 
 }
 .divider {
@@ -91,7 +91,7 @@ export default{
 }
 .menu-button
 {
-    opacity: 10;
+    opacity: 0;
 
 }
 .cerrar-menu
