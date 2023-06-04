@@ -1,0 +1,32 @@
+
+{
+  "trabajadores": [
+    {
+      "id": 1,
+      "name": "Fabricio",
+      "correo": "fabri@gmail.com",
+      "area": "Contabilidad"
+    },
+    {
+      "id": 2,
+      "name": "Richar",
+      "correo": "richar@gmail.com",
+      "area": "Administracion"
+    },
+    {
+      "id": 13,
+      "name": "Fabricio",
+      "correo": "fabri@gmail.com",
+      "area": "Contabilidad"
+    },
+    {
+      "id": 4,
+      "name": "Richar",
+      "correo": "richar@gmail.com",
+      "area": "Administracion"
+    }
+  ]
+
+}
+
+
