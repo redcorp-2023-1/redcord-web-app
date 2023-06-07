@@ -6,7 +6,7 @@
 
     <span class="p-input-icon-left">
       <i class="pi pi-search" />
-      <pv-input-text v-model="search" placeholder="Search" />
+      <pv-input-text v-model="search" placeholder="Buscar" />
     </span>
 
     <div class="actions">
@@ -35,6 +35,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+  border-bottom: 1px solid lightgray;
 }
 
 h2 {

@@ -58,6 +58,7 @@ h4 {
   color: #6a5dc4;
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 16px;
 }
 
 .contact {
