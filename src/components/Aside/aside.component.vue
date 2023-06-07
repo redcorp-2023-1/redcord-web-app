@@ -27,5 +27,9 @@ aside {
   align-items: center;
   padding: 16px 24px 0;
   gap: 24px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-left: 1px solid lightgray;
 }
 </style>

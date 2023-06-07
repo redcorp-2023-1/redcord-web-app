@@ -16,7 +16,6 @@ const routes = [
   {
     path: '/',
     component: LandingPage,
-    meta: { title: 'Landing Page' },
   },
   {
     path: '/login',
@@ -33,6 +32,7 @@ const routes = [
   {
     path: '/section',
     component: Section,
+    meta: { title: 'Secciones' },
   },
   {
     path: '/trabajadores',

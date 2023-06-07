@@ -1,16 +1,13 @@
 <template>
-  <Toolbar />
-  <main>
-    <div>
-      <RouterView />
-    </div>
-    <Aside />
-  </main>
+  <MainLayout v-if="$route.meta.title">
+    <RouterView />
+  </MainLayout>
+
+  <RouterView v-else />
 </template>
 
 <script setup>
-import Toolbar from './components/Toolbar/toolbar.component.vue';
-import Aside from './components/Aside/aside.component.vue';
+import MainLayout from './layouts/MainLayout.vue';
 </script>
 
 <style scoped>
