@@ -11,6 +11,7 @@ import conocenos from '../components/landingpagecomponents/conocenos.vue';
 import contacto from '../components/landingpagecomponents/contacto.vue';
 import planes from '../components/landingpagecomponents/planes.vue';
 import servicios from '../components/landingpagecomponents/servicios.vue';
+import Calendar from '../components/Calendar/Calendar.vue';
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: '/section',
     component: Section,
     meta: { title: 'Secciones' },
+  },
+  {
+    path: '/calendar',
+    component: Calendar,
+    meta: { title: 'Calendario' },
   },
   {
     path: '/trabajadores',

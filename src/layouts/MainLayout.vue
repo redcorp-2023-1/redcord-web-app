@@ -7,16 +7,26 @@
         <section class="scroll">
           <slot />
         </section>
-        <Aside />
+        <Aside class="aside" />
       </main>
     </div>
+
+    <pv-button class="sidebar-button" icon="pi pi-arrow-left" @click="showAside = true" />
+
+    <pv-sidebar v-model:visible="showAside" position="right">
+      <Aside />
+    </pv-sidebar>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 import Toolbar from '../components/Toolbar/toolbar.component.vue';
 import Aside from '../components/Aside/aside.component.vue';
 import SideBar from '../components/SideBar/Sidebar.vue';
+
+const showAside = ref(false);
 </script>
 
 <style scoped>
@@ -27,6 +37,7 @@ main {
 
 .main-layout {
   height: 100vh;
+  position: relative;
 }
 
 .main-content {
@@ -42,5 +53,23 @@ main {
   flex: 1 1 auto;
   height: 100%;
   overflow-y: auto;
+}
+
+.sidebar-button {
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  opacity: 40%;
+}
+
+@media (max-width: 600px) {
+  .sidebar-button {
+    display: block;
+  }
+
+  .aside {
+    display: none;
+  }
 }
 </style>

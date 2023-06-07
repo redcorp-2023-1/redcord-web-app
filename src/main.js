@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import PrimeVue from 'primevue/config';
+import VCalendar from 'v-calendar';
+import 'v-calendar/style.css';
 
 import { router } from './router';
 
@@ -20,6 +22,7 @@ import Splitter from 'primevue/splitter';
 import SplitterPanel from 'primevue/splitterpanel';
 import Divider from 'primevue/divider';
 import InputText from 'primevue/inputtext';
+import Sidebar from 'primevue/sidebar';
 const app = createApp(App);
 
 app.component('pv-button', Button);
@@ -32,7 +35,9 @@ app.component('pv-splitter', Splitter);
 app.component('pv-splitterpanel', SplitterPanel);
 app.component('pv-divider', Divider);
 app.component('pv-input-text', InputText);
+app.component('pv-sidebar', Sidebar);
 
 app.use(PrimeVue);
 app.use(router);
+app.use(VCalendar);
 app.mount('#app');

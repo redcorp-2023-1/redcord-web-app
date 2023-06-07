@@ -4,15 +4,15 @@
       {{ route.meta.title || '' }}
     </h2>
 
-    <span class="p-input-icon-left">
+    <span class="p-input-icon-left responsive-hide">
       <i class="pi pi-search" />
       <pv-input-text v-model="search" placeholder="Buscar" />
     </span>
 
     <div class="actions">
-      <i class="pi pi-users" />
-      <i class="pi pi-bell" />
-      <i class="pi pi-cog" />
+      <i class="pi pi-users responsive-hide" />
+      <i class="pi pi-bell responsive-hide" />
+      <i class="pi pi-cog responsive-hide" />
 
       <img src="../../components/SideBar/images/men.jpg" />
     </div>
@@ -59,5 +59,11 @@ img {
   height: 45px;
   width: 45px;
   border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  .responsive-hide {
+    display: none;
+  }
 }
 </style>
