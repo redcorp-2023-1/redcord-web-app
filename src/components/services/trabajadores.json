@@ -3,27 +3,31 @@
   "trabajadores": [
     {
       "id": 1,
-      "name": "Fabricio",
+      "nombre": "Fabricio",
       "correo": "fabri@gmail.com",
-      "area": "Contabilidad"
+      "area": "Contabilidad",
+      "foto": "https://images.pexels.com/photos/1699159/pexels-photo-1699159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 2,
-      "name": "Richar",
+      "nombre": "Richar",
       "correo": "richar@gmail.com",
-      "area": "Administracion"
+      "area": "Administracion",
+      "foto": "https://images.pexels.com/photos/1189941/pexels-photo-1189941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 13,
-      "name": "Fabricio",
+      "nombre": "Fabricio",
       "correo": "fabri@gmail.com",
-      "area": "Contabilidad"
+      "area": "Contabilidad",
+      "foto": "https://images.pexels.com/photos/2225668/pexels-photo-2225668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 4,
-      "name": "Richar",
+      "nombre": "Richar",
       "correo": "richar@gmail.com",
-      "area": "Administracion"
+      "area": "Administracion",
+      "foto": "https://images.pexels.com/photos/1841627/pexels-photo-1841627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ]
 

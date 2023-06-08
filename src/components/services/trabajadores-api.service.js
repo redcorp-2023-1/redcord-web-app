@@ -4,7 +4,7 @@ const http = axios.create({baseURL:"http://localhost:3000/trabajadores"})
 
 export class TrabajadorApiService{
 
-    getAll(){
+    getAllTrabajadores(){
         return http.get()
     }
 
