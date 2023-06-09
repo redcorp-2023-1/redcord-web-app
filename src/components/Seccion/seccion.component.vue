@@ -1,7 +1,5 @@
 <template>
   <main>
-    <SideBar />
-
     <div class="SeccionesActuales">
       <div class="title">Secciones Actuales</div>
 
@@ -39,7 +37,6 @@
 
 <script setup>
 import SeccionCardComponent from './seccion.card.component.vue';
-import SideBar from '../SideBar/SideBar.vue';
 </script>
 
 <style scoped>
