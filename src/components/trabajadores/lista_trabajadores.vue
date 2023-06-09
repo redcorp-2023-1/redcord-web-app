@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <SideBar></SideBar>
     <div class="table">
       <table class="minimalist-table">
         <thead>
