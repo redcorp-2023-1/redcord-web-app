@@ -5,19 +5,32 @@
       <pv-input-text v-model="search" placeholder="Buscar" />
     </span>
 
-    <Contacts />
+    <Contacts :contacts="contacts" />
 
-    <Groups />
+    <Groups :groups="groups" />
   </aside>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+
+import { ContactsService } from '../services/contacts.service';
+import { GroupsService } from '../services/groups.service';
 
 import Contacts from './contacts.component.vue';
 import Groups from './groups.component.vue';
 
+const contactsService = new ContactsService();
+const groupsService = new GroupsService();
+
 const search = ref('');
+const contacts = ref([]);
+const groups = ref([]);
+
+onMounted(async () => {
+  contacts.value = await contactsService.getAll();
+  groups.value = await groupsService.getAll();
+});
 </script>
 
 <style scoped>

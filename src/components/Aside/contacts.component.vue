@@ -15,38 +15,9 @@
 </template>
 
 <script setup>
-const contacts = [
-  {
-    id: 1,
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
-    name: 'Fake 1',
-    notifications: 2,
-  },
-  {
-    id: 2,
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
-    name: 'Fake 2',
-    notifications: 0,
-  },
-  {
-    id: 3,
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
-    name: 'Fake 3',
-    notifications: 0,
-  },
-  {
-    id: 4,
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
-    name: 'Fake 4',
-    notifications: 3,
-  },
-  {
-    id: 5,
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
-    name: 'Fake 5',
-    notifications: 0,
-  },
-];
+defineProps({
+  contacts: Array,
+});
 </script>
 
 <style scoped>
