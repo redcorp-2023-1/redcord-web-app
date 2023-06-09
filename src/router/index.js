@@ -55,27 +55,22 @@ const routes = [
   {
     path: '/blog',
     component: blog,
-    meta: { title: 'Blog' },
   },
   {
     path: '/conocenos',
     component: conocenos,
-    meta: { title: 'Conocenos' },
   },
   {
     path: '/contacto',
     component: contacto,
-    meta: { title: 'Contacto' },
   },
   {
     path: '/planes',
     component: planes,
-    meta: { title: 'Planes' },
   },
   {
     path: '/servicios',
     component: servicios,
-    meta: { title: 'Servicios' },
   },
 ];
 
