@@ -14,11 +14,11 @@
           <tr v-for="trabajador in trabajadores" :key="trabajador.id">
             <td>
               <div class="table-cell">
-                <img :src="trabajador.foto" alt="" />
-                <span>{{ trabajador.nombre }}</span>
+                <img :src="trabajador.photo" alt="" />
+                <span>{{ trabajador.name }}</span>
               </div>
             </td>
-            <td>{{ trabajador.correo }}</td>
+            <td>{{ trabajador.email }}</td>
             <td>
               <div class="table-cell">
                 <div class="circle"></div>

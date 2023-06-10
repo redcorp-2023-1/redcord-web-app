@@ -34,7 +34,7 @@ export default{
           <li><pv-divider class="divider" /></li>
           <li><RouterLink to="/"><pv-button label="Inicio" class="mr-2" icon="pi pi-home"></pv-button></RouterLink></li>
           <li><pv-divider class="divider" /></li>
-          <li><RouterLink to="/servicios"><pv-button label="about" class="mr-2" icon="pi pi-info-circle"></pv-button></RouterLink></li>
+          <li><RouterLink to="/servicios"><pv-button label="Servicios" class="mr-2" icon="pi pi-info-circle"></pv-button></RouterLink></li>
           <li><pv-divider class="divider" /></li>
           <li><RouterLink to="/blog"><pv-button label="Blog" class="mr-2" icon="pi pi-book"></pv-button></RouterLink></li>
           <li><pv-divider class="divider" /></li>

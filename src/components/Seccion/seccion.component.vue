@@ -10,33 +10,45 @@
         </select>
       </div>
 
-      <div class="content">
-        <div class="card">
-          <SeccionCardComponent />
-          <div class="line"></div>
-        </div>
+      <div class="content_section">
+        <div class="card_section" v-for="section in sections">
 
-        <div class="card">
-          <SeccionCardComponent />
-          <div class="line"></div>
-        </div>
+          <SeccionCardComponent :id="section.id" :section_Name="section.section_Name" :description="section.description"/>
 
-        <div class="card">
-          <SeccionCardComponent />
           <div class="line"></div>
         </div>
-
-        <div class="card">
-          <SeccionCardComponent />
-          <div class="line"></div>
-        </div>
+        
       </div>
     </div>
   </main>
 </template>
 
-<script setup>
+<script>
 import SeccionCardComponent from './seccion.card.component.vue';
+import { SectionAndEmployeeApiService } from '../services/SectionsAndEmployee-api.service';
+
+export default{
+  name:'Sections',
+  components:{SeccionCardComponent},
+  data(){
+    return{
+      employee_id:0,
+      sections:[],
+      SectionsAndEmployeeService: new SectionAndEmployeeApiService()
+    }
+  },
+  beforeMount()
+  {
+    this.employee_id = localStorage.getItem('id_employee');
+    this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id).then((response)=>{
+      this.sections = response.data
+      console.log(this.sections)
+    })
+  }
+  
+}
+
+
 </script>
 
 <style scoped>
@@ -77,13 +89,14 @@ main {
   text-align: center;
   margin-top: 5px;
 }
-.content {
+.content content_section {
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: columns;
 }
-.card {
+.card_section {
   padding: 12px 30px 5px;
+  flex-direction: row;
 }
 .line {
   margin-top: 10px;

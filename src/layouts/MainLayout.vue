@@ -1,7 +1,7 @@
 <template>
   <div class="main-layout">
     <SideBar />
-    <div class="main-content">
+    <div class="main-contentlayout">
       <Toolbar />
       <main>
         <section class="scroll">
@@ -40,7 +40,7 @@ main {
   position: relative;
 }
 
-.main-content {
+.main-contentlayout{
   flex: 1 1 auto;
   height: 100%;
 }

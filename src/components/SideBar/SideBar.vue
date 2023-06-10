@@ -11,8 +11,8 @@
             <div class="perfil">
                 <img src="./images/men.jpg" />
                 <div>
-                    <h3>Martin Liberman</h3>
-                    <p>Jefe de proyectos</p>
+                    <h3>{{ name }}</h3>
+                    <p>{{ cargo }}</p>
                 </div>
             </div>
 
@@ -37,25 +37,48 @@
                     </ul>
                 </div>
             </seccton>
-            <button @click="$router.push('/')"> <img class="iconos" src="./images/out.png">
+            <button @click="cerrarsesion"> <img class="iconos" src="./images/out.png">
                 Cerrar sesión</button>
         </div>
     </div>
 </template>
 
 <script>
+import { TrabajadorApiService } from '../services/trabajadores-api.service';
 export default {
     name: 'SideBar',
     data() {
         return {
             showSidebar: false,
+            trabajardorService: new TrabajadorApiService(),
+            trabajador_data:[],
+            name:'',
+            cargo:''
         };
     },
     methods: {
+        cerrarsesion()
+        {
+            localStorage.setItem('id_employee',0)
+            localStorage.setItem('access',false)
+            this.$router.push('/')
+        },
         toggleSidebar() {
             this.showSidebar = !this.showSidebar;
         },
+        async Get_trabajador()
+        {
+            this.trabajador_data = await this.trabajardorService.getById(localStorage.getItem('id_employee'))
+            this.name =this.trabajador_data.data.name
+            this.cargo = this.trabajador_data.data.cargo
+            console.log(this.trabajador_data.data)
+        }
+
     },
+    beforeMount()
+    {
+        this.Get_trabajador();
+    }
 };
 </script>
 

@@ -18,26 +18,72 @@
       <form class="form">
         <div class="form-group">
           <label for="email">Dirección de correo electrónico:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" v-model="email" required />
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" required />
+          <input type="password" id="password" v-model="password" required />
         </div>
-        <button @click="$router.push('/section')" class="btn-login">Iniciar sesión</button>
+        <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
+        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">Ingresar</button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
       </form>
     </div>
-  </div>
+  </div>  
 </template>
-
 <script>
+
+import { TrabajadorApiService } from './services/trabajadores-api.service';
+
 export default {
   name: 'LogIn',
+  data() {
+    return {
+      email: '',
+      password: '',
+      trabajadoresService: new TrabajadorApiService(),
+      responseData: [],
+      acceder: false
+    };
+  },
+  methods: {
+    submitForm() {
+      // Validar y enviar el formulario si es válido
+      
+        // Lógica para enviar el formulario (iniciar sesión)
+      this.login();
+      
+    },
+    async login() {
+      const loginData = {
+        email: this.email,
+        password: this.password
+      };
+
+      try {
+        this.responseData = await this.trabajadoresService.login(loginData);
+        console.log(this.responseData.data); // Accede a los datos de la respuesta (access, message, result)
+        localStorage.setItem('access',this.responseData.data.access);
+        localStorage.setItem('id_employee',this.responseData.data.employee_id);
+        this.acceder = localStorage.getItem("access")
+        // Aquí puedes realizar acciones adicionales en función de la respuesta recibida
+      } catch (error) {
+        console.error("Error al iniciar sesión:", error);
+        // Manejo de errores
+      }
+    },
+  },
+  mounted()
+  {
+
+  }
+
+
 };
 </script>
+
 
 <style scoped>
 /* Estilos para el contenedor principal */

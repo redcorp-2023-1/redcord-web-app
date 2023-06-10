@@ -17,34 +17,38 @@
         <div class="form-group-inline">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required />
+            <input type="text" id="nombre" v-model="nombre" required />
           </div>
           <div class="form-group">
             <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" required />
+            <input type="text" id="apellido" v-model="apellido" required />
           </div>
         </div>
         <div class="form-group">
           <label for="email">Dirección de correo electrónico:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" v-model="email" required />
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" required />
+          <input type="password" id="password" v-model="password" required />
         </div>
         <div class="form-group">
           <label for="confirm-password">Ingrese nuevamente la contraseña:</label>
-          <input type="password" id="confirm-password" required />
+          <input type="password" id="confirm-password" v-model="confirmPassword" required />
+          <p v-if="passwordMismatch" class="error-message">Las contraseñas no coinciden.</p>
         </div>
         <div class="form-group">
-          <label for="dni">DNI:</label>
-          <input type="text" id="dni" required />
+          <label for="area">Area:</label>
+          <input type="text" id="area" v-model="area" :list="areaListId" required />
+          <datalist :id="areaListId">
+            <option v-for="item in areaList" :key="item" :value="item"></option>
+          </datalist>
         </div>
         <div class="form-group">
-          <label for="ruc">RUC:</label>
-          <input type="text" id="ruc" required />
+          <label for="cargo">Cargo:</label>
+          <input type="text" id="cargo" v-model="cargo" required />
         </div>
-        <button @click="$router.push('/verification')" class="btn-register">Continuar</button>
+        <button @click="submitForm" ::disabled="isFormEmpty || passwordMismatch" class="btn-register">Continuar</button>
       </form>
       <div class="verification">
         <img src="../assets/icono4.png" alt="icon" class="message-icon" />
@@ -55,8 +59,71 @@
 </template>
 
 <script>
+import { TrabajadorApiService } from './services/trabajadores-api.service';
+
 export default {
   name: 'Register',
+  data() {
+    return {
+      nombre: '',
+      apellido: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      area:'',
+      cargo: '',
+      areaList: ['Informática', 'Finanzas y Contabilidad', 'Recursos Humanos', 'Marketing y Ventas', 'Producción', 'Desarrollo de Software', 'Administración'],
+      areaListId: 'areaList',
+      trabajadoresService: new TrabajadorApiService()
+    };
+  },
+  computed: {
+    isFormEmpty() {
+      return (
+        this.nombre === '' ||
+        this.apellido === '' ||
+        this.email === '' ||
+        this.password === '' ||
+        this.confirmPassword === '' ||
+        this.area === ''||
+        this.cargo === ''
+      );
+    },
+    passwordMismatch() {
+      return this.password !== this.confirmPassword;
+    },
+  },
+  methods: {
+    submitForm() {
+      // Validar y enviar el formulario si es válido
+      if (!this.isFormEmpty && !this.passwordMismatch) {
+        // Lógica para enviar el formulario
+        this.signUp();
+        this.$router.push('/verification');
+      }
+    },
+    async signUp() {
+      const trabajadorData = {
+        // Aquí debes obtener los datos del formulario de registro
+        name: this.nombre,
+        last_name: this.apellido,
+        email: this.email,
+        password: this.password,
+        area: this.area,
+        cargo: this.cargo,
+        photo: "https://i.pinimg.com/222x/57/70/f0/5770f01a32c3c53e90ecda61483ccb08.jpg"
+      };
+
+      try {
+        const response = await this.trabajadoresService.postTrabajador(trabajadorData);
+        console.log("Trabajador registrado exitosamente:", response.data);
+        
+      } catch (error) {
+        console.error("Error al registrar el trabajador:", error);
+        
+      }
+    },
+  },
 };
 </script>
 
