@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const https = axios.create({baseURL:"https://localhost:7233/api/SectionAndEmployee"})
+const https = axios.create({baseURL:"https://redcorpcenter.azurewebsites.net/api/SectionAndEmployee"})
 
 export class SectionAndEmployeeApiService{
 
