@@ -2,10 +2,12 @@
   <div class="container">
     <div class="left-section">
       <img src="../assets/logo.png" alt="logo" class="logo" />
-      <p class="description">
-        Descubre el mundo de la productividad para mejorar tu rutina laboral.
-      </p>
-      <img src="../assets/icono2.png" alt="icon" class="icon" />
+      <div class="left-content">
+        <p class="company-description">
+          Descubre el mundo de la productividad para mejorar tu rutina laboral.
+        </p>
+        <img src="../assets/icono2.png" alt="icon" class="icon" />
+      </div>
     </div>
     <div class="right-section">
       <div class="header">
@@ -16,27 +18,75 @@
       <form class="form">
         <div class="form-group">
           <label for="email">Dirección de correo electrónico:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" v-model="email" required />
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" required />
+          <input type="password" id="password" v-model="password" required />
         </div>
-        <button @click="$router.push('/section')" class="btn-login">Iniciar sesión</button>
+        <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
+        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">Ingresar</button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
       </form>
     </div>
-  </div>
+  </div>  
 </template>
 <script>
+
+import { TrabajadorApiService } from './services/trabajadores-api.service';
+
 export default {
   name: 'LogIn',
+  data() {
+    return {
+      email: '',
+      password: '',
+      trabajadoresService: new TrabajadorApiService(),
+      responseData: [],
+      acceder: false
+    };
+  },
+  methods: {
+    submitForm() {
+      // Validar y enviar el formulario si es válido
+      
+        // Lógica para enviar el formulario (iniciar sesión)
+      this.login();
+      
+    },
+    async login() {
+      const loginData = {
+        email: this.email,
+        password: this.password
+      };
+
+      try {
+        this.responseData = await this.trabajadoresService.login(loginData);
+        console.log(this.responseData.data); // Accede a los datos de la respuesta (access, message, result)
+        localStorage.setItem('access',this.responseData.data.access);
+        localStorage.setItem('id_employee',this.responseData.data.employee_id);
+        this.acceder = localStorage.getItem("access")
+        // Aquí puedes realizar acciones adicionales en función de la respuesta recibida
+      } catch (error) {
+        console.error("Error al iniciar sesión:", error);
+        // Manejo de errores
+      }
+    },
+  },
+  mounted()
+  {
+
+  }
+
+
 };
 </script>
+
+
 <style scoped>
-/* estilos para el contenedor principal */
+/* Estilos para el contenedor principal */
 .container {
   display: flex;
   align-items: normal;
@@ -45,14 +95,16 @@ export default {
   margin: 0 auto;
 }
 
-/* estilos para la sección izquierda */
+/* Estilos para la sección izquierda */
 .left-section {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  width: 30%;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
   padding: 20px;
+  background-color: #9f5454;
+  color: white;
 }
 
 .logo {
@@ -61,30 +113,87 @@ export default {
   object-fit: contain;
 }
 
-.description {
-  color: white;
-  text-align: center;
+.left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+
+.company-description {
   font-size: 1.2rem;
-  margin: 30px 0;
+  text-align: justify;
+  margin: 20px 0;
+  max-width: 80%;
 }
 
 .icon {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
-  margin: 0 auto;
+  animation: pulse 2s infinite;
 }
 
-/* estilos para la sección derecha */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Estilos para la sección derecha */
 .right-section {
   display: flex;
   flex-direction: column;
   justify-content: right;
   align-items: inherit;
-  width: 70%;
+  width: 50%;
   height: 100%;
   padding: 20px;
   background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la parte derecha en dispositivos móviles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+  .form {
+    align-items: center;
+  }
+  .form-group {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  input[type='email'],
+  input[type='password'] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #efeef5;
+    margin-bottom: 10px;
+  }
+  button.btn-login {
+    padding: 10px 30px;
+  }
 }
 
 .header {
@@ -156,14 +265,17 @@ button.btn-login {
 button.btn-login:hover {
   background-color: #7d3b3b;
 }
+
 input {
   color: #1a1a1a;
 }
+
 .contra {
   color: #665075;
   margin-top: 10px;
   text-decoration: none;
 }
+
 .forgot-password {
   margin-top: 15px;
 }
