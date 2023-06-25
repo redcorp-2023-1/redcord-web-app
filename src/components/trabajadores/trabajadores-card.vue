@@ -31,7 +31,7 @@
 
 <script>
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
-import {TaskApiService} from '../services/Tasks.service';
+import { TaskApiService } from '../services/Tasks.service';
 
 export default {
   name: 'Trabajador',
@@ -39,15 +39,15 @@ export default {
     id: {
       type: String,
       required: true,
-    }
+    },
   },
   data() {
     return {
       trabajadores: [],
-      teams:[],
-      tasks:[],
+      teams: [],
+      tasks: [],
       trabajadoresService: new TrabajadorApiService(),
-      taskApiService:new TaskApiService()
+      taskApiService: new TaskApiService(),
     };
   },
   created() {
@@ -60,19 +60,16 @@ export default {
         this.trabajadores = response.data;
 
         const teamsrecovered = await this.taskApiService.GetTeamsByIdEmployee(this.id);
-        this.teams=teamsrecovered.data;
+        this.teams = teamsrecovered.data;
 
-        const tasksrecovered = await this.taskApiService.GetTasksByIdEmployee(this.id)
+        const tasksrecovered = await this.taskApiService.GetTasksByIdEmployee(this.id);
         this.tasks = tasksrecovered.data;
-
       } catch (error) {
         console.error(error);
       }
-    }
-  }
+    },
+  },
 };
-
-
 </script>
 
 <style>
@@ -140,7 +137,7 @@ export default {
   border-radius: 10px;
 }
 
-.teams-employee{
+.teams-employee {
   margin-bottom: 10px;
 }
 

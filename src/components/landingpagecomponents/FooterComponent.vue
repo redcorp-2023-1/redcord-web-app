@@ -1,18 +1,16 @@
-
-<script >
+<script>
 import { RouterLink } from 'vue-router';
 
-export default({
-    name: "footercomponent",
-    components: { RouterLink }
-})
+export default {
+  name: 'footercomponent',
+  components: { RouterLink },
+};
 </script>
 
 <template>
-    <footer>
+  <footer>
     <div class="container-footer-all">
       <div class="container-body">
-        
         <div class="colum1">
           <h1>Mas información</h1>
           <p>Síguenos en nuestras redes sociales</p>
@@ -40,10 +38,18 @@ export default({
             <li><RouterLink to="/blog" class="Blog" href="blog.html">Blog</RouterLink></li>
           </div>
           <div class="row">
-            <li><RouterLink to="conocenos" class="Conócenos" href="conocenos.html">Conócenos</RouterLink></li>
+            <li>
+              <RouterLink to="conocenos" class="Conócenos" href="conocenos.html"
+                >Conócenos</RouterLink
+              >
+            </li>
           </div>
           <div class="row">
-            <li><RouterLink to="servicios" class="Servicios" href="servicios.html">Servicios</RouterLink></li>
+            <li>
+              <RouterLink to="servicios" class="Servicios" href="servicios.html"
+                >Servicios</RouterLink
+              >
+            </li>
           </div>
         </div>
 
@@ -84,7 +90,7 @@ export default({
         </div>
 
         <div class="idiomas">
-          <h6 >
+          <h6>
             <label>Idioma</label>
             <select name="idioma" id="idioma">
               <option value="Español">Español</option>
@@ -98,14 +104,9 @@ export default({
 </template>
 
 <style>
-
-
-
-
-
 .container-footer-all {
   width: 100%;
-  
+
   margin: auto;
   padding: 150px;
   background-color: #22242e;
@@ -277,7 +278,6 @@ input {
   font-family: 'Roboto Slab';
   color: white;
   font-size: 16px;
-  
 }
 
 .footer {
@@ -288,7 +288,6 @@ input {
   padding: 40px;
   background-color: #22242e;
   align-items: center;
-  
 }
 
 .copyright {
@@ -306,23 +305,22 @@ input {
   color: #c7c7c7;
 }
 
-@media screen and (max-width:1000px)
-{
-  .container-body{
+@media screen and (max-width: 1000px) {
+  .container-body {
     flex-direction: column;
     align-items: center;
   }
 
-  .colum1,.colum2,.colum3{
+  .colum1,
+  .colum2,
+  .colum3 {
     padding-bottom: 100px;
   }
 }
 
-@media screen and (max-width:500px)
-{
-  input{
+@media screen and (max-width: 500px) {
+  input {
     width: 200px;
   }
 }
-
 </style>

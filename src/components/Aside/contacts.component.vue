@@ -15,29 +15,26 @@
 </template>
 
 <script>
-  import {TaskApiService} from '../services/Tasks.service';
-  export default{
-    name:"Contactos",
-    data()
-    {
-      return{
-        contacts:[],
-        taskApiService: new TaskApiService()
-      }
-    },
-    async beforeMount()
-    {
-      try
-      {
-        const response = await this.taskApiService.GetEmployeesContactsByTeamId(localStorage.getItem('id_employee'))
-        this.contacts = response.data
-      }catch(error)
-      {
-        console.error("Error al obtener los contactos:", error);
-      }
+import { TaskApiService } from '../services/Tasks.service';
+export default {
+  name: 'Contactos',
+  data() {
+    return {
+      contacts: [],
+      taskApiService: new TaskApiService(),
+    };
+  },
+  async beforeMount() {
+    try {
+      const response = await this.taskApiService.GetEmployeesContactsByTeamId(
+        localStorage.getItem('id_employee')
+      );
+      this.contacts = response.data;
+    } catch (error) {
+      console.error('Error al obtener los contactos:', error);
     }
-  }
-
+  },
+};
 </script>
 
 <style scoped>

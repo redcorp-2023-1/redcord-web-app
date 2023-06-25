@@ -1,11 +1,11 @@
 <template>
   <div>
     <button class="menuSide" v-if="!showSidebar" @click="toggleSidebar">
-      <img src="./images/menuSidebar.png" alt="">
+      <img src="./images/menuSidebar.png" alt="" />
     </button>
     <div class="overlay" v-if="showSidebar" @click="toggleSidebar"></div>
 
-    <div class="sidebar" :class="{ 'active': showSidebar }">
+    <div class="sidebar" :class="{ active: showSidebar }">
       <img src="./images/LogoRedcorp.png" />
 
       <div class="perfil">
@@ -21,12 +21,25 @@
         <pv-divider class="divider" />
 
         <ul>
-          <router-link to="/VisionGeneral" class="link"><img class="iconos" src="./images/v_g.png">Visión General</router-link>
-          <router-link to="/trabajadores" class="link"><img class="iconos" src="./images/secc.png">Secciones</router-link>
-          <router-link to="/section" class="link"><img class="iconos" src="./images/herr.png">Herramientas</router-link>
-          <router-link to="/comunicados" class="link"><img class="iconos" src="./images/comunicados.png">Comunicados</router-link>
-          <router-link to="/trabajadores" class="link"><img class="iconos" src="./images/list.png">Lista de trabajadores de áreas</router-link>
-          <router-link to="/section" class="link"><img class="iconos" src="./images/prog.png">Progreso de Empleados</router-link>
+          <router-link to="/VisionGeneral" class="link"
+            ><img class="iconos" src="./images/v_g.png" />Visión General</router-link
+          >
+          <router-link to="/trabajadores" class="link"
+            ><img class="iconos" src="./images/secc.png" />Secciones</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/herr.png" />Herramientas</router-link
+          >
+          <router-link to="/comunicados" class="link"
+            ><img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
+          >
+          <router-link to="/trabajadores" class="link"
+            ><img class="iconos" src="./images/list.png" />Lista de trabajadores de
+            áreas</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/prog.png" />Progreso de Empleados</router-link
+          >
         </ul>
       </section>
 
@@ -35,9 +48,9 @@
           <label>Interacciones</label>
           <pv-divider class="divider" />
           <ul>
-            <a><img class="iconos" src="./images/chats.png">Chats</a>
-            <a><img class="iconos" src="./images/not.png">Notificaciones</a>
-            <a><img class="iconos" src="./images/coments.png">Comentarios</a>
+            <a><img class="iconos" src="./images/chats.png" />Chats</a>
+            <a><img class="iconos" src="./images/not.png" />Notificaciones</a>
+            <a><img class="iconos" src="./images/coments.png" />Comentarios</a>
           </ul>
         </div>
       </section>
@@ -56,53 +69,48 @@
 </template>
 
 <script>
-import AlertaCerrarSesion from "../AlertNotification/AlertaCerrarSesion.vue";
+import AlertaCerrarSesion from '../AlertNotification/AlertaCerrarSesion.vue';
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
 
 export default {
-    name: 'SideBar',
-    data() {
-        return {
-            showSidebar: false,
-            trabajardorService: new TrabajadorApiService(),
-            trabajador_data:[],
-            name:'',
-            cargo:''
-        };
-    },
-    methods: {
-        cerrarsesion()
-        {
-            localStorage.removeItem('id_employee')
-            localStorage.removeItem('token')
-            localStorage.removeItem('access')
-            
-            this.$router.push('/')
-        },
-        toggleSidebar() {
-            this.showSidebar = !this.showSidebar;
-        },
-        async Get_trabajador()
-        {
-            this.trabajador_data = await this.trabajardorService.getById(localStorage.getItem('id_employee'))
-            this.name =this.trabajador_data.data.name
-            this.cargo = this.trabajador_data.data.cargo
-            console.log(this.trabajador_data.data)
-        }
+  name: 'SideBar',
+  data() {
+    return {
+      showSidebar: false,
+      trabajardorService: new TrabajadorApiService(),
+      trabajador_data: [],
+      name: '',
+      cargo: '',
+    };
+  },
+  methods: {
+    cerrarsesion() {
+      localStorage.removeItem('id_employee');
+      localStorage.removeItem('token');
+      localStorage.removeItem('access');
 
+      this.$router.push('/');
     },
-    beforeMount()
-    {
-
-        this.Get_trabajador();
+    toggleSidebar() {
+      this.showSidebar = !this.showSidebar;
     },
-    beforeCreate()
-    {
-        if(!window.localStorage.getItem('token'))
-        {
-            this.$router.push('/login')
-        }
+    async Get_trabajador() {
+      this.trabajador_data = await this.trabajardorService.getById(
+        localStorage.getItem('id_employee')
+      );
+      this.name = this.trabajador_data.data.name;
+      this.cargo = this.trabajador_data.data.cargo;
+      console.log(this.trabajador_data.data);
+    },
+  },
+  beforeMount() {
+    this.Get_trabajador();
+  },
+  beforeCreate() {
+    if (!window.localStorage.getItem('token')) {
+      this.$router.push('/login');
     }
+  },
 };
 </script>
 
@@ -343,4 +351,3 @@ button:hover {
   }
 }
 </style>
-

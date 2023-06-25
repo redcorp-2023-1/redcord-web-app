@@ -29,16 +29,17 @@
           <input type="roles" id="roles" v-model="roles" required />
         </div>
         <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
-        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">Ingresar</button>
+        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">
+          Ingresar
+        </button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
       </form>
     </div>
-  </div>  
+  </div>
 </template>
 <script>
-
 import { AuthApiService } from './services/AuthUser.service';
 
 export default {
@@ -47,50 +48,38 @@ export default {
     return {
       email: '',
       password: '',
-      roles:'',
+      roles: '',
       authApiService: new AuthApiService(),
       responseData: [],
-      acceder: false
+      acceder: false,
     };
   },
   methods: {
     submitForm() {
-      // Validar y enviar el formulario si es válido
-      
-        // Lógica para enviar el formulario (iniciar sesión)
       this.login();
-      
     },
     async login() {
       const loginData = {
         email: this.email,
         password: this.password,
-        roles:this.roles
+        roles: this.roles,
       };
 
       try {
         this.responseData = await this.authApiService.login(loginData);
-        
-        localStorage.setItem('access',true)
-        localStorage.setItem('id_employee',this.responseData.data.user_id);
-        localStorage.setItem('token',this.responseData.data.token.value)
-        this.acceder = localStorage.getItem("access")
-        // Aquí puedes realizar acciones adicionales en función de la respuesta recibida
+
+        localStorage.setItem('access', true);
+        localStorage.setItem('id_employee', this.responseData.data.user_id);
+        localStorage.setItem('token', this.responseData.data.token.value);
+        this.acceder = localStorage.getItem('access');
       } catch (error) {
-        console.error("Error al iniciar sesión:", error);
-        // Manejo de errores
+        console.error('Error al iniciar sesión:', error);
       }
     },
   },
-  mounted()
-  {
-
-  }
-
-
+  mounted() {},
 };
 </script>
-
 
 <style scoped>
 /* Estilos para el contenedor principal */
@@ -126,8 +115,6 @@ export default {
   align-items: center;
   margin-top: 50px;
 }
-
-
 
 .company-description {
   font-size: 1.2rem;

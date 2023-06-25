@@ -11,30 +11,27 @@
 </template>
 
 <script>
+import { TaskApiService } from '../services/Tasks.service';
 
-import {TaskApiService} from '../services/Tasks.service';
-
-  export default{
-    name:"Groups",
-    data()
-    {
-      return{
-        groups:[],
-        taskApiService: new TaskApiService()
-      }
-    },
-    async beforeMount()
-    {
-      try
-      {
-        const response = await this.taskApiService.GetTeamsByIdEmployee(localStorage.getItem('id_employee'))
-        this.groups = response.data
-      }catch(error)
-      {
-        console.error("Error al obtener los grupos:", error);
-      }
+export default {
+  name: 'Groups',
+  data() {
+    return {
+      groups: [],
+      taskApiService: new TaskApiService(),
+    };
+  },
+  async beforeMount() {
+    try {
+      const response = await this.taskApiService.GetTeamsByIdEmployee(
+        localStorage.getItem('id_employee')
+      );
+      this.groups = response.data;
+    } catch (error) {
+      console.error('Error al obtener los grupos:', error);
     }
-  }
+  },
+};
 </script>
 
 <style scoped>

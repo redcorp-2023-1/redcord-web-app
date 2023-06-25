@@ -77,10 +77,8 @@ export default {
   height: 400px;
   object-fit: contain;
   margin-top: 30px;
-  animation: pulse 2s infinite ;
-
+  animation: pulse 2s infinite;
 }
-
 
 @keyframes pulse {
   0% {
@@ -205,8 +203,4 @@ p {
 }
 
 /* Animaciones */
-
-
-
-
 </style>

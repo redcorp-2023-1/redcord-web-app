@@ -26,9 +26,7 @@
               </div>
             </td>
             <td>
-              <router-link :to="`/Trabajador/${trabajador.id}`">
-                ver Perfil
-              </router-link>
+              <router-link :to="`/Trabajador/${trabajador.id}`"> Ver Perfil </router-link>
             </td>
           </tr>
         </tbody>
@@ -43,7 +41,7 @@ import Trabajador from './trabajadores-card.vue';
 
 export default {
   name: 'trabajadores',
-  components: { Trabajador},
+  components: { Trabajador },
   data() {
     return {
       trabajadores: [],
