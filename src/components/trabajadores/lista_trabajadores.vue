@@ -26,7 +26,9 @@
               </div>
             </td>
             <td>
-              <router-link :to="`/Trabajador/${user.id}/${user.nombre}/${user.email}/${user.area}/${user.photo}`">
+              <router-link
+                :to="`/Trabajador/${user.id}/${user.nombre}/${user.email}/${user.area}/${user.photo}`"
+              >
                 ver Perfil
               </router-link>
             </td>
@@ -55,9 +57,8 @@ export default {
     try {
       const response = await this.trabajadoresService.getAllTrabajadores();
       this.trabajadores = response.data;
-      console.log(this.trabajadores);
     } catch (error) {
-      console.error(error);
+      throw new Error(error);
     }
   },
 };
