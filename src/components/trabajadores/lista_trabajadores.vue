@@ -26,7 +26,7 @@
               </div>
             </td>
             <td>
-              <router-link :to="`/Trabajador/${user.id}/${user.nombre}/${user.email}/${user.area}/${user.photo}`">
+              <router-link :to="`/Trabajador/${trabajador.id}`">
                 ver Perfil
               </router-link>
             </td>
@@ -43,7 +43,7 @@ import Trabajador from './trabajadores-card.vue';
 
 export default {
   name: 'trabajadores',
-  components: { Trabajador, SideBar },
+  components: { Trabajador},
   data() {
     return {
       trabajadores: [],
@@ -55,7 +55,6 @@ export default {
     try {
       const response = await this.trabajadoresService.getAllTrabajadores();
       this.trabajadores = response.data;
-      console.log(this.trabajadores);
     } catch (error) {
       console.error(error);
     }
@@ -94,8 +93,10 @@ th {
   text-decoration: underline;
 }
 td {
-  font-size: 1.3rem;
+  font-size: 14px;
   color: black;
+  align-items: center;
+  justify-content: center;
 }
 
 .table-cell {

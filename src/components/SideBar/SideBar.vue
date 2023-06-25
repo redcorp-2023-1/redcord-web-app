@@ -73,7 +73,7 @@ export default {
             this.trabajador_data = await this.trabajardorService.getById(localStorage.getItem('id_employee'))
             this.name =this.trabajador_data.data.name
             this.cargo = this.trabajador_data.data.cargo
-            console.log(this.trabajador_data.data)
+
         }
 
     },

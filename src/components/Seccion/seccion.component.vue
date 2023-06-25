@@ -42,7 +42,6 @@ export default {
     try {
       const response = await this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id);
       this.sections = response.data;
-      console.log(this.sections);
     } catch (error) {
       console.error(error);
     }

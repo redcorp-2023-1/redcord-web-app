@@ -50,7 +50,7 @@ main {
 }
 
 .scroll {
-  flex: 1 1 auto;
+  flex: 1 1;
   height: 100%;
   overflow-y: auto;
 }

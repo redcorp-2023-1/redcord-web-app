@@ -3,21 +3,41 @@
     <h4>Contactos</h4>
 
     <div class="contact" v-for="contact in contacts" :key="contact.id">
-      <img :src="contact.imageUrl" :alt="contact.name" />
+      <img :src="contact.photo" :alt="contact.name" />
 
       <p>{{ contact.name }}</p>
 
-      <div class="counter" v-if="contact.notifications">
-        {{ contact.notifications }}
+      <div class="counter" v-if="contact.id">
+        {{ contact.id }}
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-defineProps({
-  contacts: Array,
-});
+<script>
+  import {TaskApiService} from '../services/Tasks.service';
+  export default{
+    name:"Contactos",
+    data()
+    {
+      return{
+        contacts:[],
+        taskApiService: new TaskApiService()
+      }
+    },
+    async beforeMount()
+    {
+      try
+      {
+        const response = await this.taskApiService.GetEmployeesContactsByTeamId(localStorage.getItem('id_employee'))
+        this.contacts = response.data
+      }catch(error)
+      {
+        console.error("Error al obtener los contactos:", error);
+      }
+    }
+  }
+
 </script>
 
 <style scoped>

@@ -70,7 +70,6 @@ export default {
 
       try {
         this.responseData = await this.authApiService.login(loginData);
-        console.log(this.responseData.data); // Accede a los datos de la respuesta (access, message, result)
         
         localStorage.setItem('access',true)
         localStorage.setItem('id_employee',this.responseData.data.user_id);

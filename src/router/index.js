@@ -52,7 +52,7 @@ const routes = [
     meta: { title: 'Trabajadores' },
   },
   {
-    path: '/Trabajador/:id/:nombre/:email/:area/:photo/',
+    path: '/Trabajador/:id',
     component: trabajadoresCard,
     props: true,
     name: 'Trabajador',

@@ -36,11 +36,7 @@
 </template>
 
 <script>
-
-import axios from "axios";
-
-
-const httpsC = axios.create({ baseURL: "http://localhost:3000/comunicados" });
+import {TaskApiService} from '../services/Tasks.service';
 
 export default {
 
@@ -51,12 +47,13 @@ export default {
       comunicados: [],
       comunicadosOriginales: [],
       searchText: "",
+      tasksApiService: new TaskApiService()
     };
   },
 
   async beforeMount() {
     try {
-      const response = await httpsC.get();
+      const response = await this.tasksApiService.GetTasksByIdEmployee(localStorage.getItem('id_employee'))
       this.comunicados = response.data;
       this.comunicadosOriginales = [...this.comunicados];
     } catch (error) {
@@ -91,10 +88,6 @@ export default {
 
 }
 
-main{
-
-
-}
 
 
 .container{

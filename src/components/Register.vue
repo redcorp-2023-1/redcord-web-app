@@ -131,7 +131,7 @@ export default {
 
       try {
         const response = await this.authApiService.postTrabajador(trabajadorData);
-        console.log("Trabajador registrado exitosamente:", response.data);
+        console.log("Trabajador registrado exitosamente:",);
         
       } catch (error) {
         console.error("Error al registrar el trabajador:", error);
