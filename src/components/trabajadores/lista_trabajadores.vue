@@ -45,7 +45,7 @@ import Trabajador from './trabajadores-card.vue';
 
 export default {
   name: 'trabajadores',
-  components: { Trabajador, SideBar },
+  components: { Trabajador },
   data() {
     return {
       trabajadores: [],

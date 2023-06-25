@@ -17,53 +17,34 @@
       </div>
     </div>
 
-    <section class="herramientas">
+    <seccton class="herramientas">
       <label>Herramientas</label>
-      <pv-divider class="divider" />
-
       <ul>
-        <router-link to="/VisionGeneral" class="link"
-          ><img class="iconos" src="./images/v_g.png" /> Visión General</router-link
-        >
-        <router-link to="/trabajadores" class="link"
-          ><img class="iconos" src="./images/secc.png" />Secciones</router-link
-        >
+        <a> <img class="iconos" src="./images/v_g.png" /> Visión General</a>
         <router-link to="/section" class="link"
-          ><img class="iconos" src="./images/herr.png" />herramientas</router-link
+          ><img class="iconos" src="./images/secc.png " />Secciones</router-link
         >
-        <router-link to="/section" class="link"
-          ><img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
+        <a> <img class="iconos" src="./images/herr.png" />herramientas</a>
+        <router-link to="/comunicados" class="link">
+          <img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
         >
         <router-link to="/trabajadores" class="link">
           <img class="iconos" src="./images/list.png" />Lista de trabajadores de areas</router-link
         >
-        <router-link to="/section" class="link"
-          ><img class="iconos" src="./images/prog.png" />Progreso de Empleados</router-link
-        >
+        <a> <img class="iconos" src="./images/prog.png" />Progreso de Empleados</a>
       </ul>
-    </section>
-
-    <section class="interacciones">
+    </seccton>
+    <seccton class="interacciones">
       <div>
         <label>Interacciones</label>
-        <pv-divider class="divider" />
         <ul>
           <a> <img class="iconos" src="./images/chats.png" />Chats</a>
           <a> <img class="iconos" src="./images/not.png" />Notificaciones</a>
           <a> <img class="iconos" src="./images/coments.png" />Comentarios</a>
         </ul>
       </div>
-    </section>
-
-    <section class="interacciones">
-      <div>
-        <label>Log Out</label>
-        <pv-divider class="divider" />
-        <div>
-          <AlertaCerrarSesion />
-        </div>
-      </div>
-    </section>
+    </seccton>
+    <button @click="logOut"><img class="iconos" src="./images/out.png" /> Cerrar sesión</button>
   </div>
 </template>
 
@@ -77,14 +58,14 @@ export default {
   data() {
     return {
       showSidebar: false,
-      trabajardorService: new TrabajadorApiService(),
-      trabajador_data: [],
+      workerService: new TrabajadorApiService(),
+      worker_data: [],
       name: '',
       cargo: '',
     };
   },
   methods: {
-    cerrarsesion() {
+    logOut() {
       localStorage.removeItem('id_employee');
       localStorage.removeItem('token');
       localStorage.removeItem('access');
@@ -94,17 +75,14 @@ export default {
     toggleSidebar() {
       this.showSidebar = !this.showSidebar;
     },
-    async Get_trabajador() {
-      this.trabajador_data = await this.trabajardorService.getById(
-        localStorage.getItem('id_employee')
-      );
-      this.name = this.trabajador_data.data.name;
-      this.cargo = this.trabajador_data.data.cargo;
-      console.log(this.trabajador_data.data);
+    async getWorker() {
+      this.worker_data = await this.workerService.getById(localStorage.getItem('id_employee'));
+      this.name = this.worker_data.data.name;
+      this.cargo = this.worker_data.data.cargo;
     },
   },
   beforeMount() {
-    this.Get_trabajador();
+    this.getWorker();
   },
   beforeCreate() {
     if (!window.localStorage.getItem('token')) {

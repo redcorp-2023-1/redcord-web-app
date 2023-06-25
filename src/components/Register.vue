@@ -16,12 +16,12 @@
       <form class="form">
         <div class="form-group-inline">
           <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" v-model="nombre" required />
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" v-model="name" required />
           </div>
           <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" v-model="apellido" required />
+            <label for="lastname">Apellido:</label>
+            <input type="text" id="lastname" v-model="lastname" required />
           </div>
         </div>
         <div class="form-group">
@@ -45,8 +45,8 @@
           </datalist>
         </div>
         <div class="form-group">
-          <label for="cargo">Cargo:</label>
-          <input type="text" id="cargo" v-model="cargo" required />
+          <label for="charge">Cargo:</label>
+          <input type="text" id="charge" v-model="charge" required />
         </div>
         <div class="form-group">
           <label for="roles">Roles</label>
@@ -78,13 +78,13 @@ export default {
   name: 'Register',
   data() {
     return {
-      nombre: '',
-      apellido: '',
+      name: '',
+      lastname: '',
       email: '',
       password: '',
       confirmPassword: '',
       area: '',
-      cargo: '',
+      charge: '',
       roles: '',
       areaList: [
         'Informática',
@@ -104,13 +104,13 @@ export default {
   computed: {
     isFormEmpty() {
       return (
-        this.nombre === '' ||
-        this.apellido === '' ||
+        this.name === '' ||
+        this.lastname === '' ||
         this.email === '' ||
         this.password === '' ||
         this.confirmPassword === '' ||
         this.area === '' ||
-        this.cargo === '' ||
+        this.charge === '' ||
         this.roles === ''
       );
     },
@@ -126,19 +126,19 @@ export default {
       }
     },
     async signUp() {
-      const trabajadorData = {
-        name: this.nombre,
-        last_name: this.apellido,
+      const workerData = {
+        name: this.name,
+        last_name: this.lastname,
         email: this.email,
         password: this.password,
         area: this.area,
-        cargo: this.cargo,
+        charge: this.charge,
         photo: 'https://i.pinimg.com/222x/57/70/f0/5770f01a32c3c53e90ecda61483ccb08.jpg',
         roles: this.roles,
       };
 
       try {
-        await this.authApiService.postTrabajador(trabajadorData);
+        await this.authApiService.postTrabajador(workerData);
       } catch (error) {
         throw new Error(error);
       }

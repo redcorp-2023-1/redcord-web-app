@@ -8,7 +8,7 @@
             placeholder="Filtrar..."
             class="search-input"
             v-model="searchText"
-            @input="searchComunicados"
+            @input="searchCommuniques"
           />
         </label>
       </div>
@@ -21,7 +21,7 @@
           <th>Completed</th>
           <th>Active</th>
         </tr>
-        <tr v-for="com in comunicados" :key="com.id">
+        <tr v-for="com in communiques" :key="com.id">
           <td>{{ com.name }}</td>
           <td>{{ com.description }}</td>
           <td class="center">{{ com.initialDate }}<br />to<br />{{ com.finalDate }}</td>
@@ -38,15 +38,15 @@
 <script>
 import axios from 'axios';
 
-const httpsC = axios.create({ baseURL: 'http://localhost:3000/comunicados' });
+const httpsC = axios.create({ baseURL: 'http://localhost:3000/communiques' });
 
 export default {
   name: 'Comunicados',
 
   data() {
     return {
-      comunicados: [],
-      comunicadosOriginales: [],
+      communiques: [],
+      originalCommuniques: [],
       searchText: '',
     };
   },
@@ -54,21 +54,21 @@ export default {
   async beforeMount() {
     try {
       const response = await httpsC.get();
-      this.comunicados = response.data;
-      this.comunicadosOriginales = [...this.comunicados];
+      this.communiques = response.data;
+      this.originalCommuniques = [...this.communiques];
     } catch (error) {
       throw new Error(error);
     }
   },
 
   methods: {
-    searchComunicados() {
+    searchCommuniques() {
       if (this.searchText === '') {
-        this.comunicados = [...this.comunicadosOriginales];
+        this.communiques = [...this.originalCommuniques];
       } else {
-        this.comunicados = this.comunicadosOriginales.filter(comunicado => {
-          const nameMatch = comunicado.name.toLowerCase().includes(this.searchText.toLowerCase());
-          const descriptionMatch = comunicado.description
+        this.communiques = this.originalCommuniques.filter(_communique => {
+          const nameMatch = _communique.name.toLowerCase().includes(this.searchText.toLowerCase());
+          const descriptionMatch = _communique.description
             .toLowerCase()
             .includes(this.searchText.toLowerCase());
           return nameMatch || descriptionMatch;
