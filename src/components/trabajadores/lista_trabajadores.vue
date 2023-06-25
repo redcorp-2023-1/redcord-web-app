@@ -37,7 +37,7 @@
 
 <script>
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
-import SideBar from '../SideBar/Sidebar.vue';
+import SideBar from '../SideBar/SideBar.vue';
 import Trabajador from './trabajadores-card.vue';
 
 export default {
@@ -50,11 +50,14 @@ export default {
     };
   },
 
-  beforeMount() {
-    this.trabajadoresService.getAllTrabajadores().then(response => {
+  async beforeMount() {
+    try {
+      const response = await this.trabajadoresService.getAllTrabajadores();
       this.trabajadores = response.data;
       console.log(this.trabajadores);
-    });
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 </script>

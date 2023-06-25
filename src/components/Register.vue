@@ -48,6 +48,13 @@
           <label for="cargo">Cargo:</label>
           <input type="text" id="cargo" v-model="cargo" required />
         </div>
+        <div class="form-group">
+          <label for="roles">Roles</label>
+          <input type="text" id="roles" v-model="roles" :list="rolesListId" required />
+          <datalist :id="rolesListId">
+            <option v-for="item in rolesList" :key="item" :value="item"></option>
+          </datalist>
+        </div>
         <button @click="submitForm" ::disabled="isFormEmpty || passwordMismatch" class="btn-register">Continuar</button>
       </form>
       <div class="verification">
@@ -59,7 +66,7 @@
 </template>
 
 <script>
-import { TrabajadorApiService } from './services/trabajadores-api.service';
+import { AuthApiService } from './services/AuthUser.service';
 
 export default {
   name: 'Register',
@@ -72,9 +79,12 @@ export default {
       confirmPassword: '',
       area:'',
       cargo: '',
+      roles: '',
       areaList: ['Informática', 'Finanzas y Contabilidad', 'Recursos Humanos', 'Marketing y Ventas', 'Producción', 'Desarrollo de Software', 'Administración'],
       areaListId: 'areaList',
-      trabajadoresService: new TrabajadorApiService()
+      rolesList:['user','admin'],
+      rolesListId:'rolesList',
+      authApiService: new AuthApiService()
     };
   },
   computed: {
@@ -86,7 +96,8 @@ export default {
         this.password === '' ||
         this.confirmPassword === '' ||
         this.area === ''||
-        this.cargo === ''
+        this.cargo === ''||
+        this.roles === ''
       );
     },
     passwordMismatch() {
@@ -103,6 +114,9 @@ export default {
       }
     },
     async signUp() {
+
+
+
       const trabajadorData = {
         // Aquí debes obtener los datos del formulario de registro
         name: this.nombre,
@@ -111,11 +125,12 @@ export default {
         password: this.password,
         area: this.area,
         cargo: this.cargo,
-        photo: "https://i.pinimg.com/222x/57/70/f0/5770f01a32c3c53e90ecda61483ccb08.jpg"
+        photo: "https://i.pinimg.com/222x/57/70/f0/5770f01a32c3c53e90ecda61483ccb08.jpg", 
+        roles: this.roles
       };
 
       try {
-        const response = await this.trabajadoresService.postTrabajador(trabajadorData);
+        const response = await this.authApiService.postTrabajador(trabajadorData);
         console.log("Trabajador registrado exitosamente:", response.data);
         
       } catch (error) {
