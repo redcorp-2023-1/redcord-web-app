@@ -1,130 +1,126 @@
 <script setup>
 import HeaderComponent from './HeaderComponent.vue';
 import FooterComponent from './FooterComponent.vue';
-
 </script>
 <template>
-    <header>
-        <HeaderComponent></HeaderComponent>
-    </header>
-    <section id="banner">
-      <div class="contenido-banner">
-        <h1><span>¿Qué es Redcorp?</span></h1>
-        <br />
-        <p>
-          Redcorp es una plataforma web y móvil que ofrece servicios a empresas que requieran una
-          mejor organización y comunicación entre sus empleados de distintas áreas, promoviendo
-          grupos de trabajo y eficiencia del desarrollo, mediante un interfaz similar al de una red
-          social. Nuestro objetivo son las empresas que busquen una aplicación web para administrar
-          de mejor forma la red de empleados y la gestión de grupos de trabajo.
-        </p>
-      </div>
-    </section>
+  <header>
+    <HeaderComponent></HeaderComponent>
+  </header>
+  <section id="banner">
+    <div class="contenido-banner">
+      <h1><span>¿Qué es Redcorp?</span></h1>
+      <br />
+      <p>
+        Redcorp es una plataforma web y móvil que ofrece servicios a empresas que requieran una
+        mejor organización y comunicación entre sus empleados de distintas áreas, promoviendo grupos
+        de trabajo y eficiencia del desarrollo, mediante un interfaz similar al de una red social.
+        Nuestro objetivo son las empresas que busquen una aplicación web para administrar de mejor
+        forma la red de empleados y la gestión de grupos de trabajo.
+      </p>
+    </div>
+  </section>
 
-    <section id="contenedor_precios">
-      <div class="container__planes">
-        <div class="planes">
-          <div class="texto">
-            <h1>Servicios</h1>
+  <section id="contenedor_precios">
+    <div class="container__planes">
+      <div class="planes">
+        <div class="texto">
+          <h1>Servicios</h1>
+        </div>
+
+        <div class="container-card">
+          <div class="card">
+            <figure>
+              <img src="./jpg/1.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <p>
+                Personalización del servicio según la empresa del cliente, sin perder las
+                funcionalidades principales de la marca.
+              </p>
+            </div>
           </div>
 
-          <div class="container-card">
-            <div class="card">
-              <figure>
-                <img src="./jpg/1.jpg" />
-              </figure>
-              <div class="contenido-card">
-                <p>
-                  Personalización del servicio según la empresa del cliente, sin perder las
-                  funcionalidades principales de la marca.
-                </p>
-              </div>
+          <div class="card">
+            <figure>
+              <img src="./jpg/2.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <p>
+                Gestión de personal mediante un interfaz de búsqueda retornando el perfil del
+                empleado correspondiente. Interfaz de inicio que muestra las publicaciones,
+                novedades y proyectos a futuro de la empresa, así mismo un cronograma de
+                actividades. Gestión de secciones apartadas correspondientes a cada área, para los
+                grupos de trabajos que se deseen crear, las cuales contarán con herramientas
+                virtuales dependiendo el enfoque del grupo de trabajo en cuestión.
+              </p>
             </div>
+          </div>
 
-            <div class="card">
-              <figure>
-                <img src="./jpg/2.jpg" />
-              </figure>
-              <div class="contenido-card">
-                <p>
-                  Gestión de personal mediante un interfaz de búsqueda retornando el perfil del
-                  empleado correspondiente. Interfaz de inicio que muestra las publicaciones,
-                  novedades y proyectos a futuro de la empresa, así mismo un cronograma de
-                  actividades. Gestión de secciones apartadas correspondientes a cada área, para los
-                  grupos de trabajos que se deseen crear, las cuales contarán con herramientas
-                  virtuales dependiendo el enfoque del grupo de trabajo en cuestión.
-                </p>
-              </div>
+          <div class="card">
+            <figure>
+              <img src="./jpg/3.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <p>
+                Interfaz de inicio que muestra las publicaciones, novedades y proyectos a futuro de
+                la empresa, así mismo un cronograma de actividades.
+              </p>
             </div>
+          </div>
 
-            <div class="card">
-              <figure>
-                <img src="./jpg/3.jpg" />
-              </figure>
-              <div class="contenido-card">
-                <p>
-                  Interfaz de inicio que muestra las publicaciones, novedades y proyectos a futuro
-                  de la empresa, así mismo un cronograma de actividades.
-                </p>
-              </div>
-            </div>
-
-            <div class="card">
-              <figure>
-                <img src="./jpg/4.jpg" />
-              </figure>
-              <div class="contenido-card">
-                <p>
-                  Gestión de secciones apartadas correspondientes a cada área, para los grupos de
-                  trabajos que se deseen crear, las cuales contarán con herramientas virtuales
-                  dependiendo el enfoque del grupo de trabajo en cuestión.
-                </p>
-              </div>
+          <div class="card">
+            <figure>
+              <img src="./jpg/4.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <p>
+                Gestión de secciones apartadas correspondientes a cada área, para los grupos de
+                trabajos que se deseen crear, las cuales contarán con herramientas virtuales
+                dependiendo el enfoque del grupo de trabajo en cuestión.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="pregunta">
-      <div class="container__pregunta">
-        <div class="planes">
-          <div class="texto2">
-            <h1>Sobre el producto</h1>
-          </div>
+  <section id="pregunta">
+    <div class="container__pregunta">
+      <div class="planes">
+        <div class="texto2">
+          <h1>Sobre el producto</h1>
+        </div>
 
-          <div class="video">
-            <div class="seccion_video">
-              <div class="videoYoutube">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/DYPGJ6qnFes"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
+        <div class="video">
+          <div class="seccion_video">
+            <div class="videoYoutube">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/DYPGJ6qnFes"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
-          <div class="bot">
-            <RouterLink to="/contacto">
-              <input type="button1" value="Contáctanos" />
-            </RouterLink>
-          </div>
+        </div>
+        <div class="bot">
+          <RouterLink to="/contacto">
+            <input type="button1" value="Contáctanos" />
+          </RouterLink>
         </div>
       </div>
-    </section>
-    <footer>
-        <FooterComponent></FooterComponent>
-    </footer>
-    
+    </div>
+  </section>
+  <footer>
+    <FooterComponent></FooterComponent>
+  </footer>
 </template>
 
 <style>
-
-
 #banner {
   padding: 0 20px;
   background-image: url(./png/fondoServicios.png);
@@ -134,7 +130,6 @@ import FooterComponent from './FooterComponent.vue';
 }
 
 .contenido-banner {
- 
   color: #fff;
   height: 100%;
   display: flex;
@@ -321,11 +316,10 @@ import FooterComponent from './FooterComponent.vue';
 }
 
 @media screen and (max-width: 1000px) {
-
   .container-card {
     flex-wrap: wrap;
   }
-  .card{
+  .card {
     align-items: center;
   }
   .texto2 {
@@ -338,41 +332,24 @@ import FooterComponent from './FooterComponent.vue';
   }
 }
 
-
-
 @keyframes move-vector {
   0% {
     transform: translateY(15px);
   }
   50% {
-    transform: translateY(0px); 
+    transform: translateY(0px);
   }
   100% {
     transform: translateY(15px);
   }
 }
 
-
-
-
-
-
 @media screen and (max-width: 1200px) {
-
-
-
-
   .container__banner .text {
     max-width: 100%;
     text-align: center;
     align-items: center;
   }
-
-
-
-
-
-
 }
 
 @media screen and (max-width: 670px) {
@@ -381,7 +358,6 @@ import FooterComponent from './FooterComponent.vue';
     margin-left: 0px;
   }
 }
-
 
 @media screen and (max-width: 507px) {
   .contenido-banner h1 {
@@ -392,9 +368,5 @@ import FooterComponent from './FooterComponent.vue';
   .contenido-banner p {
     font-size: 15px;
   }
-
-  
 }
-
-
 </style>

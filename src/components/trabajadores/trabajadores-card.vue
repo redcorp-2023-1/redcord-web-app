@@ -38,13 +38,12 @@ export default {
   },
 
   beforeMount() {
-    this.id= this.$route.params.id;
-    this.nombre= this.$route.params.nombre;
-    this.email= this.$route.params.email;
-    this.area= this.$route.params.area;
-    this.photo= this.$route.params.photo;
+    this.id = this.$route.params.id;
+    this.nombre = this.$route.params.nombre;
+    this.email = this.$route.params.email;
+    this.area = this.$route.params.area;
+    this.photo = this.$route.params.photo;
   },
-
 };
 </script>
 
