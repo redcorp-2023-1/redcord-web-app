@@ -1,11 +1,13 @@
 import axios from "axios";
 
+
 const https = axios.create({
     baseURL:"https://localhost:7233/api/SectionAndEmployee",
     headers:{
         Authorization:'Bearer '+ localStorage.getItem('token')
     }
 })
+
 
 export class SectionAndEmployeeApiService{
 

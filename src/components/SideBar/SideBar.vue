@@ -22,7 +22,7 @@
                     <a> <img class="iconos" src="./images/v_g.png"> Visión General</a>
                     <router-link  to="/section" class="link"><img class="iconos" src="./images/secc.png ">Secciones</router-link>
                     <a> <img class="iconos" src="./images/herr.png">herramientas</a>
-                    <a> <img class="iconos" src="./images/comunicados.png">Comunicados</a>
+                    <router-link to="/comunicados" class="link"> <img class="iconos" src="./images/comunicados.png">Comunicados</router-link>
                     <router-link to="/trabajadores" class="link"> <img class="iconos" src="./images/list.png">Lista de trabajadores de areas</router-link>
                     <a> <img class="iconos" src="./images/prog.png">Progreso de Empleados</a>
                 </ul>

@@ -37,7 +37,6 @@
 
 <script>
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
-import SideBar from '../SideBar/SideBar.vue';
 import Trabajador from './trabajadores-card.vue';
 
 export default {

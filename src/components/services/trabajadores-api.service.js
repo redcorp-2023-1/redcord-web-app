@@ -7,6 +7,7 @@ const https = axios.create({
     }
 })
 
+
 export class TrabajadorApiService{
 
     getAllTrabajadores(){
