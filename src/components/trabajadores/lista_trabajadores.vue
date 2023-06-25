@@ -26,7 +26,9 @@
               </div>
             </td>
             <td>
-              <button class="profile-button">Ver Perfil</button>
+              <router-link :to="`/Trabajador/${user.id}/${user.nombre}/${user.email}/${user.area}/${user.photo}`">
+                ver Perfil
+              </router-link>
             </td>
           </tr>
         </tbody>
