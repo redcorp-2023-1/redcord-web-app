@@ -1,12 +1,11 @@
 <template>
   <main>
-  <SideBar></SideBar>
   <div class="container">
-    <h2>Comunicados</h2>
+    
     <div class="search-container">
       <label class="search-label">
         <input type="text"
-               placeholder="Buscar..."
+               placeholder="Filtrar..."
                class="search-input"
                v-model="searchText"
                @input="searchComunicados"
@@ -39,14 +38,14 @@
 <script>
 
 import axios from "axios";
-import SideBar from "../SideBar/SideBar.vue";
+
 
 const httpsC = axios.create({ baseURL: "http://localhost:3000/comunicados" });
 
 export default {
 
   name: "Comunicados",
-  components: {SideBar },
+
   data() {
     return {
       comunicados: [],

@@ -12,6 +12,7 @@ import contacto from '../components/landingpagecomponents/contacto.vue';
 import planes from '../components/landingpagecomponents/planes.vue';
 import servicios from '../components/landingpagecomponents/servicios.vue';
 import Calendar from '../components/Calendar/Calendar.vue';
+import communiques from '../components/communiques/communiques.vue'
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
   {
     path: '/verification',
     component: Verification,
+  },
+  {
+    path:'/comunicados',
+    component:communiques,
+    meta:{title:'Comunicados'}
   },
   {
     path: '/section',
