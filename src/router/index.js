@@ -16,25 +16,6 @@ import SelectCargo from "../components/selectCargo.vue";
 import AlertaCerrarSesion from "../components/AlertNotification/AlertaCerrarSesion.vue";
 import VisionGeneral from "../components/VisionGeneral/VisionGeneral.vue";
 
-const routes = [
-  {path: '/',component: LandingPage,},
-  {path: '/login',component: LogIn, },
-  {path: '/register',component: Register,},
-  { path: '/verification', component: Verification },
-  { path: '/section', component: Section },
-  { path: '/trabajadores', component: Trabajadores },
-  {path: '/Trabajador/:id/:nombre/:correo/:area/:foto/',component: trabajadoresCard,props: true,name: 'Trabajador',},
-  {path:'/blog',component:blog},
-  {path:'/conocenos',component:conocenos},
-  {path:'/contacto',component:contacto},
-  {path:'/planes',component:planes},
-  {path:'/servicios',component:servicios},
-  {path: '/selectCargo', component: SelectCargo},
-  {path: '/AlertaCerrarSesion', component: AlertaCerrarSesion},
-  {path: '/VisionGeneral', component: VisionGeneral},
-
-
-import servicios from '../components/landingpagecomponents/servicios.vue';
 import Calendar from '../components/Calendar/Calendar.vue';
 import communiques from '../components/communiques/communiques.vue';
 
@@ -102,7 +83,19 @@ const routes = [
     path: '/servicios',
     component: servicios,
   },
+  { 
+    path: '/selectCargo', 
+    component: SelectCargo
+  },
 
+  {
+    path: '/AlertaCerrarSesion', 
+    component: AlertaCerrarSesion
+  },
+  {
+    path: '/VisionGeneral', 
+    component: VisionGeneral
+  },
 ];
 
 export const router = createRouter({

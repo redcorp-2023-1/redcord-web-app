@@ -4,36 +4,36 @@
       <h2>Bandeja de entrada</h2>
     </div>
     <div class="email-list">
-      <div class="email-item" v-for="email in emails" :key="email.id">
-        <div class="sender">{{ email.sender }}</div>
-        <div class="subject">{{ email.subject }}</div>
-        <div class="date">{{ email.date }}</div>
+      <div class="email-item">
+        <div class="sender">{{ users.name }}</div>
+        <div class="subject">{{ users.email }}</div>
+        
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { TrabajadorApiService } from '../services/trabajadores-api.service';
+
 export default {
   data() {
     return {
-      emails: [
-        {
-          id: 1,
-          sender: "John Doe",
-          subject: "Hola",
-          date: "2023-06-04"
-        },
-        {
-          id: 2,
-          sender: "Jane Smith",
-          subject: "Reunión",
-          date: "2023-06-03"
-        },
-        // Agrega más correos electrónicos aquí...
-      ]
+      users:[],
+      trabajadorApiService:new TrabajadorApiService()
     };
+  },
+  async beforeMount()
+  {
+    
+    try {
+      const response = await this.trabajadorApiService.getById(localStorage.getItem('id_employee'));
+      this.users = response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
+
 };
 </script>
 
