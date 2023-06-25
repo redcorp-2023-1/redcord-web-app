@@ -1,17 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
 
-const https = axios.create({baseURL:"https://localhost:7233/api/Employee"})
+const https = axios.create({ baseURL: 'https://localhost:7233/api/Employee' });
 
-export class AuthApiService{
+export class AuthApiService {
+  postTrabajador(body) {
+    return https.post('/Signup', body);
+  }
 
-
-    postTrabajador(body) {
-        return https.post('/Signup', body);
-    }
-    
-    login(body)
-    {
-        return https.post('/login',body);
-    }
-
+  login(body) {
+    return https.post('/login', body);
+  }
 }

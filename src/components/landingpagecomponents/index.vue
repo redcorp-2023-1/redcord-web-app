@@ -4,11 +4,10 @@ import HeaderComponent from './HeaderComponent.vue';
 </script>
 
 <template>
-
   <header>
     <HeaderComponent></HeaderComponent>
   </header>
-  
+
   <main>
     <div class="container__cover">
       <div class="cover">
@@ -193,11 +192,11 @@ import HeaderComponent from './HeaderComponent.vue';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@700&display=swap');
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*COVER*/
 
@@ -696,7 +695,7 @@ footer {
 }
 
 @media screen and (max-width: 1060px) {
-  .testimonios{
+  .testimonios {
     height: 1050px;
     min-height: 950px;
   }
@@ -708,7 +707,6 @@ footer {
     text-align: center;
     align-items: center;
   }
-
 }
 
 @media screen and (max-width: 900px) {
@@ -717,15 +715,14 @@ footer {
     text-align: center;
     align-items: center;
   }
-  .container__banner3 .task3{
+  .container__banner3 .task3 {
     padding-top: 130px;
   }
   .container__banner3 .task3 img {
-    
     width: 750px;
     height: 400px;
   }
-  .svg{
+  .svg {
     display: none;
   }
 
@@ -757,7 +754,6 @@ footer {
     width: 500px;
     height: 380px;
   }
-
 }
 
 @media screen and (max-width: 693px) {
@@ -772,10 +768,7 @@ footer {
     width: 550px;
     height: 250px;
   }
-
 }
-
-
 
 @media screen and (max-width: 656px) {
   .container__banner4 .task4 img {
@@ -812,7 +805,7 @@ footer {
     width: 540px;
     height: 520px;
   }
-  .textopequeño{
+  .textopequeño {
     display: none;
   }
 }
@@ -827,7 +820,7 @@ footer {
     width: 520px;
     height: 500px;
   }
-  .container__cover .apps{
+  .container__cover .apps {
     display: none;
   }
 }
@@ -898,7 +891,7 @@ footer {
     width: 400px;
     height: 300px;
   }
-  .container__cover .text input{
+  .container__cover .text input {
     margin-top: 10px;
   }
 }
@@ -948,8 +941,7 @@ footer {
     margin-top: 30px;
     width: 300px;
   }
-  .container__cover .text h1
-  {
+  .container__cover .text h1 {
     font-size: 30px;
   }
 }
@@ -969,7 +961,7 @@ footer {
     width: 340px;
     height: 350px;
   }
-  .testimonios{
+  .testimonios {
     height: 1150px;
   }
 }
@@ -982,33 +974,29 @@ footer {
     width: 250px;
     height: 230px;
   }
-  .container__banner4 .task4 img{
+  .container__banner4 .task4 img {
     width: 300px;
     height: 300px;
   }
-
 }
 
-@media screen and (max-width: 360px){
- 
-  
-  .container__banner2 .banner2{
+@media screen and (max-width: 360px) {
+  .container__banner2 .banner2 {
     height: 800px;
   }
-  .container__banner2 .task2 img{
+  .container__banner2 .task2 img {
     width: 250px;
     height: 200px;
     margin-bottom: none;
   }
 
-  .container__banner3 .task3 img{
+  .container__banner3 .task3 img {
     width: 300px;
     height: 200px;
   }
-  .container__banner4 .task4 img{
+  .container__banner4 .task4 img {
     width: 300px;
     height: 300px;
   }
 }
-
 </style>

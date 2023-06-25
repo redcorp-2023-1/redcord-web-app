@@ -14,17 +14,12 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
-
 import Contacts from './contacts.component.vue';
 import Groups from './groups.component.vue';
-
-
 
 const search = ref('');
 const contacts = ref([]);
 const groups = ref([]);
-
-
 </script>
 
 <style scoped>

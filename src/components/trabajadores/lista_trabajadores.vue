@@ -11,24 +11,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="trabajador in trabajadores" :key="trabajador.id">
+          <tr v-for="worker in workers" :key="worker.id">
             <td>
               <div class="table-cell">
-                <img :src="trabajador.photo" alt="" />
-                <span>{{ trabajador.name }}</span>
+                <img :src="worker.photo" alt="" />
+                <span>{{ worker.name }}</span>
               </div>
             </td>
-            <td>{{ trabajador.email }}</td>
+            <td>{{ worker.email }}</td>
             <td>
               <div class="table-cell">
                 <div class="circle"></div>
-                <spam>{{ trabajador.area }}</spam>
+                <spam>{{ worker.area }}</spam>
               </div>
             </td>
             <td>
-              <router-link :to="`/Trabajador/${trabajador.id}`">
-                ver Perfil
-              </router-link>
+              <router-link :to="`/Trabajador/${worker.id}`"> Ver Perfil </router-link>
             </td>
           </tr>
         </tbody>
@@ -43,18 +41,18 @@ import Trabajador from './trabajadores-card.vue';
 
 export default {
   name: 'trabajadores',
-  components: { Trabajador},
+  components: { Trabajador },
   data() {
     return {
-      trabajadores: [],
-      trabajadoresService: new TrabajadorApiService(),
+      workers: [],
+      workersService: new TrabajadorApiService(),
     };
   },
 
   async beforeMount() {
     try {
-      const response = await this.trabajadoresService.getAllTrabajadores();
-      this.trabajadores = response.data;
+      const response = await this.workersService.getAllTrabajadores();
+      this.workers = response.data;
     } catch (error) {
       console.error(error);
     }

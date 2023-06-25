@@ -12,12 +12,14 @@
 
       <div class="content_section">
         <div class="card_section" v-for="section in sections">
-
-          <SeccionCardComponent :id="section.id" :section_Name="section.section_Name" :description="section.description"/>
+          <SeccionCardComponent
+            :id="section.id"
+            :section_Name="section.section_Name"
+            :description="section.description"
+          />
 
           <div class="line"></div>
         </div>
-        
       </div>
     </div>
   </main>
@@ -34,22 +36,21 @@ export default {
     return {
       employee_id: 0,
       sections: [],
-      SectionsAndEmployeeService: new SectionAndEmployeeApiService()
+      SectionsAndEmployeeService: new SectionAndEmployeeApiService(),
     };
   },
   async beforeMount() {
     this.employee_id = localStorage.getItem('id_employee');
     try {
-      const response = await this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id);
+      const response = await this.SectionsAndEmployeeService.GetSectionsByEmployeeId(
+        this.employee_id
+      );
       this.sections = response.data;
     } catch (error) {
       console.error(error);
     }
-  }
-
-}
-
-
+  },
+};
 </script>
 
 <style scoped>
