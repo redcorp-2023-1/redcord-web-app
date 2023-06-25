@@ -15,46 +15,65 @@
           <p>{{ cargo }}</p>
         </div>
       </div>
-
-      <seccton class="herramientas">
-        <label>Herramientas</label>
-        <ul>
-          <a> <img class="iconos" src="./images/v_g.png" /> Visión General</a>
-          <router-link to="/section" class="link"
-            ><img class="iconos" src="./images/secc.png " />Secciones</router-link
-          >
-          <a> <img class="iconos" src="./images/herr.png" />herramientas</a>
-          <router-link to="/comunicados" class="link">
-            <img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
-          >
-          <router-link to="/trabajadores" class="link">
-            <img class="iconos" src="./images/list.png" />Lista de trabajadores de
-            areas</router-link
-          >
-          <a> <img class="iconos" src="./images/prog.png" />Progreso de Empleados</a>
-        </ul>
-      </seccton>
-      <seccton class="interacciones">
-        <div>
-          <label>Interacciones</label>
-          <ul>
-            <a> <img class="iconos" src="./images/chats.png" />Chats</a>
-            <a> <img class="iconos" src="./images/not.png" />Notificaciones</a>
-            <a> <img class="iconos" src="./images/coments.png" />Comentarios</a>
-          </ul>
-        </div>
-      </seccton>
-      <button @click="cerrarsesion">
-        <img class="iconos" src="./images/out.png" /> Cerrar sesión
-      </button>
     </div>
+
+    <section class="herramientas">
+      <label>Herramientas</label>
+      <pv-divider class="divider" />
+
+      <ul>
+        <router-link to="/VisionGeneral" class="link"
+          ><img class="iconos" src="./images/v_g.png" /> Visión General</router-link
+        >
+        <router-link to="/trabajadores" class="link"
+          ><img class="iconos" src="./images/secc.png" />Secciones</router-link
+        >
+        <router-link to="/section" class="link"
+          ><img class="iconos" src="./images/herr.png" />herramientas</router-link
+        >
+        <router-link to="/section" class="link"
+          ><img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
+        >
+        <router-link to="/trabajadores" class="link">
+          <img class="iconos" src="./images/list.png" />Lista de trabajadores de areas</router-link
+        >
+        <router-link to="/section" class="link"
+          ><img class="iconos" src="./images/prog.png" />Progreso de Empleados</router-link
+        >
+      </ul>
+    </section>
+
+    <section class="interacciones">
+      <div>
+        <label>Interacciones</label>
+        <pv-divider class="divider" />
+        <ul>
+          <a> <img class="iconos" src="./images/chats.png" />Chats</a>
+          <a> <img class="iconos" src="./images/not.png" />Notificaciones</a>
+          <a> <img class="iconos" src="./images/coments.png" />Comentarios</a>
+        </ul>
+      </div>
+    </section>
+
+    <section class="interacciones">
+      <div>
+        <label>Log Out</label>
+        <pv-divider class="divider" />
+        <div>
+          <AlertaCerrarSesion />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
+import AlertaCerrarSesion from '../AlertNotification/AlertaCerrarSesion.vue';
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
+
 export default {
   name: 'SideBar',
+  components: { AlertaCerrarSesion },
   data() {
     return {
       showSidebar: false,
@@ -81,6 +100,7 @@ export default {
       );
       this.name = this.trabajador_data.data.name;
       this.cargo = this.trabajador_data.data.cargo;
+      console.log(this.trabajador_data.data);
     },
   },
   beforeMount() {
@@ -126,7 +146,7 @@ export default {
 }
 
 .sidebar {
-  width: 300px;
+  width: 18vw;
   height: 100%;
   overflow: auto;
   background: #22242e;
@@ -155,6 +175,7 @@ export default {
   height: 80px;
   width: auto;
 }
+
 .perfil div {
   margin-left: 20px;
   margin-right: 30px;
@@ -173,10 +194,12 @@ export default {
   font-weight: bold;
   width: 90%;
 }
+
 .herramientas label {
   color: #6a5dc4;
   font-size: 1.5em;
 }
+
 .herramientas ul {
   color: #7da4ca;
   margin: 10px;
@@ -184,6 +207,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .herramientas ul a {
   font-size: 1.1em;
   margin-top: 10px;
@@ -202,10 +226,12 @@ export default {
   font-weight: bold;
   width: 90%;
 }
+
 .interacciones label {
   color: #6a5dc4;
   font-size: 1.5em;
 }
+
 .interacciones ul {
   color: #7da4ca;
   margin: 10px;
@@ -213,6 +239,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .interacciones ul a {
   font-size: 1.1em;
   margin-top: 10px;
@@ -221,6 +248,7 @@ export default {
   display: flex;
   align-items: center;
 }
+
 .interacciones ul a:hover {
   background: #375176;
 }
@@ -237,8 +265,66 @@ button {
   display: flex;
   align-items: center;
 }
+
 button:hover {
   background-color: rgba(55, 81, 118, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perfil div {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .perfil img {
+    margin-bottom: 10px;
+  }
+
+  .herramientas,
+  .interacciones {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .herramientas label,
+  .interacciones label {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sidebar {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .perfil img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .perfil div {
+    margin: 5px 0;
+  }
+
+  .herramientas ul a,
+  .interacciones ul a {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1.2em;
+  }
 }
 
 @media (max-width: 1000px) {
