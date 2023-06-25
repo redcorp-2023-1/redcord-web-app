@@ -1,6 +1,12 @@
 import axios from "axios";
 
-const https = axios.create({baseURL:"https://redcorpcenter.azurewebsites.net/api/Employee"})
+const https = axios.create({
+    baseURL:"https://localhost:7233/api/Employee",
+    headers:{
+        Authorization:'Bearer '+ localStorage.getItem('token')
+    }
+})
+
 
 export class TrabajadorApiService{
 
@@ -17,13 +23,6 @@ export class TrabajadorApiService{
         return https.delete('/'+id)
     }
 
-    postTrabajador(body) {
-        return https.post('/Signup', body);
-    }
     
-    login(body)
-    {
-        return https.post('/login',body);
-    }
 
 }

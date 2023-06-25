@@ -27,25 +27,27 @@
 import SeccionCardComponent from './seccion.card.component.vue';
 import { SectionAndEmployeeApiService } from '../services/SectionsAndEmployee-api.service';
 
-export default{
-  name:'Sections',
-  components:{SeccionCardComponent},
-  data(){
-    return{
-      employee_id:0,
-      sections:[],
+export default {
+  name: 'Sections',
+  components: { SeccionCardComponent },
+  data() {
+    return {
+      employee_id: 0,
+      sections: [],
       SectionsAndEmployeeService: new SectionAndEmployeeApiService()
-    }
+    };
   },
-  beforeMount()
-  {
+  async beforeMount() {
     this.employee_id = localStorage.getItem('id_employee');
-    this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id).then((response)=>{
-      this.sections = response.data
-      console.log(this.sections)
-    })
+    try {
+      const response = await this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id);
+      this.sections = response.data;
+      console.log(this.sections);
+    } catch (error) {
+      console.error(error);
+    }
   }
-  
+
 }
 
 

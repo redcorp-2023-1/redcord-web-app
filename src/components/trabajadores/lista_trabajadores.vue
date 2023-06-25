@@ -49,11 +49,14 @@ export default {
     };
   },
 
-  beforeMount() {
-    this.trabajadoresService.getAllTrabajadores().then(response => {
+  async beforeMount() {
+    try {
+      const response = await this.trabajadoresService.getAllTrabajadores();
       this.trabajadores = response.data;
       console.log(this.trabajadores);
-    });
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 </script>

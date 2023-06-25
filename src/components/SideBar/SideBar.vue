@@ -59,8 +59,10 @@ export default {
     methods: {
         cerrarsesion()
         {
-            localStorage.setItem('id_employee',0)
-            localStorage.setItem('access',false)
+            localStorage.removeItem('id_employee')
+            localStorage.removeItem('token')
+            localStorage.removeItem('access')
+            
             this.$router.push('/')
         },
         toggleSidebar() {
@@ -77,7 +79,15 @@ export default {
     },
     beforeMount()
     {
+
         this.Get_trabajador();
+    },
+    beforeCreate()
+    {
+        if(!window.localStorage.getItem('token'))
+        {
+            this.$router.push('/login')
+        }
     }
 };
 </script>
