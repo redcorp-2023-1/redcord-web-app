@@ -12,39 +12,59 @@
         <img src="./images/men.jpg" />
         <div>
           <h3>{{ name }}</h3>
-          <p>{{ cargo }}</p>
+          <p>{{ charge }}</p>
         </div>
       </div>
-    </div>
 
-    <seccton class="herramientas">
-      <label>Herramientas</label>
-      <ul>
-        <a> <img class="iconos" src="./images/v_g.png" /> Visión General</a>
-        <router-link to="/section" class="link"
-          ><img class="iconos" src="./images/secc.png " />Secciones</router-link
-        >
-        <a> <img class="iconos" src="./images/herr.png" />herramientas</a>
-        <router-link to="/comunicados" class="link">
-          <img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
-        >
-        <router-link to="/trabajadores" class="link">
-          <img class="iconos" src="./images/list.png" />Lista de trabajadores de areas</router-link
-        >
-        <a> <img class="iconos" src="./images/prog.png" />Progreso de Empleados</a>
-      </ul>
-    </seccton>
-    <seccton class="interacciones">
-      <div>
-        <label>Interacciones</label>
+      <section class="herramientas">
+        <label>Herramientas</label>
+        <pv-divider class="divider" />
+
         <ul>
-          <a> <img class="iconos" src="./images/chats.png" />Chats</a>
-          <a> <img class="iconos" src="./images/not.png" />Notificaciones</a>
-          <a> <img class="iconos" src="./images/coments.png" />Comentarios</a>
+          <router-link to="/VisionGeneral" class="link"
+            ><img class="iconos" src="./images/v_g.png" />Visión General</router-link
+          >
+          <router-link to="/trabajadores" class="link"
+            ><img class="iconos" src="./images/secc.png" />Secciones</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/herr.png" />Herramientas</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
+          >
+          <router-link to="/trabajadores" class="link"
+            ><img class="iconos" src="./images/list.png" />Lista de trabajadores de
+            áreas</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/prog.png" />Progreso de Empleados</router-link
+          >
         </ul>
-      </div>
-    </seccton>
-    <button @click="logOut"><img class="iconos" src="./images/out.png" /> Cerrar sesión</button>
+      </section>
+
+      <section class="interacciones">
+        <div>
+          <label>Interacciones</label>
+          <pv-divider class="divider" />
+          <ul>
+            <a><img class="iconos" src="./images/chats.png" />Chats</a>
+            <a><img class="iconos" src="./images/not.png" />Notificaciones</a>
+            <a><img class="iconos" src="./images/coments.png" />Comentarios</a>
+          </ul>
+        </div>
+      </section>
+
+      <section class="interacciones">
+        <div>
+          <label>Log Out</label>
+          <pv-divider class="divider" />
+          <div>
+            <AlertaCerrarSesion />
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -58,14 +78,14 @@ export default {
   data() {
     return {
       showSidebar: false,
-      workerService: new TrabajadorApiService(),
-      worker_data: [],
+      workersService: new TrabajadorApiService(),
+      workerData: [],
       name: '',
-      cargo: '',
+      charge: '',
     };
   },
   methods: {
-    logOut() {
+    cerrarsesion() {
       localStorage.removeItem('id_employee');
       localStorage.removeItem('token');
       localStorage.removeItem('access');
@@ -76,9 +96,9 @@ export default {
       this.showSidebar = !this.showSidebar;
     },
     async getWorker() {
-      this.worker_data = await this.workerService.getById(localStorage.getItem('id_employee'));
-      this.name = this.worker_data.data.name;
-      this.cargo = this.worker_data.data.cargo;
+      this.workerData = await this.workersService.getById(localStorage.getItem('id_employee'));
+      this.name = this.workerData.data.name;
+      this.charge = this.workerData.data.cargo;
     },
   },
   beforeMount() {
@@ -112,9 +132,10 @@ export default {
 .link {
   color: #7da4ca;
 }
+
 .menuSide {
   width: 50px;
-  display: None;
+  display: none;
 }
 
 .iconos {
@@ -314,6 +335,7 @@ button:hover {
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
   }
+
   .menuSide {
     display: flex;
     align-items: flex-start;
@@ -321,6 +343,7 @@ button:hover {
     background: #c7c7c7;
     margin: 5px;
   }
+
   .menuSide img {
     width: 50px;
   }
