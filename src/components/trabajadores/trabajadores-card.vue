@@ -2,9 +2,9 @@
   <div class="datos">
     <div>{{ id }}</div>
     <div>{{ nombre }}</div>
-    <div>{{ correo }}</div>
+    <div>{{ email }}</div>
     <div>{{ area }}</div>
-    <img :src="foto" />
+    <img :src="photo" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
       type: String,
       required: true,
     },
-    correo: {
+    email: {
       type: String,
       required: true,
     },
@@ -28,7 +28,7 @@ export default {
       type: String,
       required: true,
     },
-    foto: {
+    photo: {
       type: Image,
       required: true,
     },
@@ -37,7 +37,14 @@ export default {
     return {};
   },
 
-  beforeMount() {},
+  beforeMount() {
+    this.id= this.$route.params.id;
+    this.nombre= this.$route.params.nombre;
+    this.email= this.$route.params.email;
+    this.area= this.$route.params.area;
+    this.photo= this.$route.params.photo;
+  },
+
 };
 </script>
 
