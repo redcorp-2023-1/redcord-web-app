@@ -29,7 +29,7 @@
           <input type="roles" id="roles" v-model="roles" required />
         </div>
         <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
-        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">
+        <button @click.prevent="canAccess ? $router.push('/section') : null" class="btn-login">
           Ingresar
         </button>
         <div class="forgot-password">
@@ -51,7 +51,7 @@ export default {
       roles: '',
       authApiService: new AuthApiService(),
       responseData: [],
-      acceder: false,
+      canAccess: false,
     };
   },
   methods: {
@@ -71,9 +71,9 @@ export default {
         localStorage.setItem('access', true);
         localStorage.setItem('id_employee', this.responseData.data.user_id);
         localStorage.setItem('token', this.responseData.data.token.value);
-        this.acceder = localStorage.getItem('access');
+        this.canAccess = localStorage.getItem('access');
       } catch (error) {
-        console.error('Error al iniciar sesión:', error);
+        console.error('Error logging in:', error);
       }
     },
   },

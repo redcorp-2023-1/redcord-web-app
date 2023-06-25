@@ -16,12 +16,12 @@
       <form class="form">
         <div class="form-group-inline">
           <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" v-model="nombre" required />
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" v-model="name" required />
           </div>
           <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" v-model="apellido" required />
+            <label for="lastname">Apellido:</label>
+            <input type="text" id="lastname" v-model="lastname" required />
           </div>
         </div>
         <div class="form-group">
@@ -78,8 +78,8 @@ export default {
   name: 'Register',
   data() {
     return {
-      nombre: '',
-      apellido: '',
+      name: '',
+      lastname: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -104,8 +104,8 @@ export default {
   computed: {
     isFormEmpty() {
       return (
-        this.nombre === '' ||
-        this.apellido === '' ||
+        this.name === '' ||
+        this.lastname === '' ||
         this.email === '' ||
         this.password === '' ||
         this.confirmPassword === '' ||
@@ -126,9 +126,9 @@ export default {
       }
     },
     async signUp() {
-      const trabajadorData = {
-        name: this.nombre,
-        last_name: this.apellido,
+      const workerData = {
+        name: this.name,
+        last_name: this.lastname,
         email: this.email,
         password: this.password,
         area: this.area,
@@ -138,9 +138,9 @@ export default {
       };
 
       try {
-        await this.authApiService.postTrabajador(trabajadorData);
+        await this.authApiService.postTrabajador(workerData);
       } catch (error) {
-        console.error('Error al registrar el trabajador:', error);
+        console.error('Error registering worker:', error);
       }
     },
   },

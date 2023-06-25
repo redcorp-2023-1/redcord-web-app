@@ -21,7 +21,7 @@
           <th>Completed</th>
           <th>Active</th>
         </tr>
-        <tr v-for="com in comunicados" :key="com.id">
+        <tr v-for="com in communiques" :key="com.id">
           <td>{{ com.name }}</td>
           <td>{{ com.description }}</td>
           <td class="center">{{ com.initialDate }}<br />to<br />{{ com.finalDate }}</td>
@@ -43,8 +43,8 @@ export default {
 
   data() {
     return {
-      comunicados: [],
-      comunicadosOriginales: [],
+      communiques: [],
+      originalCommuniques: [],
       searchText: '',
       tasksApiService: new TaskApiService(),
     };
@@ -55,21 +55,21 @@ export default {
       const response = await this.tasksApiService.GetTasksByIdEmployee(
         localStorage.getItem('id_employee')
       );
-      this.comunicados = response.data;
-      this.comunicadosOriginales = [...this.comunicados];
+      this.communiques = response.data;
+      this.originalCommuniques = [...this.communiques];
     } catch (error) {
-      console.error('Error al obtener los comunicados:', error);
+      console.error('Error getting communiques:', error);
     }
   },
 
   methods: {
     searchComunicados() {
       if (this.searchText === '') {
-        this.comunicados = [...this.comunicadosOriginales];
+        this.communiques = [...this.originalCommuniques];
       } else {
-        this.comunicados = this.comunicadosOriginales.filter(comunicado => {
-          const nameMatch = comunicado.name.toLowerCase().includes(this.searchText.toLowerCase());
-          const descriptionMatch = comunicado.description
+        this.communiques = this.originalCommuniques.filter(communique => {
+          const nameMatch = communique.name.toLowerCase().includes(this.searchText.toLowerCase());
+          const descriptionMatch = communique.description
             .toLowerCase()
             .includes(this.searchText.toLowerCase());
           return nameMatch || descriptionMatch;

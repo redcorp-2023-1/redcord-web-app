@@ -31,7 +31,7 @@ export default {
       );
       this.contacts = response.data;
     } catch (error) {
-      console.error('Error al obtener los contactos:', error);
+      console.error('Error getting contacts:', error);
     }
   },
 };

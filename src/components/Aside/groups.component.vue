@@ -28,7 +28,7 @@ export default {
       );
       this.groups = response.data;
     } catch (error) {
-      console.error('Error al obtener los grupos:', error);
+      console.error('Error getting groups:', error);
     }
   },
 };

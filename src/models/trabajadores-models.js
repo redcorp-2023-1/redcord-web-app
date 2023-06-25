@@ -1,9 +1,9 @@
 export default class Trabajadores {
-  constructor(id, nombre, foto, correo, area) {
+  constructor(id, name, photo, email, area) {
     this.id = id;
-    this.foto = foto;
-    this.nombre = nombre;
-    this.correo = correo;
+    this.photo = photo;
+    this.name = name;
+    this.email = email;
     this.area = area;
   }
 }

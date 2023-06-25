@@ -1,7 +1,7 @@
 <template>
   <div class="card flex justify-content-center">
     <pv-button class="Button-inicar" label="Show" @click="visible = true">
-      <img class="iconos" src="./images/out.png" /> Cerrar sesión
+      <img class="icons" src="./images/out.png" /> Cerrar sesión
     </pv-button>
 
     <pv-dialog v-model:visible="visible" modal header="Cerrar Sesión" :style="{ width: '30vw' }">
@@ -11,7 +11,7 @@
       </p>
       <template #footer>
         <pv-button label="Cancelar" icon="pi pi-times" @click="visible = false" text />
-        <pv-button label="Cerra la sesión" icon="pi pi-check" @click="cerrarSesion" autofocus />
+        <pv-button label="Cerra la sesión" icon="pi pi-check" @click="logOut" autofocus />
       </template>
     </pv-dialog>
   </div>
@@ -24,15 +24,12 @@ import { useRouter } from 'vue-router';
 const visible = ref(false);
 const router = useRouter();
 
-const cerrarSesion = () => {
-  // Realizar acciones de cierre de sesión si es necesario
-
-  // Redireccionar a la página principal
+const logOut = () => {
   router.push('/');
 };
 </script>
 <style scoped>
-.iconos {
+.icons {
   max-width: 30px;
   max-height: 30px;
   color: #7da4ca;

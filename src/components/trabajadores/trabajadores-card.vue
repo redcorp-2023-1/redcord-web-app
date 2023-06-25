@@ -2,14 +2,14 @@
   <div class="profile-container">
     <div class="profile-card">
       <div class="profile-picture">
-        <img :src="trabajadores.photo" alt="Profile Picture" />
+        <img :src="worker.photo" alt="Profile Picture" />
       </div>
       <div class="profile-info">
-        <div class="profile-name">{{ trabajadores.name }} {{ trabajadores.last_name }}</div>
-        <div class="profile-email">{{ trabajadores.email }}</div>
-        <div class="profile-area">{{ trabajadores.area }}</div>
+        <div class="profile-name">{{ worker.name }} {{ worker.last_name }}</div>
+        <div class="profile-email">{{ worker.email }}</div>
+        <div class="profile-area">{{ worker.area }}</div>
       </div>
-      <div class="profile-cargo">{{ trabajadores.cargo }}</div>
+      <div class="profile-cargo">{{ worker.cargo }}</div>
     </div>
     <div class="linea"></div>
     <div class="teams-card">
@@ -43,27 +43,27 @@ export default {
   },
   data() {
     return {
-      trabajadores: [],
+      worker: [],
       teams: [],
       tasks: [],
-      trabajadoresService: new TrabajadorApiService(),
+      workersService: new TrabajadorApiService(),
       taskApiService: new TaskApiService(),
     };
   },
   created() {
-    this.fetchTrabajador();
+    this.fetchWorker();
   },
   methods: {
-    async fetchTrabajador() {
+    async fetchWorker() {
       try {
-        const response = await this.trabajadoresService.getById(this.id);
-        this.trabajadores = response.data;
+        const response = workersService.getById(this.id);
+        this.worker = response.data;
 
-        const teamsrecovered = await this.taskApiService.GetTeamsByIdEmployee(this.id);
-        this.teams = teamsrecovered.data;
+        const teamsRecovered = await this.taskApiService.GetTeamsByIdEmployee(this.id);
+        this.teams = teamsRecovered.data;
 
-        const tasksrecovered = await this.taskApiService.GetTasksByIdEmployee(this.id);
-        this.tasks = tasksrecovered.data;
+        const tasksRecovered = await this.taskApiService.GetTasksByIdEmployee(this.id);
+        this.tasks = tasksRecovered.data;
       } catch (error) {
         console.error(error);
       }
