@@ -10,39 +10,51 @@
       </div>
     </div>
 
-    <seccton class="herramientas">
+    <section class="herramientas">
       <label>Herramientas</label>
+      <pv-divider class="divider" />
+
       <ul>
-        <a> <img class="iconos" src="./images/v_g.png"> Visión General</a>
-        <router-link  to="/section" class="link"><img class="iconos" src="./images/secc.png ">Secciones</router-link>
-        <a> <img class="iconos" src="./images/herr.png">herramientas</a>
-        <a> <img class="iconos" src="./images/comunicados.png">Comunicados</a>
+        <router-link to="/VisionGeneral" class="link " ><img class="iconos" src="./images/v_g.png"> Visión General</router-link>
+        <router-link to="/trabajadores" class="link "><img class="iconos" src="./images/secc.png">Secciones</router-link>
+        <router-link to="/section" class="link"><img class="iconos" src="./images/herr.png">herramientas</router-link>
+        <router-link to="/section" class="link"><img class="iconos" src="./images/comunicados.png">Comunicados</router-link>
         <router-link to="/trabajadores" class="link"> <img class="iconos" src="./images/list.png">Lista de trabajadores de areas</router-link>
-        <a> <img class="iconos" src="./images/prog.png">Progreso de Empleados</a>
+        <router-link to="/section" class="link"><img class="iconos" src="./images/prog.png">Progreso de Empleados</router-link>
       </ul>
-    </seccton>
-    <seccton class="interacciones">
+    </section>
+
+    <section class="interacciones">
       <div>
         <label>Interacciones</label>
+        <pv-divider class="divider" />
         <ul>
           <a> <img class="iconos" src="./images/chats.png">Chats</a>
           <a> <img class="iconos" src="./images/not.png">Notificaciones</a>
           <a> <img class="iconos" src="./images/coments.png">Comentarios</a>
         </ul>
       </div>
-    </seccton>
+    </section>
 
-    <button @click="$router.push('/')"> <img class="iconos" src="./images/out.png">
-        Cerrar sesión</button>
+    <section class="interacciones">
+      <div>
+        <label>Log Out</label>
+        <pv-divider class="divider" />
+        <div>
+          <AlertaCerrarSesion/>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
+import AlertaCerrarSesion from "../AlertNotification/AlertaCerrarSesion.vue";
 export default {
   name: 'SideBar',
+  components: {AlertaCerrarSesion},
 };
 </script>
-
 
 <style scoped>
 * {
@@ -51,19 +63,19 @@ export default {
   padding: 0;
 }
 
-.link{
-  color:#7da4ca;
-} 
+.link {
+  color: #7da4ca;
+}
 
-.iconos{
-    max-width:30px;
-    max-height:30px;
-    color:#7da4ca;
+.iconos {
+  max-width: 30px;
+  max-height: 30px;
+  color: #7da4ca;
 }
 
 .sidebar {
   width: 18vw;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
   background: #22242e;
   color: white;
@@ -71,6 +83,7 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+
 .sidebar img {
   width: 160px;
   height: 80px;
@@ -78,17 +91,18 @@ export default {
 }
 
 .perfil {
-    background: #303341;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    border-radius: 35px;
-    height: 80px;
-    width: auto;
+  background: #303341;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 35px;
+  height: 80px;
+  width: auto;
 }
+
 .perfil div {
   margin-left: 20px;
-    margin-right:30px;
+  margin-right: 30px;
 }
 
 .perfil img {
@@ -102,10 +116,12 @@ export default {
   font-weight: bold;
   width: 90%;
 }
+
 .herramientas label {
   color: #6a5dc4;
   font-size: 1.5em;
 }
+
 .herramientas ul {
   color: #7da4ca;
   margin: 10px;
@@ -113,13 +129,14 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .herramientas ul a {
   font-size: 1.1em;
   margin-top: 10px;
   padding: 5px;
   border-radius: 10px;
-    display:flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .herramientas ul a:hover {
@@ -131,10 +148,12 @@ export default {
   font-weight: bold;
   width: 90%;
 }
+
 .interacciones label {
   color: #6a5dc4;
   font-size: 1.5em;
 }
+
 .interacciones ul {
   color: #7da4ca;
   margin: 10px;
@@ -142,14 +161,16 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .interacciones ul a {
   font-size: 1.1em;
   margin-top: 10px;
   padding: 5px;
   border-radius: 10px;
-    display:flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
+
 .interacciones ul a:hover {
   background: #375176;
 }
@@ -163,11 +184,68 @@ button {
   padding: 10px;
   border-radius: 10px;
   border: none;
-    display:flex;
-    align-items: center;
-}
-button:hover {
-    background-color: rgba(55, 81, 118, 0.5);
+  display: flex;
+  align-items: center;
 }
 
+button:hover {
+  background-color: rgba(55, 81, 118, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perfil div {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .perfil img {
+    margin-bottom: 10px;
+  }
+
+  .herramientas,
+  .interacciones {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .herramientas label,
+  .interacciones label {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sidebar {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .perfil img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .perfil div {
+    margin: 5px 0;
+  }
+
+  .herramientas ul a,
+  .interacciones ul a {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1.2em;
+  }
+}
 </style>

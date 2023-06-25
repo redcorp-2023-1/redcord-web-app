@@ -11,7 +11,9 @@ import conocenos from '../components/landingpagecomponents/conocenos.vue';
 import contacto from '../components/landingpagecomponents/contacto.vue';
 import planes from '../components/landingpagecomponents/planes.vue';
 import servicios from '../components/landingpagecomponents/servicios.vue'
-
+import SelectCargo from "../components/selectCargo.vue";
+import AlertaCerrarSesion from "../components/AlertNotification/AlertaCerrarSesion.vue";
+import VisionGeneral from "../components/VisionGeneral/VisionGeneral.vue";
 
 const routes = [
   {path: '/',component: LandingPage,},
@@ -25,7 +27,10 @@ const routes = [
   {path:'/conocenos',component:conocenos},
   {path:'/contacto',component:contacto},
   {path:'/planes',component:planes},
-  {path:'/servicios',component:servicios}
+  {path:'/servicios',component:servicios},
+  {path: '/selectCargo', component: SelectCargo},
+  {path: '/AlertaCerrarSesion', component: AlertaCerrarSesion},
+  {path: '/VisionGeneral', component: VisionGeneral},
 
 ];
 

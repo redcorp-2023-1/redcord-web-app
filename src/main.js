@@ -20,6 +20,10 @@ import Toolbar from 'primevue/toolbar';
 import Splitter from 'primevue/splitter';
 import SplitterPanel from 'primevue/splitterpanel';
 import Divider from 'primevue/divider';
+import Dialog from 'primevue/dialog';
+import Calendar from "primevue/calendar";
+import Chart from 'primevue/chart';
+
 const app = createApp(App);
 
 app.component('pv-button', Button)
@@ -31,6 +35,10 @@ app.component('pv-toolbar',Toolbar)
 app.component('pv-splitter',Splitter)
 app.component('pv-splitterpanel',SplitterPanel)
 app.component('pv-divider',Divider)
+app.component('pv-dialog',Dialog)
+app.component('pv-chart',Chart)
+app.component('pv-calendar',Calendar)
+app.component('pv-chart',Chart)
 
 app.use(PrimeVue);
 app.use(router);
