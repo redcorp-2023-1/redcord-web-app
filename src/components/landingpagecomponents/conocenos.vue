@@ -1,117 +1,116 @@
 <script setup>
-    
 import FooterComponent from './FooterComponent.vue';
 import HeaderComponent from './HeaderComponent.vue';
 </script>
 <template>
-    <header>
-        <HeaderComponent></HeaderComponent>
-    </header>
-    <main>
-      <div class="container_cover2">
-        <div class="cover">
-          <div class="text">
-            <h1>Conócenos</h1>
+  <header>
+    <HeaderComponent></HeaderComponent>
+  </header>
+  <main>
+    <div class="container_cover2">
+      <div class="cover">
+        <div class="text">
+          <h1>Conócenos</h1>
 
-            <p>
-              Nuestro equipo tiene como misión generar un mejor ambiente de apoyo y comunidad entre
-              los trabajadores de una empresa a la que brindamos nuestro servicio, fomentando una
-              eficaz gestión de trabajo y desarrollo profesional. Nuestra visión es la del
-              reconocimiento de parte de las empresas como la plataforma digital social de
-              excelencia para la comunicación y desarrollo profesional entre miembros de la empresa.
-            </p>
-          </div>
-          <div class="svg">
-            <img src="./jpg/imgGroup.jpg" alt="" />
-          </div>
+          <p>
+            Nuestro equipo tiene como misión generar un mejor ambiente de apoyo y comunidad entre
+            los trabajadores de una empresa a la que brindamos nuestro servicio, fomentando una
+            eficaz gestión de trabajo y desarrollo profesional. Nuestra visión es la del
+            reconocimiento de parte de las empresas como la plataforma digital social de excelencia
+            para la comunicación y desarrollo profesional entre miembros de la empresa.
+          </p>
+        </div>
+        <div class="svg">
+          <img src="./jpg/imgGroup.jpg" alt="" />
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <section class="team">
-      <div class="team__header">
-        <h2>Nuestro equipo</h2>
-      </div>
-      <div class="team__contenedor">
-        <div class="team__caja">
-          <div class="caja-top">
-            <div class="perfil">
-              <div class="perfil-img">
-                <img src="./png/Ellipse 41.png" />
-              </div>
-
-              <div class="name-user">
-                <strong>Fabrizzio Castro</strong>
-                <span>Ingeniero de Software</span>
-              </div>
+  <section class="team">
+    <div class="team__header">
+      <h2>Nuestro equipo</h2>
+    </div>
+    <div class="team__contenedor">
+      <div class="team__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/Ellipse41.png" />
             </div>
-          </div>
-        </div>
 
-        <div class="team__caja">
-          <div class="caja-top">
-            <div class="perfil">
-              <div class="perfil-img">
-                <img src="./png/Ellipse 42.png" />
-              </div>
-
-              <div class="name-user">
-                <strong>Jhonel Rios</strong>
-                <span>Ingeniero de Software</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team__caja">
-          <div class="caja-top">
-            <div class="perfil">
-              <div class="perfil-img">
-                <img src="./png/Ellipse 45.png" />
-              </div>
-
-              <div class="name-user">
-                <strong> Richar Romero </strong>
-                <span>Ingeniero de Software</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team__caja">
-          <div class="caja-top">
-            <div class="perfil">
-              <div class="perfil-img">
-                <img src="./png/Ellipse 44.png" />
-              </div>
-
-              <div class="name-user">
-                <strong>Edwin Lopez</strong>
-                <span>Ingeniero de Software</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team__caja">
-          <div class="caja-top">
-            <div class="perfil">
-              <div class="perfil-img">
-                <img src="./png/Ellipse 43.png" />
-              </div>
-
-              <div class="name-user">
-                <strong>Esteban Calderón</strong>
-                <span>Ingeniero de Software</span>
-              </div>
+            <div class="name-user">
+              <strong>Fabrizzio Castro</strong>
+              <span>Ingeniero de Software</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <footer>
-        <FooterComponent></FooterComponent>
-    </footer>
+
+      <div class="team__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/Ellipse42.png" />
+            </div>
+
+            <div class="name-user">
+              <strong>Jhonel Rios</strong>
+              <span>Ingeniero de Software</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/Ellipse45.png" />
+            </div>
+
+            <div class="name-user">
+              <strong> Richar Romero </strong>
+              <span>Ingeniero de Software</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/Ellipse44.png" />
+            </div>
+
+            <div class="name-user">
+              <strong>Edwin Lopez</strong>
+              <span>Ingeniero de Software</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team__caja">
+        <div class="caja-top">
+          <div class="perfil">
+            <div class="perfil-img">
+              <img src="./png/Ellipse43.png" />
+            </div>
+
+            <div class="name-user">
+              <strong>Esteban Calderón</strong>
+              <span>Ingeniero de Software</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <FooterComponent></FooterComponent>
+  </footer>
 </template>
 
 <style>
@@ -376,7 +375,6 @@ import HeaderComponent from './HeaderComponent.vue';
     background-image: url(./jpg/fondo2.JPG);
   }
 
-
   .container_cover2 {
     background-position: 0px;
   }
@@ -434,8 +432,6 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 @media screen and (max-width: 1000px) {
-
-
   .team {
     height: 1100px;
   }
@@ -456,8 +452,6 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 @media screen and (max-width: 850px) {
-
-
   .team {
     height: 1100px;
   }
@@ -468,8 +462,6 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 @media screen and (max-width: 800px) {
-
-
   .team {
     height: 1100px;
   }
@@ -487,7 +479,5 @@ import HeaderComponent from './HeaderComponent.vue';
   .team__header {
     margin-top: 50px;
   }
-
 }
-
 </style>

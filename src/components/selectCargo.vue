@@ -1,4 +1,3 @@
-
   <template>
     <div class="select-cargo">
       <div class="logo-container">
@@ -19,8 +18,6 @@
     </div>
   </template>
 
-
-
 <script>
 export default {
   name: "selectCargo"
@@ -28,6 +25,10 @@ export default {
 </script>
 
 <style>
+*{
+    box-sizing: border-box;
+}
+
 .select-cargo {
   background-color: #FFFFFF;
   padding: 20px;
@@ -47,14 +48,18 @@ h2 {
 }
 .buttons-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content:space-evenly;
+    padding:10px;
+    margin: 5rem auto 5rem;
+    max-width: 1000px;
+
 }
 .cargo-button {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 45%;
+    max-width: 200px;
   background-color: #FFFFFF;
   border: 2px solid #CFCFCF;
   border-radius: 5px;
@@ -69,6 +74,12 @@ h2 {
   font-weight: bold;
   text-align: center;
 }
+.cargo-button:hover{
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+    animation: pulsate 2s infinite; /* Animación de colores alrededor */
+}
+
 .continuar-button {
   display: block;
   margin: 0 auto;
@@ -81,5 +92,21 @@ h2 {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+}
+.continuar-button:hover{
+    background-color: #e8a18f;
+}
+
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 10px rgba(0, 0, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
 }
 </style>

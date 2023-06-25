@@ -1,7 +1,5 @@
 <template>
   <main>
-    <SideBar />
-
     <div class="SeccionesActuales">
       <div class="title">Secciones Actuales</div>
 
@@ -12,34 +10,47 @@
         </select>
       </div>
 
-      <div class="content">
-        <div class="card">
-          <SeccionCardComponent />
-          <div class="line"></div>
-        </div>
+      <div class="content_section">
+        <div class="card_section" v-for="section in sections">
 
-        <div class="card">
-          <SeccionCardComponent />
-          <div class="line"></div>
-        </div>
+          <SeccionCardComponent :id="section.id" :section_Name="section.section_Name" :description="section.description"/>
 
-        <div class="card">
-          <SeccionCardComponent />
           <div class="line"></div>
         </div>
-
-        <div class="card">
-          <SeccionCardComponent />
-          <div class="line"></div>
-        </div>
+        
       </div>
     </div>
   </main>
 </template>
 
-<script setup>
+<script>
 import SeccionCardComponent from './seccion.card.component.vue';
-import SideBar from '../SideBar/SideBar.vue';
+import { SectionAndEmployeeApiService } from '../services/SectionsAndEmployee-api.service';
+
+export default {
+  name: 'Sections',
+  components: { SeccionCardComponent },
+  data() {
+    return {
+      employee_id: 0,
+      sections: [],
+      SectionsAndEmployeeService: new SectionAndEmployeeApiService()
+    };
+  },
+  async beforeMount() {
+    this.employee_id = localStorage.getItem('id_employee');
+    try {
+      const response = await this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id);
+      this.sections = response.data;
+      console.log(this.sections);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+}
+
+
 </script>
 
 <style scoped>
@@ -80,13 +91,14 @@ main {
   text-align: center;
   margin-top: 5px;
 }
-.content {
+.content content_section {
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: columns;
 }
-.card {
+.card_section {
   padding: 12px 30px 5px;
+  flex-direction: row;
 }
 .line {
   margin-top: 10px;

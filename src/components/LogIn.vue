@@ -18,26 +18,80 @@
       <form class="form">
         <div class="form-group">
           <label for="email">Dirección de correo electrónico:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" v-model="email" required />
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" required />
+          <input type="password" id="password" v-model="password" required />
         </div>
-        <button @click="$router.push('/section')" class="btn-login">Iniciar sesión</button>
+        <div class="form-group">
+          <label for="roles">Rol:</label>
+          <input type="roles" id="roles" v-model="roles" required />
+        </div>
+        <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
+        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">Ingresar</button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
       </form>
     </div>
-  </div>
+  </div>  
 </template>
-
 <script>
+
+import { AuthApiService } from './services/AuthUser.service';
+
 export default {
   name: 'LogIn',
+  data() {
+    return {
+      email: '',
+      password: '',
+      roles:'',
+      authApiService: new AuthApiService(),
+      responseData: [],
+      acceder: false
+    };
+  },
+  methods: {
+    submitForm() {
+      // Validar y enviar el formulario si es válido
+      
+        // Lógica para enviar el formulario (iniciar sesión)
+      this.login();
+      
+    },
+    async login() {
+      const loginData = {
+        email: this.email,
+        password: this.password,
+        roles:this.roles
+      };
+
+      try {
+        this.responseData = await this.authApiService.login(loginData);
+        console.log(this.responseData.data); // Accede a los datos de la respuesta (access, message, result)
+        
+        localStorage.setItem('access',true)
+        localStorage.setItem('id_employee',this.responseData.data.user_id);
+        localStorage.setItem('token',this.responseData.data.token.value)
+        this.acceder = localStorage.getItem("access")
+        // Aquí puedes realizar acciones adicionales en función de la respuesta recibida
+      } catch (error) {
+        console.error("Error al iniciar sesión:", error);
+        // Manejo de errores
+      }
+    },
+  },
+  mounted()
+  {
+
+  }
+
+
 };
 </script>
+
 
 <style scoped>
 /* Estilos para el contenedor principal */
@@ -137,7 +191,8 @@ export default {
     margin-bottom: 15px;
   }
   input[type='email'],
-  input[type='password'] {
+  input[type='password'],
+  input[type='roles'] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -196,7 +251,8 @@ label {
 }
 
 input[type='email'],
-input[type='password'] {
+input[type='password'],
+input[type='roles'] {
   width: 50%;
   padding: 10px;
   border: none;

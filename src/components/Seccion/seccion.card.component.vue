@@ -2,8 +2,9 @@
   <div class="Card">
     <div class="border"></div>
     <div class="content">
-      <div class="code">#LTA546 2023</div>
-      <div class="title">ÁREA DE LOGÍSTICA - STARTUP</div>
+      <div class="code">#LTA546-{{id}} 2023</div>
+      <div class="title">{{section_Name}} - Redcorp</div>
+      <div class="code">{{description}}</div>
       <div class="members">Ver miembros</div>
     </div>
 
@@ -16,6 +17,7 @@
 <script>
 export default {
   name: 'seccion.card.component',
+  props: ["id","section_Name","description"]
 };
 </script>
 

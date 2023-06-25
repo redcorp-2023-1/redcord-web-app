@@ -1,20 +1,28 @@
 import axios from "axios";
 
-const http = axios.create({baseURL:"http://localhost:3000/trabajadores"})
+const https = axios.create({
+    baseURL:"https://localhost:7233/api/Employee",
+    headers:{
+        Authorization:'Bearer '+ localStorage.getItem('token')
+    }
+})
+
 
 export class TrabajadorApiService{
 
-    getAll(){
-        return http.get()
+    getAllTrabajadores(){
+        return https.get()
     }
 
     getById(id)
     {
-        return http.get('/'+id)
+        return https.get('/'+id)
     }
     delete(id)
     {
-        return http.delete('/'+id)
+        return https.delete('/'+id)
     }
+
+    
 
 }
