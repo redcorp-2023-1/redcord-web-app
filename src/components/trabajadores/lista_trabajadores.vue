@@ -21,7 +21,7 @@
             <td>{{ worker.email }}</td>
             <td>
               <div class="table-cell">
-                <div class="circle"></div>
+                <div class="circle5"></div>
                 <spam>{{ worker.area }}</spam>
               </div>
             </td>
@@ -101,7 +101,7 @@ td {
   display: flex;
   align-items: center;
 }
-.circle {
+.circle5 {
   width: 20px;
   height: 20px;
   background: green;
