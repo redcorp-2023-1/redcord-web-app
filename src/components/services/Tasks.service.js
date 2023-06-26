@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const https = axios.create({
-  baseURL: 'https://localhost:7233/api/Team',
-  headers: {
-    Authorization: 'Bearer ' + localStorage.getItem('token'),
-  },
-});
+    baseURL:"redcorpcenter.azurewebsites.net/api/Team",
+    headers:{
+        Authorization:'Bearer '+ localStorage.getItem('token')
+    }
+})
 
 export class TaskApiService {
   GetTasksByIdEmployee(employee_id) {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const https = axios.create({ baseURL: 'https://localhost:7233/api/Employee' });
+const https = axios.create({baseURL:"redcorpcenter.azurewebsites.net/api/Employee"})
 
 export class AuthApiService {
   postTrabajador(body) {
