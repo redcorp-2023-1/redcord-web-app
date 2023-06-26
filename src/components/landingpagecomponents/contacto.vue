@@ -1,64 +1,62 @@
 <script setup>
 import FooterComponent from './FooterComponent.vue';
 import HeaderComponent from './HeaderComponent.vue';
-
-
 </script>
 <template>
-    <header>
-        <HeaderComponent></HeaderComponent>
-    </header>
-    <section id="banner3">
-      <div class="contenido-bannercontacto">
-        <h1><span>Contáctanos</span></h1>
-        <br />
-        <p>
-          Si desea obtener más información sobre nuestros servicios, de la plataforma o cualquier
-          otro tema en especial, no dude en contáctarnos.
-        </p>
-        <p>Ingrese sus datos y estableceremos una comunicación prontamente con usted.</p>
-      </div>
-    </section>
+  <header>
+    <HeaderComponent></HeaderComponent>
+  </header>
+  <section id="banner3">
+    <div class="contenido-bannercontacto">
+      <h1><span>Contáctanos</span></h1>
+      <br />
+      <p>
+        Si desea obtener más información sobre nuestros servicios, de la plataforma o cualquier otro
+        tema en especial, no dude en contáctarnos.
+      </p>
+      <p>Ingrese sus datos y estableceremos una comunicación prontamente con usted.</p>
+    </div>
+  </section>
 
-    <section id="contenedor_formulario">
-      <div class="Formu">
-        <form action="" class="form">
-          <div class="form1">
-            <h1 class="tituloForm">Ingrese sus datos personales</h1>
-            <p></p>
-          </div>
-          <label for="nombre" class="labelForm">Nombres</label>
-          <input type="text" id="nombre" class="form-input" placeholder="Escriba su nombre" />
-          <label for="apellido" class="labelForm">Apellidos</label>
-          <input type="text" id="apellido" class="form-input" placeholder="Escriba su apellido" />
-          <label for="correo" class="labelForm">Correo electrónico</label>
-          <input
-            type="text"
-            id="correo"
-            class="form-input"
-            placeholder="Escriba su correo electrónico"
-          />
-          <label for="empresa" class="labelForm">Empresa</label>
-          <input
-            type="text"
-            id="empresa"
-            class="form-input"
-            placeholder="Escriba la empresa que pertenece"
-          />
+  <section id="contenedor_formulario">
+    <div class="Formu">
+      <form action="" class="form">
+        <div class="form1">
+          <h1 class="tituloForm">Ingrese sus datos personales</h1>
+          <p></p>
+        </div>
+        <label for="nombre" class="labelForm">Nombres</label>
+        <input type="text" id="nombre" class="form-input" placeholder="Escriba su nombre" />
+        <label for="apellido" class="labelForm">Apellidos</label>
+        <input type="text" id="apellido" class="form-input" placeholder="Escriba su apellido" />
+        <label for="correo" class="labelForm">Correo electrónico</label>
+        <input
+          type="text"
+          id="correo"
+          class="form-input"
+          placeholder="Escriba su correo electrónico"
+        />
+        <label for="empresa" class="labelForm">Empresa</label>
+        <input
+          type="text"
+          id="empresa"
+          class="form-input"
+          placeholder="Escriba la empresa que pertenece"
+        />
 
-          <label for="mensaje" class="labelForm">Mensaje</label>
+        <label for="mensaje" class="labelForm">Mensaje</label>
 
-          <div id="mensajeForm">
-            <textarea id="mensaje1" placeholder="Escriba su mensaje"></textarea>
-          </div>
+        <div id="mensajeForm">
+          <textarea id="mensaje1" placeholder="Escriba su mensaje"></textarea>
+        </div>
 
-          <div class="bot">
-            <a href="">
-              <input type="button" value="Enviar" />
-            </a>
-          </div>
-        </form>
-        <div class="columIcon">
+        <div class="bot">
+          <a href="">
+            <input type="button" value="Enviar" />
+          </a>
+        </div>
+      </form>
+      <div class="columIcon">
         <div class="row2">
           <img src="./png/mapIcon.png" width="30" height="30" alt="map" />
           <label class="mapa">Lima, Perú</label>
@@ -72,13 +70,12 @@ import HeaderComponent from './HeaderComponent.vue';
           <label class="phone">555-5555</label>
         </div>
       </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    
-    <footer>
-        <FooterComponent></FooterComponent>
-    </footer>
+  <footer>
+    <FooterComponent></FooterComponent>
+  </footer>
 </template>
 
 <style>
@@ -91,7 +88,6 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 .contenido-bannercontacto {
-  
   color: #fff;
   height: 100%;
 
@@ -134,31 +130,26 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 #contenedor_formulario {
-  
   margin: 500px;
   padding: 10px 20px;
-  
+
   box-sizing: border-box;
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
-
-
-.form
-{
+.form {
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
 }
-.Formu{
+.Formu {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
 
 .Formu .form .form1 .tituloForm {
   font-family: 'Roboto Slab';
@@ -201,8 +192,6 @@ import HeaderComponent from './HeaderComponent.vue';
 }
 
 #contenedor_formulario .bot {
-
-
   flex-direction: column;
   justify-content: center;
   align-items: center;

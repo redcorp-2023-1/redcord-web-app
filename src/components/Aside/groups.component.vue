@@ -10,10 +10,28 @@
   </section>
 </template>
 
-<script setup>
-defineProps({
-  groups: Array,
-});
+<script>
+import { TaskApiService } from '../services/Tasks.service';
+
+export default {
+  name: 'Groups',
+  data() {
+    return {
+      groups: [],
+      taskApiService: new TaskApiService(),
+    };
+  },
+  async beforeMount() {
+    try {
+      const response = await this.taskApiService.GetTeamsByIdEmployee(
+        localStorage.getItem('id_employee')
+      );
+      this.groups = response.data;
+    } catch (error) {
+      console.error('Error getting groups:', error);
+    }
+  },
+};
 </script>
 
 <style scoped>

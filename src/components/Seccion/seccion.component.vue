@@ -12,12 +12,14 @@
 
       <div class="content_section">
         <div class="card_section" v-for="section in sections">
-
-          <SeccionCardComponent :id="section.id" :section_Name="section.section_Name" :description="section.description"/>
+          <SeccionCardComponent
+            :id="section.id"
+            :section_Name="section.section_Name"
+            :description="section.description"
+          />
 
           <div class="line"></div>
         </div>
-        
       </div>
     </div>
   </main>
@@ -27,28 +29,28 @@
 import SeccionCardComponent from './seccion.card.component.vue';
 import { SectionAndEmployeeApiService } from '../services/SectionsAndEmployee-api.service';
 
-export default{
-  name:'Sections',
-  components:{SeccionCardComponent},
-  data(){
-    return{
-      employee_id:0,
-      sections:[],
-      SectionsAndEmployeeService: new SectionAndEmployeeApiService()
+export default {
+  name: 'Sections',
+  components: { SeccionCardComponent },
+  data() {
+    return {
+      employee_id: 0,
+      sections: [],
+      SectionsAndEmployeeService: new SectionAndEmployeeApiService(),
+    };
+  },
+  async beforeMount() {
+    this.employee_id = localStorage.getItem('id_employee');
+    try {
+      const response = await this.SectionsAndEmployeeService.GetSectionsByEmployeeId(
+        this.employee_id
+      );
+      this.sections = response.data;
+    } catch (error) {
+      console.error(error);
     }
   },
-  beforeMount()
-  {
-    this.employee_id = localStorage.getItem('id_employee');
-    this.SectionsAndEmployeeService.GetSectionsByEmployeeId(this.employee_id).then((response)=>{
-      this.sections = response.data
-      console.log(this.sections)
-    })
-  }
-  
-}
-
-
+};
 </script>
 
 <style scoped>

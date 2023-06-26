@@ -10,8 +10,14 @@ import blog from '../components/landingpagecomponents/blog.vue';
 import conocenos from '../components/landingpagecomponents/conocenos.vue';
 import contacto from '../components/landingpagecomponents/contacto.vue';
 import planes from '../components/landingpagecomponents/planes.vue';
+
 import servicios from '../components/landingpagecomponents/servicios.vue';
+import SelectCargo from '../components/selectCargo.vue';
+import AlertaCerrarSesion from '../components/AlertNotification/AlertaCerrarSesion.vue';
+import VisionGeneral from '../components/VisionGeneral/VisionGeneral.vue';
+
 import Calendar from '../components/Calendar/Calendar.vue';
+import communiques from '../components/communiques/communiques.vue';
 
 const routes = [
   {
@@ -31,6 +37,11 @@ const routes = [
     component: Verification,
   },
   {
+    path: '/comunicados',
+    component: communiques,
+    meta: { title: 'Comunicados' },
+  },
+  {
     path: '/section',
     component: Section,
     meta: { title: 'Secciones' },
@@ -46,7 +57,7 @@ const routes = [
     meta: { title: 'Trabajadores' },
   },
   {
-    path: '/Trabajador/:id/:nombre/:correo/:area/:foto/',
+    path: '/Trabajador/:id',
     component: trabajadoresCard,
     props: true,
     name: 'Trabajador',
@@ -71,6 +82,19 @@ const routes = [
   {
     path: '/servicios',
     component: servicios,
+  },
+  {
+    path: '/selectCargo',
+    component: SelectCargo,
+  },
+
+  {
+    path: '/AlertaCerrarSesion',
+    component: AlertaCerrarSesion,
+  },
+  {
+    path: '/VisionGeneral',
+    component: VisionGeneral,
   },
 ];
 

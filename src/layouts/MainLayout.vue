@@ -24,7 +24,7 @@ import { ref } from 'vue';
 
 import Toolbar from '../components/Toolbar/toolbar.component.vue';
 import Aside from '../components/Aside/aside.component.vue';
-import SideBar from '../components/SideBar/Sidebar.vue';
+import SideBar from '../components/SideBar/SideBar.vue';
 
 const showAside = ref(false);
 </script>
@@ -40,7 +40,7 @@ main {
   position: relative;
 }
 
-.main-contentlayout{
+.main-contentlayout {
   flex: 1 1 auto;
   height: 100%;
 }
@@ -50,7 +50,7 @@ main {
 }
 
 .scroll {
-  flex: 1 1 auto;
+  flex: 1 1;
   height: 100%;
   overflow-y: auto;
 }

@@ -1,0 +1,94 @@
+{
+  "comunicados": [
+    {
+      "id": 1,
+      "name": "Tarea 1",
+      "description": "Descripción de la tarea 1",
+      "initialDate": "2023-06-26",
+      "finalDate": "2023-07-05",
+      "isCompleted": false,
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Tarea 2",
+      "description": "Descripción de la tarea 2",
+      "initialDate": "2023-07-01",
+      "finalDate": "2023-07-10",
+      "isCompleted": false,
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Tarea 3",
+      "description": "Descripción de la tarea 3",
+      "initialDate": "2023-07-05",
+      "finalDate": "2023-07-15",
+      "isCompleted": true,
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "name": "Tarea 4",
+      "description": "Descripción de la tarea 4",
+      "initialDate": "2023-06-30",
+      "finalDate": "2023-07-08",
+      "isCompleted": true,
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "name": "Tarea 5",
+      "description": "Descripción de la tarea 5",
+      "initialDate": "2023-07-03",
+      "finalDate": "2023-07-12",
+      "isCompleted": false,
+      "isActive": false
+    },
+    {
+      "id": 6,
+      "name": "Tarea 6",
+      "description": "Descripción de la tarea 6",
+      "initialDate": "2023-07-08",
+      "finalDate": "2023-07-18",
+      "isCompleted": false,
+      "isActive": true
+    },
+    {
+      "id": 7,
+      "name": "Tarea 7",
+      "description": "Descripción de la tarea 7",
+      "initialDate": "2023-07-02",
+      "finalDate": "2023-07-11",
+      "isCompleted": false,
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "name": "Tarea 8",
+      "description": "Descripción de la tarea 8",
+      "initialDate": "2023-07-07",
+      "finalDate": "2023-07-16",
+      "isCompleted": false,
+      "isActive": false
+    },
+    {
+      "id": 9,
+      "name": "Tarea 9",
+      "description": "Descripción de la tarea 9",
+      "initialDate": "2023-07-04",
+      "finalDate": "2023-07-13",
+      "isCompleted": false,
+      "isActive": true
+    },
+    {
+      "id": 10,
+      "name": "Tarea 10",
+      "description": "Descripción de la tarea 10",
+      "initialDate": "2023-07-06",
+      "finalDate": "2023-07-15",
+      "isCompleted": false,
+      "isActive": true
+    }
+  ]
+}

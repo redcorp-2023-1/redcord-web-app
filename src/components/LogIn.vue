@@ -24,18 +24,23 @@
           <label for="password">Contraseña:</label>
           <input type="password" id="password" v-model="password" required />
         </div>
+        <div class="form-group">
+          <label for="roles">Rol:</label>
+          <input type="roles" id="roles" v-model="roles" required />
+        </div>
         <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
-        <button @click.prevent="acceder ? $router.push('/section') : null" class="btn-login">Ingresar</button>
+        <button @click.prevent="canAccess ? $router.push('/section') : null" class="btn-login">
+          Ingresar
+        </button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
       </form>
     </div>
-  </div>  
+  </div>
 </template>
 <script>
-
-import { TrabajadorApiService } from './services/trabajadores-api.service';
+import { AuthApiService } from './services/AuthUser.service';
 
 export default {
   name: 'LogIn',
@@ -43,47 +48,38 @@ export default {
     return {
       email: '',
       password: '',
-      trabajadoresService: new TrabajadorApiService(),
+      roles: '',
+      authApiService: new AuthApiService(),
       responseData: [],
-      acceder: false
+      canAccess: false,
     };
   },
   methods: {
     submitForm() {
-      // Validar y enviar el formulario si es válido
-      
-        // Lógica para enviar el formulario (iniciar sesión)
       this.login();
-      
     },
     async login() {
       const loginData = {
         email: this.email,
-        password: this.password
+        password: this.password,
+        roles: this.roles,
       };
 
       try {
-        this.responseData = await this.trabajadoresService.login(loginData);
-        console.log(this.responseData.data); // Accede a los datos de la respuesta (access, message, result)
-        localStorage.setItem('access',this.responseData.data.access);
-        localStorage.setItem('id_employee',this.responseData.data.employee_id);
-        this.acceder = localStorage.getItem("access")
-        // Aquí puedes realizar acciones adicionales en función de la respuesta recibida
+        this.responseData = await this.authApiService.login(loginData);
+
+        localStorage.setItem('access', true);
+        localStorage.setItem('id_employee', this.responseData.data.user_id);
+        localStorage.setItem('token', this.responseData.data.token.value);
+        this.canAccess = localStorage.getItem('access');
       } catch (error) {
-        console.error("Error al iniciar sesión:", error);
-        // Manejo de errores
+        console.error('Error logging in:', error);
       }
     },
   },
-  mounted()
-  {
-
-  }
-
-
+  mounted() {},
 };
 </script>
-
 
 <style scoped>
 /* Estilos para el contenedor principal */
@@ -119,8 +115,6 @@ export default {
   align-items: center;
   margin-top: 50px;
 }
-
-
 
 .company-description {
   font-size: 1.2rem;
@@ -183,7 +177,8 @@ export default {
     margin-bottom: 15px;
   }
   input[type='email'],
-  input[type='password'] {
+  input[type='password'],
+  input[type='roles'] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -242,7 +237,8 @@ label {
 }
 
 input[type='email'],
-input[type='password'] {
+input[type='password'],
+input[type='roles'] {
   width: 50%;
   padding: 10px;
   border: none;

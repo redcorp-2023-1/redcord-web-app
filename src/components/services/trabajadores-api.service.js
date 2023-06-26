@@ -1,29 +1,21 @@
-import axios from "axios";
+import axios from 'axios';
 
-const https = axios.create({baseURL:"https://redcorpcenter.azurewebsites.net/api/Employee"})
-
-export class TrabajadorApiService{
-
-    getAllTrabajadores(){
-        return https.get()
+const https = axios.create({
+    baseURL:"https://redcorpcenter.azurewebsites.net/api/Employee",
+    headers:{
+        Authorization:'Bearer '+ localStorage.getItem('token')
     }
+})
 
-    getById(id)
-    {
-        return https.get('/'+id)
-    }
-    delete(id)
-    {
-        return https.delete('/'+id)
-    }
+export class TrabajadorApiService {
+  getAllTrabajadores() {
+    return https.get();
+  }
 
-    postTrabajador(body) {
-        return https.post('/Signup', body);
-    }
-    
-    login(body)
-    {
-        return https.post('/login',body);
-    }
-
+  getById(id) {
+    return https.get('/' + id);
+  }
+  delete(id) {
+    return https.delete('/' + id);
+  }
 }

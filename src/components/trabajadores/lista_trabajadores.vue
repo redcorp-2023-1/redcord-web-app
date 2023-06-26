@@ -11,22 +11,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="trabajador in trabajadores" :key="trabajador.id">
+          <tr v-for="worker in workers" :key="worker.id">
             <td>
               <div class="table-cell">
-                <img :src="trabajador.photo" alt="" />
-                <span>{{ trabajador.name }}</span>
+                <img :src="worker.photo" alt="" />
+                <span>{{ worker.name }}</span>
               </div>
             </td>
-            <td>{{ trabajador.email }}</td>
+            <td>{{ worker.email }}</td>
             <td>
               <div class="table-cell">
                 <div class="circle"></div>
-                <spam>{{ trabajador.area }}</spam>
+                <spam>{{ worker.area }}</spam>
               </div>
             </td>
             <td>
-              <button class="profile-button">Ver Perfil</button>
+              <router-link :to="`/Trabajador/${worker.id}`"> Ver Perfil </router-link>
             </td>
           </tr>
         </tbody>
@@ -37,24 +37,25 @@
 
 <script>
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
-import SideBar from '../SideBar/Sidebar.vue';
 import Trabajador from './trabajadores-card.vue';
 
 export default {
   name: 'trabajadores',
-  components: { Trabajador, SideBar },
+  components: { Trabajador },
   data() {
     return {
-      trabajadores: [],
-      trabajadoresService: new TrabajadorApiService(),
+      workers: [],
+      workersService: new TrabajadorApiService(),
     };
   },
 
-  beforeMount() {
-    this.trabajadoresService.getAllTrabajadores().then(response => {
-      this.trabajadores = response.data;
-      console.log(this.trabajadores);
-    });
+  async beforeMount() {
+    try {
+      const response = await this.workersService.getAllTrabajadores();
+      this.workers = response.data;
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 </script>
@@ -90,8 +91,10 @@ th {
   text-decoration: underline;
 }
 td {
-  font-size: 1.3rem;
+  font-size: 14px;
   color: black;
+  align-items: center;
+  justify-content: center;
 }
 
 .table-cell {
