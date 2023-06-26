@@ -56,7 +56,7 @@ export default {
   methods: {
     async fetchWorker() {
       try {
-        const response = workersService.getById(this.id);
+        const response = await this.workersService.getById(this.id);
         this.worker = response.data;
 
         const teamsRecovered = await this.taskApiService.GetTeamsByIdEmployee(this.id);
