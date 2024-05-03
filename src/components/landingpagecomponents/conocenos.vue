@@ -51,11 +51,11 @@ import HeaderComponent from './HeaderComponent.vue';
         <div class="caja-top">
           <div class="perfil">
             <div class="perfil-img">
-              <img src="./png/Ellipse42.png" />
+              <img src="./png/Ellipse46.png" />
             </div>
 
             <div class="name-user">
-              <strong>Jhonel Rios</strong>
+              <strong>Fabricio Huilca</strong>
               <span>Ingeniero de Software</span>
             </div>
           </div>
@@ -66,11 +66,11 @@ import HeaderComponent from './HeaderComponent.vue';
         <div class="caja-top">
           <div class="perfil">
             <div class="perfil-img">
-              <img src="./png/Ellipse45.png" />
+              <img src="./png/Ellipse47.png" />
             </div>
 
             <div class="name-user">
-              <strong> Richar Romero </strong>
+              <strong>Fabio Nicolich</strong>
               <span>Ingeniero de Software</span>
             </div>
           </div>
@@ -81,11 +81,11 @@ import HeaderComponent from './HeaderComponent.vue';
         <div class="caja-top">
           <div class="perfil">
             <div class="perfil-img">
-              <img src="./png/Ellipse44.png" />
+              <img src="./png/Ellipse48.png" />
             </div>
 
             <div class="name-user">
-              <strong>Edwin Lopez</strong>
+              <strong>Leonel Ortega</strong>
               <span>Ingeniero de Software</span>
             </div>
           </div>
