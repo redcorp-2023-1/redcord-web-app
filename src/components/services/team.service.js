@@ -7,7 +7,13 @@ const https = axios.create({
     }
 })
 
-export class TaskApiService {
+export class TeamService {
+
+  crearteam(body){
+    return https.post('/',body);
+  }
+
+
   GetTasksByIdEmployee(employee_id) {
     return https.get('/GetTasksByIdEmployee/' + employee_id);
   }

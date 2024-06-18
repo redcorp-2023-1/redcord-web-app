@@ -1,5 +1,5 @@
 <template>
-  <div class="card flex justify-content-center">
+  <div class="">
     <pv-button class="Button-inicar" label="Show" @click="visible = true">
       <img class="icons" src="./images/out.png" /> Cerrar sesión
     </pv-button>
@@ -25,6 +25,9 @@ const visible = ref(false);
 const router = useRouter();
 
 const logOut = () => {
+  localStorage.removeItem('id_employee');
+      localStorage.removeItem('token');
+      localStorage.removeItem('access');
   router.push('/');
 };
 </script>

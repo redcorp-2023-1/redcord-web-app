@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { TaskApiService } from '../services/Tasks.service';
+import { TeamService } from '../services/team.service';
 
 export default {
   name: 'Comunicados',
@@ -46,13 +46,13 @@ export default {
       communiques: [],
       originalCommuniques: [],
       searchText: '',
-      tasksApiService: new TaskApiService(),
+      teamService: new TeamService(),
     };
   },
 
   async beforeMount() {
     try {
-      const response = await this.tasksApiService.GetTasksByIdEmployee(
+      const response = await this.teamService.GetTasksByIdEmployee(
         localStorage.getItem('id_employee')
       );
       this.communiques = response.data;

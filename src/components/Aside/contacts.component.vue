@@ -4,35 +4,40 @@
 
     <div class="contact" v-for="contact in contacts" :key="contact.id">
       <img :src="contact.photo" :alt="contact.name" />
-
       <p>{{ contact.name }}</p>
-
-      <div class="counter" v-if="contact.id">
-        {{ contact.id }}
-      </div>
+      <div class="counter" v-if="contact.id">{{ contact.id }}</div>
     </div>
   </section>
 </template>
 
 <script>
-import { TaskApiService } from '../services/Tasks.service';
+import { TeamService } from '../services/team.service';
+
 export default {
   name: 'Contactos',
   data() {
     return {
       contacts: [],
-      taskApiService: new TaskApiService(),
+      teamService: new TeamService(),
     };
   },
-  async beforeMount() {
-    try {
-      const response = await this.taskApiService.GetEmployeesContactsByTeamId(
-        localStorage.getItem('id_employee')
-      );
-      this.contacts = response.data;
-    } catch (error) {
-      console.error('Error getting contacts:', error);
-    }
+  async mounted() {
+    await this.fetchContacts();
+  },
+  methods: {
+    async fetchContacts() {
+      try {
+        const employeeId = localStorage.getItem('id_employee');
+        if (!employeeId) {
+          throw new Error('Employee ID not found in localStorage');
+        }
+
+        const response = await this.teamService.GetEmployeesContactsByTeamId(employeeId);
+        this.contacts = response.data;
+      } catch (error) {
+        console.error('Error getting contacts:', error);
+      }
+    },
   },
 };
 </script>
@@ -56,9 +61,9 @@ h4 {
   margin-bottom: 26px;
 }
 
-img {
-  width: 40px;
-  height: 40px;
+.contact img {
+  width: 50px;
+  height: 60px;
   border-radius: 50%;
 }
 

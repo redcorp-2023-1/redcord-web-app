@@ -4,32 +4,39 @@
 
     <div class="group" v-for="group in groups" :key="group.id">
       <i class="pi pi-users" />
-
       <p>{{ group.name }}</p>
     </div>
   </section>
 </template>
 
 <script>
-import { TaskApiService } from '../services/Tasks.service';
+import { TeamService } from '../services/team.service';
 
 export default {
   name: 'Groups',
   data() {
     return {
       groups: [],
-      taskApiService: new TaskApiService(),
+      teamApiService: new TeamService(),
     };
   },
-  async beforeMount() {
-    try {
-      const response = await this.taskApiService.GetTeamsByIdEmployee(
-        localStorage.getItem('id_employee')
-      );
-      this.groups = response.data;
-    } catch (error) {
-      console.error('Error getting groups:', error);
-    }
+  async mounted() {
+    await this.fetchGroups();
+  },
+  methods: {
+    async fetchGroups() {
+      try {
+        const employeeId = localStorage.getItem('id_employee');
+        if (!employeeId) {
+          throw new Error('Employee ID not found in localStorage');
+        }
+
+        const response = await this.teamApiService.GetTeamsByIdEmployee(employeeId);
+        this.groups = response.data;
+      } catch (error) {
+        console.error('Error getting groups:', error);
+      }
+    },
   },
 };
 </script>

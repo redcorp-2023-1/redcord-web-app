@@ -68,7 +68,7 @@ export default {
           <li><pv-divider class="divider" /></li>
           <li>
             <RouterLink to="/planes"
-              ><pv-button label="Precios y planes" class="mr-2" icon="pi pi-money-bill"></pv-button
+              ><pv-button label="Precios y planes"  icon="pi pi-money-bill"></pv-button
             ></RouterLink>
           </li>
           <li><pv-divider class="divider" /></li>

@@ -21,13 +21,13 @@ import Toolbar from 'primevue/toolbar';
 import Splitter from 'primevue/splitter';
 import SplitterPanel from 'primevue/splitterpanel';
 import Divider from 'primevue/divider';
-
+import CascadeSelect from 'primevue/cascadeselect';
 import Dialog from 'primevue/dialog';
 import Calendar from 'primevue/calendar';
 import Chart from 'primevue/chart';
 import InputText from 'primevue/inputtext';
 import Sidebar from 'primevue/sidebar';
-
+import Message from 'primevue/message';
 const app = createApp(App);
 
 app.component('pv-button', Button);
@@ -45,6 +45,8 @@ app.component('pv-calendar', Calendar);
 app.component('pv-chart', Chart);
 app.component('pv-input-text', InputText);
 app.component('pv-sidebar', Sidebar);
+app.component('pv-cascadeSelect',CascadeSelect);
+app.component('pv-message',Message);
 
 app.use(PrimeVue);
 app.use(router);
