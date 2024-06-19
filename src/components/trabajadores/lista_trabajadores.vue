@@ -117,6 +117,7 @@ td {
   justify-content: center; /* Centrado */
 }
 
+
 .circle {
   width: 20px;
   height: 20px;

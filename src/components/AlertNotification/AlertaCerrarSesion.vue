@@ -26,8 +26,8 @@ const router = useRouter();
 
 const logOut = () => {
   localStorage.removeItem('id_employee');
-      localStorage.removeItem('token');
-      localStorage.removeItem('access');
+  localStorage.removeItem('token');
+  localStorage.removeItem('access');
   router.push('/');
 };
 </script>

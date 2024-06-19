@@ -1,11 +1,11 @@
 <template>
   <div>
     <button class="menuSide" v-if="!showSidebar" @click="toggleSidebar">
-      <img src="./images/menuSidebar.png" alt="" />
+      <img src="./images/menuSidebar.png" alt="">
     </button>
     <div class="overlay" v-if="showSidebar" @click="toggleSidebar"></div>
 
-    <div class="sidebar" :class="{ active: showSidebar }">
+    <div class="sidebar" :class="{ 'active': showSidebar }">
       <img src="./images/LogoRedcorp.png" />
       <router-link to="/Perfil" class="link">
         <div class="perfil">
@@ -50,9 +50,9 @@
           <label>Interacciones</label>
           <pv-divider class="divider" />
           <ul>
-            <a><img class="iconos" src="./images/chats.png" />Chats</a>
-            <a><img class="iconos" src="./images/not.png" />Notificaciones</a>
-            <a><img class="iconos" src="./images/coments.png" />Comentarios</a>
+            <a><img class="iconos" src="./images/chats.png">Chats</a>
+            <a><img class="iconos" src="./images/not.png">Notificaciones</a>
+            <a><img class="iconos" src="./images/coments.png">Comentarios</a>
           </ul>
         </div>
       </section>
@@ -71,20 +71,19 @@
 </template>
 
 <script>
-import AlertaCerrarSesion from '../AlertNotification/AlertaCerrarSesion.vue';
+import AlertaCerrarSesion from "../AlertNotification/AlertaCerrarSesion.vue";
 import { TrabajadorApiService } from '../services/trabajadores-api.service';
 
 export default {
   name: 'SideBar',
-  components: {
-    AlertaCerrarSesion,
-  },
+  components: { AlertaCerrarSesion },
   data() {
     return {
       showSidebar: false,
-      workerService: new TrabajadorApiService(),
-      workerData: [],
+      trabajardorService: new TrabajadorApiService(),
+      trabajador_data: [],
       name: '',
+      develop
       cargo: '',
       photo:'' 
     };
@@ -102,13 +101,13 @@ export default {
     },
   },
   beforeMount() {
-    this.getWorker();
+    this.Get_trabajador();
   },
   beforeCreate() {
     if (!window.localStorage.getItem('token')) {
       this.$router.push('/login');
     }
-  },
+  }
 };
 </script>
 
@@ -349,3 +348,4 @@ button:hover {
   }
 }
 </style>
+
