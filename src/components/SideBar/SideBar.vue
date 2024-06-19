@@ -7,26 +7,41 @@
 
     <div class="sidebar" :class="{ 'active': showSidebar }">
       <img src="./images/LogoRedcorp.png" />
-
-      <div class="perfil">
-        <img src="./images/men.jpg" />
-        <div>
-          <h3>{{ name }}</h3>
-          <p>{{ cargo }}</p>
+      <router-link to="/Perfil" class="link">
+        <div class="perfil">
+          
+            <img :src="photo" :alt="name" v-if="photo"/>
+            <div>
+              <h3>{{ name }}</h3>
+              <p>{{ cargo }}</p>
+            </div>
+          
         </div>
-      </div>
-
+      </router-link>
       <section class="herramientas">
         <label>Herramientas</label>
         <pv-divider class="divider" />
 
         <ul>
-          <router-link to="/VisionGeneral" class="link"><img class="iconos" src="./images/v_g.png">Visión General</router-link>
-          <router-link to="/section" class="link"><img class="iconos" src="./images/secc.png">Secciones</router-link>
-          <router-link to="/section" class="link"><img class="iconos" src="./images/herr.png">Herramientas</router-link>
-          <router-link to="/comunicados" class="link"><img class="iconos" src="./images/comunicados.png">Comunicados</router-link>
-          <router-link to="/trabajadores" class="link"><img class="iconos" src="./images/list.png">Lista de trabajadores de áreas</router-link>
-          <router-link to="/section" class="link"><img class="iconos" src="./images/prog.png">Progreso de Empleados</router-link>
+          <router-link to="/VisionGeneral" class="link"
+            ><img class="iconos" src="./images/v_g.png" />Visión General</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/secc.png" />Secciones</router-link
+          >
+          <router-link to="/Herramientas" class="link"
+            ><img class="iconos" src="./images/herr.png" />Herramientas</router-link
+          >
+          <router-link to="/comunicados" class="link"
+            ><img class="iconos" src="./images/comunicados.png" />Comunicados</router-link
+          >
+          <router-link to="/trabajadores" class="link"
+            ><img class="iconos" src="./images/list.png" />Lista de trabajadores de
+            áreas</router-link
+          >
+          <router-link to="/section" class="link"
+            ><img class="iconos" src="./images/prog.png" />Progreso de Empleados</router-link
+          >
         </ul>
       </section>
 
@@ -68,26 +83,22 @@ export default {
       trabajardorService: new TrabajadorApiService(),
       trabajador_data: [],
       name: '',
-      cargo: ''
+      develop
+      cargo: '',
+      photo:'' 
     };
   },
   methods: {
-    cerrarsesion() {
-      localStorage.removeItem('id_employee');
-      localStorage.removeItem('token');
-      localStorage.removeItem('access');
 
-      this.$router.push('/');
-    },
     toggleSidebar() {
       this.showSidebar = !this.showSidebar;
     },
-    async Get_trabajador() {
-      this.trabajador_data = await this.trabajardorService.getById(localStorage.getItem('id_employee'));
-      this.name = this.trabajador_data.data.name;
-      this.cargo = this.trabajador_data.data.cargo;
-      console.log(this.trabajador_data.data);
-    }
+    async getWorker() {
+      this.workerData = await this.workerService.getById(localStorage.getItem('id_employee'));
+      this.name = this.workerData.data.name;
+      this.cargo = this.workerData.data.cargo;
+      this.photo = this.workerData.data.photo;
+    },
   },
   beforeMount() {
     this.Get_trabajador();

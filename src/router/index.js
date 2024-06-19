@@ -18,6 +18,8 @@ import VisionGeneral from '../components/VisionGeneral/VisionGeneral.vue';
 
 import Calendar from '../components/Calendar/Calendar.vue';
 import communiques from '../components/communiques/communiques.vue';
+import Perfil from '../components/SideBar/Perfil.vue';
+import Herramientas from '../components/herramientas/Herramientas.vue'
 
 const routes = [
   {
@@ -87,7 +89,16 @@ const routes = [
     path: '/selectCargo',
     component: SelectCargo,
   },
-
+  {
+    path: '/Perfil',
+    component: Perfil,
+    meta: { title: 'Perfil' },
+  },
+  {
+    path: '/Herramientas',
+    component: Herramientas,
+    meta: { title: 'Herramientas' },
+  },
   {
     path: '/AlertaCerrarSesion',
     component: AlertaCerrarSesion,

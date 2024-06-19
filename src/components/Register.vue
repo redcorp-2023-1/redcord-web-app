@@ -13,7 +13,7 @@
         <RouterLink to="/login" class="link">Iniciar sesión</RouterLink>
       </div>
       <h2>Regístrate en RedCorp</h2>
-      <form class="form">
+      <form class="form" @submit.prevent="submitForm">
         <div class="form-group-inline">
           <div class="form-group">
             <label for="name">Nombre:</label>
@@ -23,6 +23,18 @@
             <label for="lastname">Apellido:</label>
             <input type="text" id="lastname" v-model="lastname" required />
           </div>
+        </div>
+        <div class="form-group">
+          <label for="dni">DNI:</label>
+          <input
+            type="text"
+            id="dni"
+            v-model="dni"
+            @input="validateDNI"
+            pattern="\d{8}"
+            required
+          />
+          <p v-if="dniError" class="error-message">El DNI debe tener exactamente 8 dígitos numéricos.</p>
         </div>
         <div class="form-group">
           <label for="email">Dirección de correo electrónico:</label>
@@ -38,26 +50,28 @@
           <p v-if="passwordMismatch" class="error-message">Las contraseñas no coinciden.</p>
         </div>
         <div class="form-group">
-          <label for="area">Area:</label>
-          <input type="text" id="area" v-model="area" :list="areaListId" required />
-          <datalist :id="areaListId">
-            <option v-for="item in areaList" :key="item" :value="item"></option>
-          </datalist>
-        </div>
-        <div class="form-group">
-          <label for="cargo">Cargo:</label>
-          <input type="text" id="cargo" v-model="cargo" required />
-        </div>
-        <div class="form-group">
-          <label for="roles">Roles</label>
-          <input type="text" id="roles" v-model="roles" :list="rolesListId" required />
-          <datalist :id="rolesListId">
-            <option v-for="item in rolesList" :key="item" :value="item"></option>
-          </datalist>
-        </div>
+        <label for="area">Área:</label>
+        <select id="area" v-model="area" required>
+          <option v-for="item in areaList" :key="item" :value="item">{{ item }}</option>
+        </select>
+        <p v-if="areaError" class="error-message">Área no válida.</p>
+      </div>
+      <div class="form-group">
+        <label for="cargo">Cargo:</label>
+        <select id="cargo" v-model="cargo" required>
+          <option v-for="item in cargoList" :key="item" :value="item">{{ item }}</option>
+        </select>
+        <p v-if="cargoError" class="error-message">Cargo no válido.</p>
+      </div>
+      <div class="form-group">
+        <label for="roles">Roles:</label>
+        <select id="roles" v-model="roles" required>
+          <option v-for="item in rolesList" :key="item" :value="item">{{ item }}</option>
+        </select>
+      </div>
         <button
-          @click="submitForm"
-          ::disabled="isFormEmpty || passwordMismatch"
+          type="submit"
+          :disabled="isFormEmpty || passwordMismatch || dniError || areaError || cargoError"
           class="btn-register"
         >
           Continuar
@@ -80,14 +94,29 @@ export default {
     return {
       name: '',
       lastname: '',
+      dni:'',
       email: '',
       password: '',
       confirmPassword: '',
       area: '',
       cargo: '',
       roles: '',
+      photo: 'https://cdn-icons-png.flaticon.com/512/1077/1077063.png',
+      cargoList: [
+        'Supervisor',
+        'Ejecutiva de ventas',
+        'Gerente',
+        'Especialista Digital',
+        'Analista Financiero',
+        'Desarrollador',
+        'Reclutamiento',
+        'Coordinador',
+        'Representante',
+        'Analista',
+        'Junior',
+      ],
       areaList: [
-        'Informática',
+        'Area de Sistemas',
         'Finanzas y Contabilidad',
         'Recursos Humanos',
         'Marketing y Ventas',
@@ -96,9 +125,16 @@ export default {
         'Administración',
       ],
       areaListId: 'areaList',
+      cargoListId: 'cargoList',
       rolesList: ['user', 'admin'],
       rolesListId: 'rolesList',
       authApiService: new AuthApiService(),
+      dniError: false,
+      areaError: false,
+      cargoError: false,
+      rolesError: false,
+      responseData: [],
+      canAccess: false,
     };
   },
   computed: {
@@ -107,6 +143,7 @@ export default {
         this.name === '' ||
         this.lastname === '' ||
         this.email === '' ||
+        this.dni === '' ||
         this.password === '' ||
         this.confirmPassword === '' ||
         this.area === '' ||
@@ -119,26 +156,45 @@ export default {
     },
   },
   methods: {
-    submitForm() {
-      if (!this.isFormEmpty && !this.passwordMismatch) {
-        this.signUp();
-        this.$router.push('/verification');
-      }
+    validateDNI() {
+      const dniPattern = /^\d{8}$/;
+      this.dniError = !dniPattern.test(this.dni);
     },
+    validateArea() {
+      this.areaError = !this.areaList.includes(this.area);
+    },
+    validateCargo() {
+      this.cargoError = !this.cargoList.includes(this.cargo);
+    },
+    async submitForm() {
+      this.validateDNI();
+      this.validateArea();
+      this.validateCargo();
+      if (!this.isFormEmpty && !this.passwordMismatch && !this.dniError && !this.areaError && !this.cargoError) {
+        await this.signUp();
+      }
+    }, 
     async signUp() {
       const workerData = {
         name: this.name,
         last_name: this.lastname,
+        dni : this.dni,
         email: this.email,
         password: this.password,
         area: this.area,
         cargo: this.cargo,
-        photo: 'https://i.pinimg.com/222x/57/70/f0/5770f01a32c3c53e90ecda61483ccb08.jpg',
-        roles: this.roles,
+        photo: this.photo
       };
 
       try {
-        await this.authApiService.postTrabajador(workerData);
+        this.responseData = await this.authApiService.postTrabajador(workerData);
+        localStorage.setItem('access', true);
+        localStorage.setItem('id_employee', this.responseData.data.user_id);
+        localStorage.setItem('token', this.responseData.data.token.value);
+        this.canAccess = localStorage.getItem('access');
+        if (this.canAccess) {
+          this.$router.push('/section');
+        }
       } catch (error) {
         console.error('Error registering worker:', error);
       }
@@ -273,13 +329,16 @@ label {
 
 input[type='email'],
 input[type='password'],
-input[type='text'] {
+input[type='text'],
+select#roles,
+select#cargo,
+select#area {
   width: 100%;
   padding: 10px;
   border: none;
   border-radius: 20px;
   background-color: #f4f4f4;
-  margin-bottom: auto;
+  margin-bottom: 1rem;
 }
 
 button.btn-register {

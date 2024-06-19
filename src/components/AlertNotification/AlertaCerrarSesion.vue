@@ -1,5 +1,5 @@
 <template>
-  <div class="card flex justify-content-center">
+  <div class="">
     <pv-button class="Button-inicar" label="Show" @click="visible = true">
       <img class="icons" src="./images/out.png" /> Cerrar sesión
     </pv-button>

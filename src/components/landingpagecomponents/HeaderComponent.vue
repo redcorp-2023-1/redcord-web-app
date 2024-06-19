@@ -68,7 +68,7 @@ export default {
           <li><pv-divider class="divider" /></li>
           <li>
             <RouterLink to="/planes"
-              ><pv-button label="Precios y planes" class="mr-2" icon="pi pi-money-bill"></pv-button
+              ><pv-button label="Precios y planes"  icon="pi pi-money-bill"></pv-button
             ></RouterLink>
           </li>
           <li><pv-divider class="divider" /></li>
@@ -97,7 +97,7 @@ export default {
 
 <style>
 .Toolbarcontainer {
-  background: linear-gradient(to right, #791da3, #4338ca) !important;
+  background: linear-gradient(to right, #bba9c4, #4338ca) !important;
 }
 .logo {
   display: flex;
@@ -109,7 +109,7 @@ export default {
 .logo img {
   max-width: 90%;
   height: auto;
-}
+} 
 .nav-list {
   display: flex;
   list-style-type: none;
@@ -136,7 +136,7 @@ pv-button {
   width: 200px !important;
   height: 50px !important;
   border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(155, 49, 49, 0.1);
   transition: transform 0.3s, box-shadow 0.3s !important;
 }
 

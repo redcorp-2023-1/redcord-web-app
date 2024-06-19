@@ -12,7 +12,7 @@
     <div class="right-section">
       <div class="header">
         <a href="#" class="link">¿No eres miembro?</a>
-        <RouterLink to="/register" class="link">Registrate ahora</RouterLink>
+        <RouterLink to="/register" class="link">Regístrate ahora</RouterLink>
       </div>
       <h2>Iniciar sesión Redcorp</h2>
       <form class="form">
@@ -25,13 +25,12 @@
           <input type="password" id="password" v-model="password" required />
         </div>
         <div class="form-group">
-          <label for="roles">Rol:</label>
-          <input type="roles" id="roles" v-model="roles" required />
+          <label for="roles">Roles:</label>
+          <select id="roles" v-model="roles" required>
+            <option v-for="item in rolesList" :key="item" :value="item">{{ item }}</option>
+          </select>
         </div>
         <button @click.prevent="submitForm" class="btn-login">Iniciar sesión</button>
-        <button @click.prevent="canAccess ? $router.push('/section') : null" class="btn-login">
-          Ingresar
-        </button>
         <div class="forgot-password">
           <a href="#" class="contra">¿Se te olvidó la contraseña?</a>
         </div>
@@ -39,6 +38,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { AuthApiService } from './services/AuthUser.service';
 
@@ -52,6 +52,8 @@ export default {
       authApiService: new AuthApiService(),
       responseData: [],
       canAccess: false,
+      rolesList: ['user', 'admin'],
+      rolesListId: 'rolesList',
     };
   },
   methods: {
@@ -72,6 +74,10 @@ export default {
         localStorage.setItem('id_employee', this.responseData.data.user_id);
         localStorage.setItem('token', this.responseData.data.token.value);
         this.canAccess = localStorage.getItem('access');
+        
+        if (this.canAccess) {
+          this.$router.push('/section');
+        }
       } catch (error) {
         console.error('Error logging in:', error);
       }
@@ -238,7 +244,7 @@ label {
 
 input[type='email'],
 input[type='password'],
-input[type='roles'] {
+select#roles{
   width: 50%;
   padding: 10px;
   border: none;
