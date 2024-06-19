@@ -83,7 +83,7 @@ export default {
       trabajardorService: new TrabajadorApiService(),
       trabajador_data: [],
       name: '',
-      develop
+      develop: '',
       cargo: '',
       photo:'' 
     };
@@ -94,14 +94,14 @@ export default {
       this.showSidebar = !this.showSidebar;
     },
     async getWorker() {
-      this.workerData = await this.workerService.getById(localStorage.getItem('id_employee'));
+      this.workerData = await this.trabajardorService.getById(localStorage.getItem('id_employee'));
       this.name = this.workerData.data.name;
       this.cargo = this.workerData.data.cargo;
       this.photo = this.workerData.data.photo;
     },
   },
   beforeMount() {
-    this.Get_trabajador();
+    this.getWorker();
   },
   beforeCreate() {
     if (!window.localStorage.getItem('token')) {
