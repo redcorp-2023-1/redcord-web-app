@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "redcord-webapp"
-  }
+    "default": "redcorp-web-app",
+    "redcorp": "redcorp-web-app"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

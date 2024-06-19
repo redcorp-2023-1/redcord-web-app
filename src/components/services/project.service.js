@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const https = axios.create({
-    baseURL:"https://localhost:7233/api/Project",
+    baseURL:"https://redcorp-cudacdhxfyffgehj.eastus-01.azurewebsites.net/api/Project",
     headers:{
         Authorization:'Bearer '+ localStorage.getItem('token')
     }

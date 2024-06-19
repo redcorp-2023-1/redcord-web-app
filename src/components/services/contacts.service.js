@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const http = axios.create({ baseURL: 'https://localhost:7233/contacts' });
+const http = axios.create({ baseURL: 'https://redcorp-cudacdhxfyffgehj.eastus-01.azurewebsites.net/contacts' });
 
 export class ContactsService {
   async getAll() {
